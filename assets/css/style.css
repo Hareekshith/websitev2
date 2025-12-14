@@ -105,31 +105,74 @@ a {
 
 /* Premium Animations */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes scaleIn {
-    from { opacity: 0; transform: scale(0.96); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @keyframes blurIn {
-    from { filter: blur(6px); opacity: 0; }
-    to { filter: blur(0); opacity: 1; }
+    from {
+        filter: blur(6px);
+        opacity: 0;
+    }
+
+    to {
+        filter: blur(0);
+        opacity: 1;
+    }
 }
 
-.animate-fade { animation: fadeIn 0.8s var(--ease-luxury) forwards; opacity: 0; }
-.animate-scale { animation: scaleIn 0.7s var(--ease-luxury) forwards; opacity: 0; }
-.animate-blur { animation: blurIn 0.9s var(--ease-luxury) forwards; opacity: 0; }
+.animate-fade {
+    animation: fadeIn 0.8s var(--ease-luxury) forwards;
+    opacity: 0;
+}
+
+.animate-scale {
+    animation: scaleIn 0.7s var(--ease-luxury) forwards;
+    opacity: 0;
+}
+
+.animate-blur {
+    animation: blurIn 0.9s var(--ease-luxury) forwards;
+    opacity: 0;
+}
 
 /* Reveal utilities */
-.reveal { opacity: 0; transform: translateY(24px); }
-.reveal.is-visible { opacity: 1; transform: translateY(0); transition: all 700ms var(--ease-luxury); }
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 700ms var(--ease-luxury);
+}
 
 /* Hero parallax */
-.hero-parallax .hero-background { will-change: transform; }
-.hero-parallax .hero-overlay { will-change: opacity; }
+.hero-parallax .hero-background {
+    will-change: transform;
+}
+
+.hero-parallax .hero-overlay {
+    will-change: opacity;
+}
 
 /* Navbar specific animation that preserves horizontal centering */
 .navbar.animate-fade-up {
@@ -388,6 +431,7 @@ a {
     display: flex;
     align-items: center;
     gap: 10px;
+    white-space: nowrap;
 }
 
 .navbar-logo img {
@@ -446,6 +490,7 @@ a {
             padding: 0.7rem;
         }
     }
+
     color: var(--text-bright);
     font-size: 0.9rem;
     font-weight: 500;
@@ -472,6 +517,56 @@ a {
 .navbar-menu a:hover::after {
     width: 100%;
 }
+
+/* Dropdown Menu Styles */
+.navbar-menu li {
+    position: relative;
+}
+
+.navbar-menu .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10, 25, 47, 0.98);
+    backdrop-filter: blur(20px);
+    border: var(--glass-border);
+    border-radius: 12px;
+    padding: 0.5rem 0;
+    margin-top: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s var(--ease-luxury);
+    min-width: 150px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+.navbar-menu li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0.5rem;
+}
+
+.dropdown a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: var(--text-bright);
+    font-size: 0.85rem;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s var(--ease-luxury);
+}
+
+.dropdown a:hover {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold-primary);
+}
+
+.dropdown a::after {
+    display: none;
+}
+
 
 /* ============================================
    HERO SECTION - IMMERSIVE
@@ -750,11 +845,9 @@ a {
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(
-        to bottom,
-        var(--light-slate),
-        rgba(212, 175, 55, 0.5)
-    );
+    background: linear-gradient(to bottom,
+            var(--light-slate),
+            rgba(212, 175, 55, 0.5));
 }
 
 .timeline-item {
@@ -944,6 +1037,7 @@ a {
     cursor: pointer;
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
+
 .gallery-image-wrapper img {
     position: absolute;
     inset: 0;
@@ -1185,25 +1279,48 @@ html {
     font-size: 1rem;
     margin-bottom: 0.4rem;
 }
+
 .team-card-content .role {
     font-size: 0.85rem;
     color: var(--text-muted);
 }
+
 .team-card-content .description {
     font-size: 0.85rem;
 }
 
 /* Responsive adjustments for team cards */
 @media (max-width: 1024px) {
-    .team-card { flex: 0 0 220px; }
-    .team-card-image { height: 200px; }
+    .team-card {
+        flex: 0 0 220px;
+    }
+
+    .team-card-image {
+        height: 200px;
+    }
 }
+
 @media (max-width: 768px) {
-    .team-carousel-track { gap: 1rem; }
-    .team-card { flex: 0 0 200px; }
-    .team-card-image { height: 180px; }
-    .team-card-content h3 { font-size: 0.95rem; }
-    .team-card-content .role, .team-card-content .description { font-size: 0.8rem; }
+    .team-carousel-track {
+        gap: 1rem;
+    }
+
+    .team-card {
+        flex: 0 0 200px;
+    }
+
+    .team-card-image {
+        height: 180px;
+    }
+
+    .team-card-content h3 {
+        font-size: 0.95rem;
+    }
+
+    .team-card-content .role,
+    .team-card-content .description {
+        font-size: 0.8rem;
+    }
 }
 
 /* ============================================

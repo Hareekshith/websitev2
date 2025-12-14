@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="ACM Student Chapter VIT Chennai">
+    <meta name="description"
+        content="ACM VIT Chennai 2025 Annual Newsletter - A comprehensive review of all events, workshops, and competitions conducted throughout the year">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+
+    <title>2025 Newsletter - ACM VIT Chennai</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        /* Newsletter Specific Styles */
+        .newsletter-hero {
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f35 50%, #0a0e1a 100%);
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(74, 246, 38, 0.1) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        .year-badge {
+            display: inline-block;
+            font-size: 10rem;
+            font-weight: 999;
+            background: linear-gradient(135deg, #4af626, #ffd700, #4af626);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s ease infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes gradient-shift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .newsletter-subtitle {
+            font-size: 1.6rem;
+            color: var(--gold-primary);
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        .newsletter-intro {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(74, 246, 38, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(74, 246, 38, 0.1), rgba(255, 215, 0, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 20px 60px rgba(74, 246, 38, 0.3);
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--gold-primary);
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Timeline */
+        .timeline-section {
+            position: relative;
+            padding: 4rem 0;
+        }
+
+        .month-divider {
+            display: flex;
+            align-items: center;
+            margin: 4rem 0 3rem;
+            gap: 2rem;
+        }
+
+        .month-divider::before,
+        .month-divider::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+        }
+
+        .month-label {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        /* Event Cards */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .event-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .event-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--gold-primary);
+            box-shadow: 0 25px 70px rgba(74, 246, 38, 0.4);
+        }
+
+        .event-image-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .event-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .event-card:hover .event-image {
+            transform: scale(1.15);
+        }
+
+        .event-category {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+        }
+
+        .category-workshop {
+            background: rgba(74, 246, 38, 0.9);
+            color: #000;
+        }
+
+        .category-competition {
+            background: rgba(255, 59, 48, 0.9);
+            color: #fff;
+        }
+
+        .category-social {
+            background: rgba(255, 215, 0, 0.9);
+            color: #000;
+        }
+
+        .category-outreach {
+            background: rgba(52, 199, 89, 0.9);
+            color: #fff;
+        }
+
+        .event-content {
+            padding: 1.5rem;
+        }
+
+        .event-date {
+            font-size: 0.9rem;
+            color: var(--gold-primary);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .event-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.8rem;
+        }
+
+        .event-description {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+        }
+
+        .event-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gold-primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .event-link:hover {
+            gap: 0.8rem;
+            color: #4af626;
+        }
+
+        /* Share Buttons */
+        .share-section {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .share-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .share-btn:hover {
+            background: var(--gold-primary);
+            color: #000;
+            transform: translateY(-5px) rotate(10deg);
+        }
+
+        @media (max-width: 768px) {
+            .newsletter-hero {
+                padding: 6rem 1.5rem 4rem;
+            }
+
+            .year-badge {
+                font-size: 3.5rem;
+            }
+
+            .newsletter-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .newsletter-intro {
+                font-size: 0.95rem;
+                padding: 0 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .stat-card {
+                padding: 1.8rem 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+                letter-spacing: 1px;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .month-label {
+                font-size: 1.2rem;
+                letter-spacing: 1.5px;
+            }
+
+            .month-divider {
+                margin: 3rem 0 2rem;
+                gap: 1rem;
+            }
+
+            .event-title {
+                font-size: 1.15rem;
+            }
+
+            .event-description {
+                font-size: 0.85rem;
+            }
+
+            .event-content {
+                padding: 1.2rem;
+            }
+
+            .share-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Print-specific styles for PDF generation */
+        @media print {
+
+            /* Hide elements that don't work well in PDF */
+            .navbar,
+            .download-section,
+            .share-section,
+            footer,
+            .event-link {
+                display: none !important;
+            }
+
+            /* Simplify backgrounds */
+            body,
+            section {
+                background: #fff !important;
+                color: #000 !important;
+            }
+
+            .newsletter-hero {
+                background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%) !important;
+                padding: 3rem 2rem !important;
+            }
+
+            .newsletter-hero::before {
+                display: none !important;
+            }
+
+            .year-badge {
+                color: #2d5016 !important;
+                -webkit-text-fill-color: #2d5016 !important;
+                animation: none !important;
+            }
+
+            .newsletter-subtitle {
+                color: #d4a017 !important;
+            }
+
+            .newsletter-intro {
+                color: #333 !important;
+            }
+
+            /* Simplify cards */
+            .stat-card,
+            .event-card {
+                background: #f9f9f9 !important;
+                border: 1px solid #ddd !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+            }
+
+            .stat-card::before,
+            .event-card::before {
+                display: none !important;
+            }
+
+            .stat-number {
+                color: #d4a017 !important;
+            }
+
+            .stat-label,
+            .event-date,
+            .event-description {
+                color: #555 !important;
+            }
+
+            .event-title,
+            .month-label {
+                color: #2d5016 !important;
+            }
+
+            .event-category {
+                background: #ddd !important;
+                color: #333 !important;
+            }
+
+            /* Remove animations and transitions */
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            /* Ensure images render */
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+                page-break-inside: avoid;
+            }
+
+            /* Page breaks */
+            .section-container {
+                page-break-inside: avoid;
+            }
+
+            .month-divider {
+                page-break-after: avoid;
+            }
+
+            h1,
+            h2,
+            h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar animate-fade-up">
+        <a href="index.html" class="navbar-logo">
+            <img src="assets/logo.png" alt="ACM Logo">
+            ACM <span>VIT Chennai</span>
+        </a>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <span
+                    style="color: var(--text-bright); font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; cursor: pointer;">Newsletter</span>
+                <div class="dropdown">
+                    <a href="newsletterAY25.html">AY 25-26</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- NEWSLETTER HERO -->
+    <section class="newsletter-hero">
+        <div class="year-badge">2025</div>
+        <h1 class="newsletter-subtitle">Annual Newsletter</h1>
+        <p class="newsletter-intro">
+            A year of innovation, learning, and community. Join us as we reflect on ACM VIT Chennai's incredible journey
+            through 2025,
+            featuring workshops, competitions, outreach programs, and countless moments of technological excellence.
+        </p>
+    </section>
+
+    <!-- STATS OVERVIEW -->
+    <section>
+        <div class="section-container">
+            <h2 class="section-title text-center" style="margin-bottom: 3rem;">Year in Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">13</div>
+                    <div class="stat-label">Events Conducted</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Students Impacted</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Workshops</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Competitions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENT TIMELINE -->
+    <section class="timeline-section">
+        <div class="section-container">
+            <h2 class="section-title text-center" style="margin-bottom: 4rem;">Event Timeline</h2>
+
+            <!-- JANUARY -->
+            <div class="month-divider">
+                <div class="month-label">January</div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image-container">
+                        <img src="images/Poster/TechJam25.png" alt="TechJam 2025" class="event-image">
+                        <span class="event-category category-workshop">Workshop</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="far fa-calendar"></i>
+                            January 2025
+                        </div>
+                        <h3 class="event-title">TechJam 2025</h3>
+                        <p class="event-description">
+                            An online event featuring comprehensive training in ML, Cloud Computing, Ethical Hacking,
+                            and Competitive Programming with industry-recognized certifications.
+                        </p>
+                        <a href="EventsDetails/techjam25.html" class="event-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEBRUARY -->
+            <div class="month-divider">
+                <div class="month-label">February</div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image-container">
+                        <img src="images/club_expo_2025_1.jpeg" alt="Club Expo 2025" class="event-image">
+                        <span class="event-category category-social">Social</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="far fa-calendar"></i>
+                            February 2025
+                        </div>
+                        <h3 class="event-title">Club Expo 2025</h3>
+                        <p class="event-description">
+                            Welcoming freshers to the ACM family through an engaging stall showcasing our mission,
+                            workshops, hackathons, and community initiatives.
+                        </p>
+                        <a href="EventsDetails/club_expo_2025.html" class="event-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image-container">
+                        <img src="images/Poster/frontent_kickstart.jpg" alt="Frontend Kickstart" class="event-image">
+                        <span class="event-category category-workshop">Workshop</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="far fa-calendar"></i>
+                            February 2025
+                        </div>
+                        <h3 class="event-title">Frontend Kickstart</h3>
+                        <p class="event-description">
+                            An introductory workshop for students to dive into frontend development, learning HTML, CSS,
+                            JavaScript and modern web development practices.
+                        </p>
+                        <a href="EventsDetails/frontend_kickstart.html" class="event-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MARCH -->
+            <div class="month-divider">
+                <div class="month-label">March</div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image-container">
+                        <img src="images/Poster/codepulse-10march.jpg" alt="CodePulse March 10" class="event-image">
+                        <span class="event-category category-competition">Competition</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="far fa-calendar"></i>
+                            March 10, 2025
+                        </div>
+                        <h3 class="event-title">CodePulse</h3>
+                        <p class="event-description">
+                            A competitive coding event testing algorithmic problem-solving skills with time-bound
+                            challenges on the HackerRank platform.
+                        </p>
+                        <a href="EventsDetails/codepulse-10-march.html" class="event-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- APRIL -->
+            <div class="month-divider">
+                <div class="month-label">April</div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image-container">
+                        <img src="images/Poster/rubix.jpg" alt="Rubix" class="event-image">
+                        <span class="event-category category-competition">Competition</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="far fa-calendar"></i>
+                            April 2025
+                        </div>
+                        <h3 class="event-title">Rubix</h3>
+                        <p class="event-description">
+                            An exciting technical competition challenging participants to solve complex problems and
+                            demonstrate their coding expertise.
+                        </p>
+                        <a href="EventsDetails/rubix.html" class="event-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AUGUST -->
+            <div class="month-divider">
+                <div class="month-label">August</div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image-container">
+                        <img src="events/event-img/linux_git_workshop/poster.jpg" alt="Linux & Git Workshop"
+                            class="event-image">
+                        <span class="event-category category-workshop">Workshop</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="far fa-calendar"></i>
+                            August 2, 2025
+                        </div>
+                        <h3 class="event-title">Linux & Git Workshop</h3>
+                        <p class="event-description">
+                            Empowering developers with open-source fundamentals, covering Linux kernel operations, CLI
+                            mastery, and Git version control for collaborative development.
+                        </p>
+                        <a href="events/linux_git_workshop.html" class="event-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEPTEMBER -->
+            <div class="month-divider">
+                <div class="month-label">September</div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image-container">
+                        <img src="events/event-img/docker_workshop/poster.jpg" alt="Dive Into Docker"
+                            class="event-image">
+                        <span class="event-category category-workshop">Workshop</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="far fa-calendar"></i>
+                            September 11, 2025
+                        </div>
+                        <h3 class="event-title">Dive Into Docker - Part 1</h3>
+                        <p class="event-description">
+                            An introductory workshop on containerization technology, teaching students to create Docker
+                            images and containerize backend applications efficiently.
+                        </p>
+                        <a href="events/docker_workshop.html" class="event-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OCTOBER -->
+            <div class="month-divider">
+                <div class="month-label">October</div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image-container">
+                        <img src="events/event-img/gen_ai_workshop/poster.jpg" alt="Gen AI Workshop"
+                            class="event-image">
+                        <span class="event-category category-workshop">Workshop</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="far fa-calendar"></i>
+                            October 2025
+                        </div>
+                        <h3 class="event-title">Generative AI Workshop</h3>
+                        <p class="event-description">
+                            Students built custom AI chatbots from scratch, learning about LLMs, prompt engineering, and
+                            deployment on Google Cloud Platform.
+                        </p>
+                        <a href="events/gen_ai_workshop.html" class="event-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image-container">
+                        <img src="events/event-img/hour_of_ai/poster.jpg" alt="Hour of AI" class="event-image">
+                        <span class="event-category category-outreach">Outreach</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="far fa-calendar"></i>
+                            October 2025
+                        </div>
+                        <h3 class="event-title">Hour of AI</h3>
+                        <p class="event-description">
+                            An outreach initiative introducing school students to AI-powered game development, fostering
+                            digital literacy and computational thinking.
+                        </p>
+                        <a href="events/hour_of_ai.html" class="event-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image-container">
+                        <img src="events/event-img/finance_workshop/poster.jpg" alt="Personal Finance Workshop"
+                            class="event-image">
+                        <span class="event-category category-workshop">Workshop</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="far fa-calendar"></i>
+                            October 2025
+                        </div>
+                        <h3 class="event-title">Personal Finance Workshop</h3>
+                        <p class="event-description">
+                            Bridging the gap between technical skills and financial literacy, covering budgeting, credit
+                            management, and investment fundamentals.
+                        </p>
+                        <a href="events/finance_workshop.html" class="event-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NOVEMBER -->
+            <div class="month-divider">
+                <div class="month-label">November</div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image-container">
+                        <img src="events/event-img/docker_workshop/poster2.png" alt="Docker Showdown"
+                            class="event-image">
+                        <span class="event-category category-workshop">Workshop</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="far fa-calendar"></i>
+                            November 5, 2025
+                        </div>
+                        <h3 class="event-title">Docker Showdown - Part 2</h3>
+                        <p class="event-description">
+                            An advanced session with a project showcase featuring 60+ student projects based on Docker,
+                            demonstrating real-world containerization applications.
+                        </p>
+                        <a href="events/docker_workshop.html" class="event-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image-container">
+                        <img src="events/event-img/pages_to_progress/poster.png" alt="Pages to Progress"
+                            class="event-image">
+                        <span class="event-category category-outreach">Outreach</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="far fa-calendar"></i>
+                            November 2025
+                        </div>
+                        <h3 class="event-title">Pages to Progress</h3>
+                        <p class="event-description">
+                            A community outreach initiative promoting education and learning through book distribution
+                            and literacy programs.
+                        </p>
+                        <a href="events/pages_to_progress.html" class="event-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image-container">
+                        <img src="events/event-img/industrial_visit/IMG_20251024_122311459_HDR.jpg"
+                            alt="Industrial Visit" class="event-image">
+                        <span class="event-category category-outreach">Outreach</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="far fa-calendar"></i>
+                            November 2025
+                        </div>
+                        <h3 class="event-title">ACM India Visit</h3>
+                        <p class="event-description">
+                            An educational field trip exposing students to real-world industry practices, technologies,
+                            and professional environments.
+                        </p>
+                        <a href="events/industrial_visit.html" class="event-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YEAR-ROUND -->
+            <div class="month-divider">
+                <div class="month-label">Year-Round</div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image-container">
+                        <img src="events/event-img/code_pulse/poster.jpg" alt="Code Pulse" class="event-image">
+                        <span class="event-category category-competition">Competition</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <i class="far fa-calendar"></i>
+                            2025
+                        </div>
+                        <h3 class="event-title">Code Pulse</h3>
+                        <p class="event-description">
+                            Our flagship competitive coding series fostering logical thinking, algorithmic
+                            problem-solving, and programming proficiency throughout the year.
+                        </p>
+                        <a href="events/code_pulse.html" class="event-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD PDF SECTION -->
+    <section>
+        <div class="section-container">
+            <div class="share-section"
+                style="background: linear-gradient(135deg, rgba(74, 246, 38, 0.1), rgba(255, 215, 0, 0.1)); border-radius: 30px; padding: 4rem 2rem; margin: 4rem 0;">
+                <h2 class="section-title" style="margin-bottom: 1rem;">Download Newsletter</h2>
+                <p style="color: var(--text-light); margin-bottom: 2rem; font-size: 1.1rem;">
+                    Get the complete 2025 newsletter in PDF format
+                </p>
+                <a href="assets/pdf/newsletterAY25.pdf" download="ACM-VIT-Chennai-Newsletter-2025.pdf"
+                    style="display: inline-flex; align-items: center; gap: 1rem; padding: 1.2rem 3rem; background: var(--gold-primary); color: #000; font-weight: 700; font-size: 1.1rem; border-radius: 50px; text-decoration: none; transition: all 0.3s; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);"
+                    onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 40px rgba(255, 215, 0, 0.5)';"
+                    onmouseout="this.style.transform=''; this.style.boxShadow='0 10px 30px rgba(255, 215, 0, 0.3)';">
+                    <i class="fas fa-download"></i>
+                    Download PDF
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHARE SECTION -->
+    <section>
+        <div class="section-container">
+            <div class="share-section">
+                <h2 class="section-title" style="margin-bottom: 1rem;">Share Our Journey</h2>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    Spread the word about ACM VIT Chennai's achievements
+                </p>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn" title="Share on LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="share-btn" title="Share on Twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="#" class="share-btn" title="Share on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="share-btn" title="Share on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="share-btn" title="Share via Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BACK TO EVENTS -->
+    <section class="bg-light">
+        <div class="section-container text-center">
+            <a href="events.html" class="btn">← Back to All Events</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3><img src="assets/logo.png" alt="ACM Logo" class="footer-logo"> ACM Student Chapter</h3>
+                <p style="color: var(--gold-primary); font-weight: 600;">VIT Chennai</p>
+                <p style="opacity: 0.7; margin-top: 1rem;">Advancing Computing as a Science & Profession.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <span
+                            style="color: var(--text-bright); font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; cursor: pointer;">Newsletter</span>
+                        <div class="dropdown">
+                            <a href="newsletterAY25.html">AY 25-26</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <p class="footer-email" style="margin-bottom: 1rem;">
+                    <span style="margin-right: 8px;">📧</span>
+                    <a href="mailto:vitcc.acmsc@vit.ac.in">vitcc.acmsc@vit.ac.in</a>
+                </p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link"
+                        title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link"
+                        title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub"><i
+                            class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 ACM Student Chapter - VIT Chennai. All Rights Reserved.</p>
+            <p style="font-size: 0.8rem; opacity: 0.5;">Designed for ACM SC VIT Chennai</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
