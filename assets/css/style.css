@@ -1031,6 +1031,13 @@ a {
 
 .gallery-event-card {
     position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    animation: fadeIn 1.2s ease-in-out forwards;
+    opacity: 0;
     height: 320px;
     border-radius: 12px;
     overflow: hidden;
@@ -1052,6 +1059,13 @@ a {
 /* Current markup uses .gallery-image-wrapper and .gallery-overlay */
 .gallery-image-wrapper {
     position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    animation: fadeIn 1.2s ease-in-out forwards;
+    opacity: 0;
     width: 100%;
     height: 100%;
     background-color: #020c1b;
@@ -1101,12 +1115,12 @@ a {
 }
 
 /* Hover Effects */
-.gallery-event-card:hover .gallery-event-image,
-.gallery-event-card:hover .gallery-image-wrapper img {
-    transform: scale(1.02);
-    /* Reduced scale from 1.1 */
+.gallery-event-card:hover img,
+.gallery-image-wrapper:hover img {
+    transform: perspective(2000px) rotateY(0deg) rotateX(0deg) scale(1.02);
+    box-shadow: 0 30px 60px -15px rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.4);
     filter: brightness(0.55);
-    /* Darken image more on hover to make text pop */
 }
 
 .gallery-event-card:hover .gallery-event-overlay,

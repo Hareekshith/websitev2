@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACM VIT Chennai | Blog</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #0a1a2f;
+            color: white;
+            padding: 24px 40px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        header p {
+            margin-top: 6px;
+            font-size: 14px;
+            opacity: 0.85;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .blog-thumbnail {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .blog-content {
+            padding: 18px;
+        }
+
+        .blog-content h3 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .blog-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .blog-meta {
+            font-size: 12px;
+            color: #777;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .read-more {
+            text-decoration: none;
+            font-size: 13px;
+            color: #0a1a2f;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #0a1a2f;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>ACM VIT Chennai Blog</h1>
+        <p>Technical articles, event insights, and community stories</p>
+    </header>
+
+    <main>
+        <section class="blog-grid">
+
+            <!-- Blog Post 1 -->
+            <article class="blog-card">
+                <img src="assets/blog/blog1.webp" alt="Blog 1 Thumbnail" class="blog-thumbnail">
+                <div class="blog-content">
+                    <h3>What is Competitive Programming?</h3>
+                    <p>An introduction to competitive programming and how it helps improve problem-solving skills.</p>
+                    <div class="blog-meta">
+                        <span>📅 Feb 5, 2025 · ✍️ ACM Team</span>
+                        <a href="blog-detail.html" class="read-more">Read more →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-card">
+                <img src="assets/blog/blog2.webp" alt="Blog 2 Thumbnail" class="blog-thumbnail">
+                <div class="blog-content">
+                    <h3>CodePulse: Event Recap</h3>
+                    <p>A complete recap of CodePulse, including highlights, winners, and key learnings.</p>
+                    <div class="blog-meta">
+                        <span>📅 Feb 10, 2025 · ✍️ Events Team</span>
+                        <a href="blog-detail.html" class="read-more">Read more →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="blog-card">
+                <img src="assets/blog/blog3.webp" alt="Blog 3 Thumbnail" class="blog-thumbnail">
+                <div class="blog-content">
+                    <h3>Getting Started with Docker</h3>
+                    <p>A beginner-friendly guide to Docker and why every developer should learn it.</p>
+                    <div class="blog-meta">
+                        <span>📅 Mar 1, 2025 · ✍️ Tech Team</span>
+                        <a href="blog-detail.html" class="read-more">Read more →</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 ACM VIT Chennai. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

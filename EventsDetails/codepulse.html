@@ -1,117 +1,429 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title> ACM VITCC </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>acmwebsite</title>
-    <meta name="" content="">
-    <link rel="icon" type="image/jpeg" sizes="130x130" href="../assets/img/acmfavicon.jpg">
-    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akaya+Telivigala&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Andika&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asul&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bakbak+One&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran&amp;display=swap">
-    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="ACM Student Chapter VIT Chennai">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/logo.webp">
+    <meta name="description" content="Code Pulse Report - ACM VIT Chennai">
+    <title>Code Pulse - ACM VIT Chennai</title>
+    <link rel="stylesheet" href="../assets/css/style.css?v=7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/aos.min.css">
     <link rel="stylesheet" href="../assets/css/animate.min.css">
-    <link rel="stylesheet" href="../assets/css/untitled.css">
+    <style>
+        /* User Provided "Hero Split" Styling */
+        :root {
+            --fa-style-family-classic: "Font Awesome 6 Free";
+            --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+            --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+            --fa-style-family-brands: "Font Awesome 6 Brands";
+            --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+        }
+
+        :root {
+            --void-black: #020c1b;
+            --text-muted: #8892b0;
+            --gold-primary: #d4af37;
+            --font-sans: 'Manrope', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: var(--text-muted);
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        html {
+            scrollbar-color: var(--gold-primary) rgba(255, 255, 255, 0.08);
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .hero-split-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            position: relative;
+            animation: fadeIn 1.2s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        .hero-split-image img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top-color: rgba(255, 255, 255, 0.1);
+            border-right-color: rgba(255, 255, 255, 0.1);
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+            border-left-color: rgba(255, 255, 255, 0.1);
+            transform: perspective(2000px) rotateY(-10deg) rotateX(2deg);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-split-image img:hover {
+            transform: perspective(2000px) rotateY(0deg) rotateX(0deg) scale(1.02);
+            box-shadow: 0 30px 60px -15px rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        /* Ensure responsive behavior */
+        @media (max-width: 768px) {
+            .hero-split-image img {
+                transform: rotate(0deg);
+                margin-top: 20px;
+            }
+
+            .hero-split-image img:hover {
+                transform: scale(1.02);
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#">ACM - VIT CHENNAI</a><button
-                class="navbar-toggler navbar-toggler-right" data-bs-toggle="collapse" type="button"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i
-                    class="fa fa-bars"></i></button></div>
+    <!-- NAVIGATION (Floating Luxury Pill) -->
+    <nav class="navbar animate-fade-up">
+        <a href="../index.html" class="navbar-logo">
+            <img src="../assets/logo.webp" alt="ACM Logo">
+            ACM <span>VIT Chennai</span>
+        </a>
+        <ul class="navbar-menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../events.html">Events</a></li>
+            <li><a href="../team.html">Team</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
     </nav>
-    <section class="my-5 py-5">
-        <h1 class="display-1 fw-bold flash animated" style="text-align: center;">CodePulse</h1>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center py-5" data-aos="fade"></div>
-                <div class="col">
-                    <section class="clean-block clean-info dark">
-                        <div class="container">
-                            <div class="block-heading"></div>
-                            <div class="row align-items-center">
-                                <div class="col-md-6" style="text-align: center;"><img class="img-thumbnail"
-                                        data-aos="fade-right" src="../images/Poster/CodePulse.jpg"
-                                        style="width: 395px;">
-                                </div>
-                                <div class="col-md-6">
-                                    <br><br>
-                                    <p data-aos="fade-left"><strong>🚀 Think fast. Code faster. The fastest wins. 💻⚡
 
-                                        Get ready to test your coding skills against people around you. Join ACM Student Chapter's FREE online coding competition on HackerRank and race against time to solve challenges, climb the leaderboard, and claim victory! 🔥
-                                        Whether you’re a coding pro or just love the thrill of competition with your peers, this is your chance to prove your skills and win bragging rights.
-                                        😆 
-                                        Don’t miss out—register now for Code Pulse and take the challenge!
-                                        
-                                        📍 Where? Online on HackerRank
-                                        💰 Entry Fee? Absolutely FREE!
-                                        🏆 Who wins? The fastest and smartest coders!
-                                        ⏲When? Sunday 9th February 6.00 p.m. - 8.00 p.m.
-                                        Think you’ve got what it takes? Let’s find out! 🚀 
-                                        </strong></p><br><br>
-                                        <h3 data-aos="fade-left">Check out the event!</h3><br>
-                                    <a class="btn btn-dark" role="button" data-aos="fade-left"
-                                        href="https://docs.google.com/forms/d/e/1FAIpQLScZaePLYEfx4F88i7EY4sLht0e5dT01h2Q8Op565ZO9zP3VvQ/viewform?usp=send_form"
-                                        target="_blank"
-                                        style="text-align: center;background: rgb(83,169,255);">Event
-                                        Link&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                            fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                            <path fill-rule="evenodd"
-                                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z">
-                                            </path>
-                                        </svg></a>
-                                    <div class="getting-started-info">
-                                        <p data-aos="fade-left"><strong></strong></p>
-                                        <!-- <p data-aos="fade-left"><strong>Check out our event!</strong></p> -->
-                                        <!-- <p data-aos="fade-left"><strong>✅ This event provides you with comprehensive
-                                                overview of the latest trends and skills in these areas. Moreover, it
-                                                helps you acquire in-depth knowledge and practical expertise that will
-                                                put you at a competitive advantage in the job market.</strong></p> -->
+    <!-- REPORT HERO (SPLIT LAYOUT) -->
+    <section class="hero-split" style="text-align: center; padding: 100px 20px 60px;">
+        <div class="hero-split-text" style="max-width: 800px; margin: 0 auto;">
+            <span class="event-date"
+                style="font-size: 1.1rem; margin-bottom: 1rem; padding-left: 16%; color: #4af626; text-align: center; letter-spacing: 2px;">ALGORITHMIC
+                CHALLENGE // 2025</span>
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem; color: #fff; text-align: center;">Code Pulse</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted); text-align: center;">Fostering logical
+                thinking and
+                algorithmic problem-solving.</p>
+        </div>
+    </section>
 
-                                    </div>
+    <!-- EVENT REPORT -->
+    <section>
+        <div class="section-container">
+            <div style="max-width: 900px; margin: 0 auto;">
 
+                <!-- Event 1: June 29, 2025 -->
+                <div class="row align-items-center mb-5" style="display: flex; flex-wrap: wrap; margin-bottom: 3rem;">
+                    <div class="col-md-6" style="flex: 0 0 50%; max-width: 50%; padding-right: 15px;">
+                        <h3 data-aos="fade-left" style="color: var(--text-bright);">Code Pulse (June Edition)</h3>
+                        <div data-aos="fade-left">
+                            <p>
+                                <strong>Date:</strong> 29th June 2025<br>
+                                <strong>Time:</strong> 6 PM – 8 PM<br>
+                                <strong>Platform:</strong> Online (HackerRank)<br>
+                                <strong>Student Coordinators:</strong> Drona Srivastava, Ankit Raj<br>
 
-                                    <!-- <a class="btn btn-dark" role="button" data-aos="fade-left"
-                                        href="https://vitchennai.acm.org/techjam" target="_blank"
-                                        style="text-align: center;background: rgb(83,169,255);">Event Link&nbsp;<svg
-                                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                            fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                            <path fill-rule="evenodd"
-                                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z">
-                                            </path>
-                                        </svg></a> -->
-                                </div>
-                            </div>
+                            </p>
+                            <a class="btn" role="button" href="codepulse-29-june.html"
+                                style="background: rgb(83,169,255); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">View
+                                Full Details&nbsp;<i class="fa fa-arrow-right"></i></a>
                         </div>
-                    </section>
+                    </div>
+                    <div class="col-md-6 text-center hero-split-image"
+                        style="flex: 0 0 50%; max-width: 50%; text-align: center;">
+                        <img data-aos="fade-right" src="../images/code_pulse_29_juner.webp"
+                            alt="Code Pulse June Edition Poster">
+                    </div>
+                </div>
+                <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+
+                <!-- Event 2: March 10, 2025 -->
+                <div class="row align-items-center mb-5" style="display: flex; flex-wrap: wrap; margin-bottom: 3rem;">
+                    <div class="col-md-6" style="flex: 0 0 50%; max-width: 50%; padding-right: 15px;">
+                        <h3 data-aos="fade-left" style="color: var(--text-bright);">Code Pulse</h3>
+                        <div data-aos="fade-left">
+                            <p>
+                                <strong>Date:</strong> 10th March 2025 (Monday)<br>
+                                <strong>Time:</strong> 7:00 PM – 9:00 PM<br>
+                                <strong>Platform:</strong> Online (HackerRank)<br>
+                                <strong>Student Coordinators:</strong> Anirudh S K, Lakshhmi Narayanan
+                            </p>
+                            <a class="btn" role="button" href="codepulse-10-march.html"
+                                style="background: rgb(83,169,255); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">View
+                                Full Details&nbsp;<i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center hero-split-image"
+                        style="flex: 0 0 50%; max-width: 50%; text-align: center;">
+                        <img data-aos="fade-right" src="../images/Poster/codepulse-10march.webp"
+                            alt="Code Pulse March 10 Poster">
+                    </div>
+                </div>
+                <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+
+                <!-- Event 3: March 9, 2025 -->
+                <div class="row align-items-center mb-5" style="display: flex; flex-wrap: wrap; margin-bottom: 3rem;">
+                    <div class="col-md-6" style="flex: 0 0 50%; max-width: 50%; padding-right: 15px;">
+                        <h3 data-aos="fade-left" style="color: var(--text-bright);">Code Pulse</h3>
+                        <div data-aos="fade-left">
+                            <p>
+                                <strong>Date:</strong> 9th March 2025 (Sunday)<br>
+                                <strong>Time:</strong> 6.00 p.m. - 8.00 p.m.<br>
+                                <strong>Platform:</strong> Online(HackerRank)<br>
+                                <strong>Student Coordinators:</strong> Drona Srivastava, Archita Gupta
+                            </p>
+                            <a class="btn" role="button" href="codepulse-9-march.html"
+                                style="background: rgb(83,169,255); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">View
+                                Full Details&nbsp;<i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center hero-split-image"
+                        style="flex: 0 0 50%; max-width: 50%; text-align: center;">
+                        <img data-aos="fade-right" src="../images/Poster/CodePulse-9march.webp"
+                            alt="Code Pulse March 9 Poster">
+                    </div>
+                </div>
+                <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+
+                <!-- Event 4: March 8, 2025 -->
+                <div class="row align-items-center mb-5" style="display: flex; flex-wrap: wrap; margin-bottom: 3rem;">
+                    <div class="col-md-6" style="flex: 0 0 50%; max-width: 50%; padding-right: 15px;">
+                        <h3 data-aos="fade-left" style="color: var(--text-bright);">Code Pulse</h3>
+                        <div data-aos="fade-left">
+                            <p>
+                                <strong>Date:</strong> 8th March 2025 (Saturday)<br>
+                                <strong>Time:</strong> 6:00 PM – 8:00 PM<br>
+                                <strong>Platform:</strong>Online (HackerRank)<br>
+                                <strong>Student Coordinators:</strong> Joel Joy Dennis, K Nischay
+                            </p>
+                            <a class="btn" role="button" href="codepulse-8-march.html"
+                                style="background: rgb(83,169,255); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">View
+                                Full Details&nbsp;<i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center hero-split-image"
+                        style="flex: 0 0 50%; max-width: 50%; text-align: center;">
+                        <img data-aos="fade-right" src="../images/Poster/codepulse-8-march.webp"
+                            alt="Code Pulse March 8 Poster">
+                    </div>
+                </div>
+                <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+
+
+
+                <!-- Event 6: July 7, 2024 -->
+                <div class="row align-items-center mb-5" style="display: flex; flex-wrap: wrap; margin-bottom: 3rem;">
+                    <div class="col-md-6" style="flex: 0 0 50%; max-width: 50%; padding-right: 15px;">
+                        <h3 data-aos="fade-left" style="color: var(--text-bright);">Code Pulse</h3>
+                        <div data-aos="fade-left">
+                            <p>
+                                <strong>Date:</strong> 7th July 2024 (Sunday)<br>
+                                <strong>Time:</strong> 6:00 PM – 8:00 PM<br>
+                                <strong>Platform:</strong> Online (HackerRank)<br>
+                                <strong>Student Coordinators:</strong> Archisha Sahai, Mohan Ram Sridhar<br>
+                                <strong>Participants:</strong> 315<br>
+                            </p>
+                            <a class="btn" role="button" href="codepulse-7-july.html"
+                                style="background: rgb(83,169,255); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">View
+                                Full Details&nbsp;<i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center hero-split-image"
+                        style="flex: 0 0 50%; max-width: 50%; text-align: center;">
+                        <img data-aos="fade-right" src="../images/Poster/codepulse-july-7.webp"
+                            alt="Code Pulse July 7 Poster">
+                    </div>
+                </div>
+
+                <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+
+                <a href="../events.html" class="btn-outline btn" style="margin-bottom: 2rem; display: inline-block;">←
+                    Back to Events</a>
+
+
+                <!-- General Event Logs (Added at the end) -->
+                <h2 class="section-title">Event Logs</h2>
+                <div class="report-content"
+                    style="font-size: 1.1rem; line-height: 1.8; color: var(--text-light); margin-bottom: 2rem;">
+                    <p>
+                        CodePulse is a competitive coding event aimed at fostering logical thinking, algorithmic
+                        problem-solving, and programming proficiency among participants. The event is structured into
+                        multiple rounds, each presenting time-bound challenges that test a participant’s ability to
+                        write efficient and correct code under pressure.
+                    </p>
+                    <p>
+                        It encourages both individual participation and collaborative team efforts, promoting peer
+                        learning and innovation. Participants are free to use programming languages of their choice,
+                        including C, C++, Python, Java, and more.
+                    </p>
+                    <p>
+                        CodePulse not only evaluates technical skills but also cultivates quick thinking and
+                        adaptability in a simulated real-world problem-solving environment. Prizes and certificates are
+                        awarded to top performers, recognizing their excellence.
+                    </p>
+
                 </div>
             </div>
         </div>
-        <div class="col-md-12 text-center py-5" data-aos="fade"><a class="btn btn-light" role="button"
-                data-aos="fade-up" href="../events.html" onclick="history.back(); return false;" style="font-size: 22px;" rel="prev"><svg
-                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
-                    class="bi bi-skip-backward-fill">
-                    <path
-                        d="M.5 3.5A.5.5 0 0 0 0 4v8a.5.5 0 0 0 1 0V8.753l6.267 3.636c.54.313 1.233-.066 1.233-.697v-2.94l6.267 3.636c.54.314 1.233-.065 1.233-.696V4.308c0-.63-.693-1.01-1.233-.696L8.5 7.248v-2.94c0-.63-.692-1.01-1.233-.696L1 7.248V4a.5.5 0 0 0-.5-.5z">
-                    </path>
-                </svg>&nbsp;Back</a></div>
     </section>
-    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- EVENT GALLERY -->
+    <section class="bg-light">
+        <div class="section-container">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2 class="section-title text-center">Visual Pulse</h2>
+
+                <div class="luxury-gallery-grid">
+                    <div class="gallery-event-card">
+                        <img src="../images/acm_event_hackathon_1765469366568.webp" alt="Coding"
+                            class="gallery-event-image">
+                        <div class="gallery-event-overlay">
+                            <h3 class="text-gold">Coding</h3>
+                            <p class="text-white">Solving algorithms.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-event-card">
+                        <img src="../images/acm_gallery_1_1765469401301.webp" alt="Debugging"
+                            class="gallery-event-image">
+                        <div class="gallery-event-overlay">
+                            <h3 class="text-gold">Debugging</h3>
+                            <p class="text-white">Optimizing solutions.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-event-card">
+                        <img src="../images/acm_gallery_3_1765469485125.webp" alt="Results" class="gallery-event-image">
+                        <div class="gallery-event-overlay">
+                            <h3 class="text-gold">Results</h3>
+                            <p class="text-white">Reviewing leaderboards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEEDBACK (TERMINAL STYLE) -->
+    <section>
+        <div class="section-container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 class="section-title text-center">User Feedback</h2>
+
+                <div class="terminal-container">
+                    <div class="terminal-header">
+                        <div class="terminal-dot red"></div>
+                        <div class="terminal-dot yellow"></div>
+                        <div class="terminal-dot green"></div>
+                        <span style="font-size: 0.8rem; color: #888; margin-left: 10px;">codepulse_logs</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="command-line">$ cat user_01.txt</p>
+                        <span class="command-output">"The questions were challenging but fair. The HackerRank platform
+                            worked smoothly. Great initiative!"</span>
+
+                        <p class="command-line">$ cat user_02.txt</p>
+                        <span class="command-output">"I really liked that we could use any language. Python gave me an
+                            edge in speed. Looking forward to the next pulse."</span>
+
+                        <p class="command-line">$ cat user_03.txt</p>
+                        <span class="command-output">"The time constraints really simulated real-world pressure.
+                            Excellent coordination by the ACM team."</span>
+
+                        <p class="command-line">$ echo "SESSION TERMINATED"</p>
+                        <span class="command-output">SESSION TERMINATED</span>
+                        <span class="command-line helper-cursor">_</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BACK TO EVENTS -->
+    <section class="bg-light">
+        <div class="section-container text-center">
+            <a href="../events.html" class="btn">← Back to All Events</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3><img src="../assets/logo.webp" alt="ACM Logo" class="footer-logo"> ACM Student Chapter</h3>
+                <p style="color: var(--gold-primary); font-weight: 600;">VIT Chennai</p>
+                <p style="opacity: 0.7; margin-top: 1rem;">Advancing Computing as a Science & Profession.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../events.html">Events</a></li>
+                    <li><a href="../team.html">Team</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <p class="footer-email" style="margin-bottom: 1rem;">
+                    <span style="margin-right: 8px;">📧</span>
+                    <a href="mailto:vitcc.acmsc@vit.ac.in">vitcc.acmsc@vit.ac.in</a>
+                </p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link"
+                        title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link"
+                        title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub"><i
+                            class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 ACM Student Chapter - VIT Chennai. All Rights Reserved.</p>
+            <p style="font-size: 0.8rem; opacity: 0.5;">Designed for ACM SC VIT Chennai</p>
+        </div>
+    </footer>
+    <script src="../assets/js/script.js"></script>
     <script src="../assets/js/aos.min.js"></script>
-    <script src="../assets/js/bs-init.js"></script>
-    <script src="../assets/js/grayscale.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
