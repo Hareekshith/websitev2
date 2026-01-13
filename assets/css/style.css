@@ -1,7 +1,7 @@
 /* ACM Student Chapter - VIT Chennai - ULTRA PREMIUM LUXURY THEME */
 /* "Digital Luxury" Aesthetic: Deep, Immersive, Bespoke */
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap");
 
 :root {
     /* LUXURY PALETTE */
@@ -26,8 +26,8 @@
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
     /* SPACING & TYPOGRAPHY */
-    --font-serif: 'Playfair Display', serif;
-    --font-sans: 'Manrope', sans-serif;
+    --font-serif: "Playfair Display", serif;
+    --font-sans: "Manrope", sans-serif;
 
     --ease-luxury: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -408,7 +408,10 @@ a {
     align-items: center;
     gap: 3rem;
     box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
-    transition: transform 2.5s cubic-bezier(0.25, 1, 0.5, 1), background 0.5s, opacity 2.5s;
+    transition:
+        transform 2.5s cubic-bezier(0.25, 1, 0.5, 1),
+        background 0.5s,
+        opacity 2.5s;
 }
 
 .navbar-hidden {
@@ -457,7 +460,6 @@ a {
 }
 
 .navbar-menu a {
-
     /* Small mobile phones */
     @media (max-width: 600px) {
         .navbar {
@@ -504,7 +506,7 @@ a {
 }
 
 .navbar-menu a::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -5px;
     left: 0;
@@ -567,7 +569,6 @@ a {
     display: none;
 }
 
-
 /* ============================================
    HERO SECTION - IMMERSIVE
    ============================================ */
@@ -603,10 +604,12 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg,
-            rgba(2, 12, 27, 0.9) 0%,
-            rgba(2, 12, 27, 0.7) 50%,
-            rgba(2, 12, 27, 0.3) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 12, 27, 0.9) 0%,
+        rgba(2, 12, 27, 0.7) 50%,
+        rgba(2, 12, 27, 0.3) 100%
+    );
     z-index: -1;
 }
 
@@ -845,9 +848,11 @@ a {
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(to bottom,
-            var(--light-slate),
-            rgba(212, 175, 55, 0.5));
+    background: linear-gradient(
+        to bottom,
+        var(--light-slate),
+        rgba(212, 175, 55, 0.5)
+    );
 }
 
 .timeline-item {
@@ -1052,7 +1057,9 @@ a {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s var(--ease-luxury), filter 0.5s var(--ease-luxury);
+    transition:
+        transform 0.5s var(--ease-luxury),
+        filter 0.5s var(--ease-luxury);
     filter: brightness(0.85);
 }
 
@@ -1078,7 +1085,9 @@ a {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s var(--ease-luxury), filter 0.5s var(--ease-luxury);
+    transition:
+        transform 0.5s var(--ease-luxury),
+        filter 0.5s var(--ease-luxury);
     filter: brightness(0.85);
 }
 
@@ -1096,10 +1105,12 @@ a {
 .gallery-event-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top,
-            rgba(2, 12, 27, 0.95) 0%,
-            rgba(2, 12, 27, 0.8) 50%,
-            rgba(2, 12, 27, 0.4) 100%);
+    background: linear-gradient(
+        to top,
+        rgba(2, 12, 27, 0.95) 0%,
+        rgba(2, 12, 27, 0.8) 50%,
+        rgba(2, 12, 27, 0.4) 100%
+    );
     /* and darker gradient for better text readability */
     display: flex;
     flex-direction: column;
@@ -1222,14 +1233,22 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, rgba(212, 175, 55, 0.9), rgba(212, 175, 55, 0.6));
+    background: linear-gradient(
+        180deg,
+        rgba(212, 175, 55, 0.9),
+        rgba(212, 175, 55, 0.6)
+    );
     border-radius: 10px;
     border: 2px solid rgba(2, 12, 27, 0.8);
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.25);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, rgba(212, 175, 55, 1), rgba(212, 175, 55, 0.7));
+    background: linear-gradient(
+        180deg,
+        rgba(212, 175, 55, 1),
+        rgba(212, 175, 55, 0.7)
+    );
 }
 
 ::-webkit-scrollbar-corner {
@@ -1386,7 +1405,6 @@ html {
     transform: translateX(0);
 }
 
-
 /* Utility */
 .text-gold {
     color: var(--gold-primary);
@@ -1510,13 +1528,17 @@ html {
 }
 
 .contact-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 100%);
+    background: linear-gradient(
+        135deg,
+        rgba(212, 175, 55, 0.1) 0%,
+        transparent 100%
+    );
     opacity: 0;
     transition: opacity 0.4s ease;
 }
@@ -1592,7 +1614,7 @@ html {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     margin: 4rem auto;
     max-width: 800px;
-    font-family: 'Fira Code', 'Courier New', monospace;
+    font-family: "Fira Code", "Courier New", monospace;
     overflow: hidden;
     border: 1px solid #333;
 }
@@ -1657,17 +1679,17 @@ html {
 }
 
 .winner-card.gold {
-    border-color: #FFD700;
+    border-color: #ffd700;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
 }
 
 .winner-card.silver {
-    border-color: #C0C0C0;
+    border-color: #c0c0c0;
     box-shadow: 0 0 20px rgba(192, 192, 192, 0.1);
 }
 
 .winner-card.bronze {
-    border-color: #CD7F32;
+    border-color: #cd7f32;
     box-shadow: 0 0 20px rgba(205, 127, 50, 0.1);
 }
 
@@ -1765,7 +1787,7 @@ html {
 }
 
 .hero-split-image::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1835,8 +1857,20 @@ html {
     overflow: hidden;
     position: relative;
     padding: 2rem 0;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
 }
 
 .scrolling-gallery-track {
@@ -1934,4 +1968,80 @@ html {
 
 .lightbox-close:hover {
     color: var(--gold-primary);
+}
+
+/* MODAL STYLES */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(
+        2,
+        12,
+        27,
+        0.9
+    ); /* Dark semi-transparent background */
+}
+
+.modal-content {
+    background-color: var(--dark-navy-alt);
+    padding: 2rem;
+    border: 1px solid var(--gold-primary);
+    border-radius: 8px;
+    max-width: 900px;
+    width: 90%; /* Responsive width */
+    position: absolute; /* Position relative to .modal */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    box-shadow: var(--glass-shadow);
+    animation: fadeInScale 0.3s ease-out;
+}
+
+.close-button {
+    color: var(--text-light);
+    font-size: 2.5rem; /* Make 'X' larger */
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--gold-primary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animation for modal entry */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+    .close-button {
+        font-size: 2rem;
+        top: 5px;
+        right: 15px;
+    }
 }
