@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQJG4HGBW0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KQJG4HGBW0');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description"
+        content="ACM Student Chapter at VIT Chennai - Awarded the Best Technical Chapter in VIT Chennai Campus." />
+    <meta name="keywords" content="Best Chapter, VIT Chennai, ACM VITC, ACM Student Chapter, Technical Clubs, Awards, Excellence, VITC, ACM" />
+    <meta name="author" content="ACM Student Chapter VIT Chennai" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/vitccacm/websitev2/main/assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/vitccacm/websitev2/main/assets/logo.webp" />
+
+    <title>Awards & Achievements - ACM Student Chapter VIT Chennai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20260412" />
+    <style>
+        /* Expand layout for standalone page */
+        .bc-container {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 2rem !important;
+        }
+        .bc-left-col, .bc-right-col {
+            width: 100% !important;
+            max-width: 900px !important;
+            margin: 0 auto !important;
+        }
+        .bc-chip {
+            padding: 1.5rem !important;
+            border-radius: 12px !important;
+        }
+        .bc-chip-num {
+            font-size: 2rem !important;
+        }
+        .bc-gallery-item {
+            border-radius: 16px !important;
+            overflow: hidden !important;
+        }
+        .best-chapter-desc {
+            font-size: 1.15rem !important;
+            line-height: 1.8 !important;
+            margin-bottom: 2rem !important;
+        }
+        .bc-partners-inline {
+            margin-top: 3rem !important;
+            padding: 2rem !important;
+            background: rgba(255, 255, 255, 0.03) !important;
+            border-radius: 12px !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            justify-content: center !important;
+        }
+
+        /* Journey Timeline Styles */
+        .journey-timeline {
+            max-width: 800px;
+            margin: 4rem auto 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            position: relative;
+        }
+        .journey-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--gold-primary), transparent);
+            opacity: 0.3;
+        }
+        .journey-step {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            position: relative;
+        }
+        .journey-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--void-black);
+            border: 2px solid var(--gold-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--gold-primary);
+            flex-shrink: 0;
+            z-index: 2;
+        }
+        .journey-content {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            flex-grow: 1;
+            transition: transform 0.3s ease;
+        }
+        .journey-content:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .journey-date {
+            color: var(--gold-primary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .journey-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .journey-content p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        @media (max-width: 768px) {
+            .journey-timeline::before { left: 20px; }
+            .journey-icon { width: 40px; height: 40px; font-size: 1rem; }
+            .journey-step { gap: 1rem; }
+            .journey-content { padding: 1.5rem; }
+        }
+    </style>
+</head>
+
+<body class="home-page">
+    <!-- NAVIGATION (Floating Luxury Pill) -->
+    <nav class="navbar animate-fade-up">
+        <a href="index.html" class="navbar-logo">
+            <img src="https://raw.githubusercontent.com/vitccacm/websitev2/main/assets/logo.webp" alt="ACM Logo" />
+            ACM <span>VIT Chennai</span>
+        </a>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blogs-newsletters.html">Blogs</a></li>
+        </ul>
+    </nav>
+
+    <main style="padding-top: 120px; padding-bottom: 40px;">
+        <!-- BEST TECHNICAL CHAPTER AWARD SECTION -->
+        <section class="reveal best-chapter-section" id="best-chapter">
+            <div class="container bc-container">
+
+                <!-- LEFT: Award info + stats -->
+                <div class="bc-left-col">
+
+                    <!-- Badge + Title row -->
+                    <div class="bc-title-row">
+                        <div class="award-badge-wrap">
+                            <div class="award-badge">
+                                <span class="award-badge-icon">🏆</span>
+                            </div>
+                            <div class="award-rays"></div>
+                        </div>
+                        <div class="bc-title-text">
+                            <span class="hero-pretitle" style="margin-bottom: 0.2rem;">AY 2025 – 2026</span>
+                            <h2 class="best-chapter-title">Best Technical Chapter<br /><span class="best-chapter-subtitle-gold">of the Campus</span></h2>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="best-chapter-desc-wrap" style="margin-bottom: 3rem;">
+                        <p class="best-chapter-desc" style="margin-bottom: 1.5rem !important;">
+                            The academic year 2025–2026 was a defining milestone for the <strong>ACM Student Chapter at VIT Chennai</strong>. Operating with a relentless commitment to technical excellence and community-driven learning, our chapter rose above <strong>130+ active clubs</strong> to be crowned the <strong>Best Technical Chapter</strong> on campus.
+                        </p>
+                        <p class="best-chapter-desc" style="margin-bottom: 1.5rem !important;">
+                            Over the past year, we cultivated a thriving ecosystem of innovation, bridging the gap between theoretical knowledge and industry applications. From highly anticipated, large-scale events like <strong>CodePulse</strong> and <strong>Server Surfers CTF</strong> to foundational bootcamps in Data Structures and Algorithms, we engaged a massive network of over 1,900 participants across more than 45 institutions nationwide. Our efforts were not only recognized locally but also cemented a place in the prestigious <strong>Asia Book of Records</strong>.
+                        </p>
+                        <p class="best-chapter-desc" style="margin-bottom: 0 !important;">
+                            This monumental achievement wouldn't have been possible without the unwavering dedication of our core team and the invaluable support from our esteemed industry partners, including <strong>Code Vipassana</strong>, <strong>Kaspersky</strong>, and <strong>ACM India</strong>. Their expertise and resources empowered us to deliver world-class workshops, impacting hundreds of students and fundamentally shaping the next generation of tech leaders.
+                        </p>
+                    </div>
+
+                    <!-- Stats chips -->
+                    <div class="bc-stats-chips">
+                        <div class="bc-chip bc-chip-gold">
+                            <span class="bc-chip-num" data-target="18">0</span>
+                            <span class="bc-chip-lbl">Events</span>
+                        </div>
+                        <div class="bc-chip">
+                            <span class="bc-chip-num" data-target="1900" data-suffix="+">0</span>
+                            <span class="bc-chip-lbl">Participants</span>
+                        </div>
+                        <div class="bc-chip">
+                            <span class="bc-chip-num" data-target="315">0</span>
+                            <span class="bc-chip-lbl">Single event peak</span>
+                        </div>
+                        <div class="bc-chip">
+                            <span class="bc-chip-num" data-target="45" data-suffix="+">0</span>
+                            <span class="bc-chip-lbl">Institutions</span>
+                        </div>
+                        <div class="bc-chip">
+                            <span class="bc-chip-num" data-target="50" data-suffix="+">0</span>
+                            <span class="bc-chip-lbl">Blogs published</span>
+                        </div>
+                        <div class="bc-chip">
+                            <span class="bc-chip-num" data-target="60">0</span>
+                            <span class="bc-chip-lbl">School students</span>
+                        </div>
+                        <div class="bc-chip bc-chip-purple">
+                            <span class="bc-chip-num" style="font-size:1.1rem;">Top 20</span>
+                            <span class="bc-chip-lbl">Asia Book of Records</span>
+                        </div>
+                        <div class="bc-chip">
+                            <span class="bc-chip-num" data-target="130" data-suffix="+">0</span>
+                            <span class="bc-chip-lbl">Clubs competed</span>
+                        </div>
+                        <div class="bc-chip">
+                            <span class="bc-chip-num" data-target="7" data-suffix="+">0</span>
+                            <span class="bc-chip-lbl">Colleges — CodePulse</span>
+                        </div>
+                    </div>
+
+                    <!-- Partners -->
+                    <div class="bc-partners-inline">
+                        <span class="bc-partners-label">With support from</span>
+                        <span class="bc-partner-pill"><i class="fas fa-code"></i> Code Vipassana</span>
+                        <span class="bc-partner-pill"><i class="fas fa-shield-alt"></i> Kaspersky</span>
+                        <span class="bc-partner-pill"><i class="fas fa-globe"></i> ACM India</span>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Gallery -->
+                <div class="bc-right-col">
+                    <div class="bc-gallery-header">
+                        <span class="hero-pretitle" style="font-size:0.7rem; margin-bottom:0.2rem; display:block;">Award Ceremony</span>
+                        <h3 class="bc-gallery-title">The Moment We Earned It</h3>
+                    </div>
+                    <div class="bc-gallery-grid">
+                        <!-- Portrait certificate — left column -->
+                        <div class="bc-gallery-item bc-gallery-cert">
+                            <img src="events/event-img/best-chapter-campus/cert.webp"
+                                alt="Best Technical Chapter Certificate" loading="lazy" />
+                            <div class="bc-gallery-overlay"><span>🏅 Certificate</span></div>
+                        </div>
+                        <!-- Two landscape photos stacked — right column -->
+                        <div class="bc-gallery-right">
+                            <div class="bc-gallery-item">
+                                <img src="events/event-img/best-chapter-campus/img_1.webp"
+                                    alt="ACM VITC receiving Best Chapter Award" loading="lazy" />
+                                <div class="bc-gallery-overlay"><span>📸 Award Ceremony</span></div>
+                            </div>
+                            <div class="bc-gallery-item">
+                                <img src="events/event-img/best-chapter-campus/img_2.webp"
+                                    alt="ACM VITC Team with Best Chapter Award" loading="lazy" />
+                                <div class="bc-gallery-overlay"><span>👥 Celebrating Together</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    <!-- THE JOURNEY NARRATIVE SECTION -->
+    <section class="section-padding reveal journey-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>The Road to Excellence</h2>
+                <span class="subtitle">A look back at the defining milestones of our award-winning year</span>
+            </div>
+
+            <div class="journey-timeline">
+                <!-- Milestone 1 -->
+                <div class="journey-step">
+                    <div class="journey-icon"><i class="fas fa-hands-helping"></i></div>
+                    <div class="journey-content">
+                        <span class="journey-date">The Inception & Early Outreach</span>
+                        <h3>Computer Literacy & Sustain-A-Thon</h3>
+                        <p>Our journey began with giving back—introducing essential computer concepts in a village school, followed by our foundational sustainability hackathon.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 2 -->
+                <div class="journey-step">
+                    <div class="journey-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="journey-content">
+                        <span class="journey-date">Skill Building & Logic</span>
+                        <h3>TechJam, Webdex & Frontend Kickstart</h3>
+                        <p>A rapid succession of foundational events focusing on ML, Cloud, Ethical Hacking, modern frontend development, and intense problem-solving in Rubik's Rumble.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 3 -->
+                <div class="journey-step">
+                    <div class="journey-icon"><i class="fas fa-users"></i></div>
+                    <div class="journey-content">
+                        <span class="journey-date">Summer Milestones</span>
+                        <h3>CodePulse & ACM Club Expo</h3>
+                        <p>Fostering algorithmic problem-solving before welcoming the incoming batch of students with interactive coding games and live technical demonstrations.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 4 -->
+                <div class="journey-step">
+                    <div class="journey-icon"><i class="fas fa-terminal"></i></div>
+                    <div class="journey-content">
+                        <span class="journey-date">Laying the Foundation</span>
+                        <h3>Linux & Git / Pages to Progress</h3>
+                        <p>Empowering developers with open-source fundamentals and version control, alongside inspiring young minds through the art of book reviews and critical reading.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 5 -->
+                <div class="journey-step">
+                    <div class="journey-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="journey-content">
+                        <span class="journey-date">Cybersecurity & Global Exposure</span>
+                        <h3>Cybermonth & ACM India Visit</h3>
+                        <p>An intense period of ethical hacking challenges in our Value Added Program, followed by global research interaction and networking with ACM India leadership.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 6 -->
+                <div class="journey-step">
+                    <div class="journey-icon"><i class="fab fa-docker"></i></div>
+                    <div class="journey-content">
+                        <span class="journey-date">Next-Gen Technologies</span>
+                        <h3>Gen AI & Docker Showdown</h3>
+                        <p>Exploring the Agentic Shift and autonomous systems with Google's Gemini, followed by a massive networking and knowledge exchange around software deployment and DevOps.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 7 -->
+                <div class="journey-step">
+                    <div class="journey-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="journey-content">
+                        <span class="journey-date">Life Skills & Community Impact</span>
+                        <h3>Personal Finance & Hour of AI</h3>
+                        <p>Bridging the gap in student financial literacy, and reaching beyond our campus to introduce school students to the future of AI Game Development.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 8 -->
+                <div class="journey-step">
+                    <div class="journey-icon"><i class="fas fa-book-open"></i></div>
+                    <div class="journey-content">
+                        <span class="journey-date">Breaking Records</span>
+                        <h3>DSA Bootcamp & CodePulse March</h3>
+                        <p>A month-long national DSA bootcamp combining expert-led training with a high-stakes algorithmic challenge, testing logic and skills under immense pressure.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 9 -->
+                <div class="journey-step">
+                    <div class="journey-icon"><i class="fas fa-flag"></i></div>
+                    <div class="journey-content">
+                        <span class="journey-date">The Grand Finale</span>
+                        <h3>Server Surfers CTF</h3>
+                        <p>Concluding our award-winning run with a massive Capture The Flag cybersecurity challenge, featuring industry keynote insights from Kaspersky.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>
+                    <img src="https://raw.githubusercontent.com/vitccacm/websitev2/main/assets/logo.webp" alt="ACM Logo"
+                        class="footer-logo" />
+                    ACM Student Chapter
+                </h3>
+                <p style="color: var(--gold-primary); font-weight: 600">
+                    VIT Chennai
+                </p>
+                <p style="opacity: 0.7; margin-top: 1rem">
+                    Advancing Computing as a Science & Profession.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blogs-newsletters.html">Blogs & Newsletters</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <p class="footer-email" style="margin-bottom: 1rem">
+                    <span style="margin-right: 8px">📧</span>
+                    <a href="mailto:vitcc.acmsc@vit.ac.in">vitcc.acmsc@vit.ac.in</a>
+                </p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link"
+                        title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link"
+                        title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub"><i
+                            class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; 2025 ACM Student Chapter - VIT Chennai. All Rights
+                Reserved.
+            </p>
+            <p style="font-size: 0.8rem; opacity: 0.5">
+                Designed for ACM SC VIT Chennai
+            </p>
+        </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
