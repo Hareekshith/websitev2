@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TechJam 3.0</title>
+<style>
+  :root { --bg:#0d1117; --panel:#161b22; --border:#30363d; --accent:#58a6ff; --text:#e6edf3; --muted:#8b949e; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
+  header { text-align:center; padding:48px 16px; background:linear-gradient(135deg,#1f2937,#0d1117); border-bottom:1px solid var(--border); }
+  header h1 { margin:0; font-size:2.6rem; letter-spacing:-1px; }
+  header h1 span { color:var(--accent); }
+  header p { color:var(--muted); margin:8px 0 0; }
+  nav { position:sticky; top:0; z-index:10; display:flex; flex-wrap:wrap; gap:8px; justify-content:center; padding:12px; background:rgba(13,17,23,.9); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
+  nav a { color:var(--muted); text-decoration:none; padding:6px 12px; border-radius:6px; font-size:.9rem; }
+  nav a:hover { color:var(--text); background:var(--panel); }
+  main { max-width:980px; margin:0 auto; padding:24px 16px 64px; }
+  section { margin:56px 0; scroll-margin-top:64px; }
+  section h2 { font-size:1.6rem; border-bottom:1px solid var(--border); padding-bottom:8px; }
+  .desc { color:var(--muted); margin-top:-4px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:16px; }
+  .card { background:var(--panel); border:1px solid var(--border); border-radius:10px; overflow:hidden; }
+  .video { position:relative; padding-bottom:56.25%; height:0; background:#000; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .card p { margin:0; padding:10px 12px; font-size:.85rem; color:var(--text); }
+  a.plink { display:inline-block; margin-top:14px; color:var(--accent); font-size:.9rem; text-decoration:none; }
+  a.plink:hover { text-decoration:underline; }
+  /* code viewer */
+  .editor { border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-top:20px; }
+  .tabs { display:flex; flex-wrap:wrap; gap:4px; padding:8px; background:var(--panel); border-bottom:1px solid var(--border); }
+  .tabs button { background:transparent; color:var(--muted); border:1px solid transparent; padding:5px 10px; border-radius:6px; font-size:.82rem; cursor:pointer; font-family:ui-monospace,monospace; }
+  .tabs button:hover { color:var(--text); }
+  .tabs button.active { color:var(--text); background:var(--bg); border-color:var(--border); }
+  pre { margin:0; max-height:560px; overflow:auto; background:#0d1117; }
+  pre code { display:block; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.85rem; padding:16px; white-space:pre; color:#c9d1d9; }
+  footer { text-align:center; color:var(--muted); padding:32px; border-top:1px solid var(--border); font-size:.85rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Tech<span>Jam</span> 3.0</h1>
+</header>
+
+<nav>
+  <a href="#c">C</a>
+  <a href="#java">Java</a>
+  <a href="#hacking">Ethical Hacking</a>
+  <a href="#ml">Machine Learning</a>
+  <a href="#cloud">Cloud Computing</a>
+  <a href="#repo">DSA Java Basics</a>
+  <a href="https://vitchennai.acm.org/index.html" target="_blank" rel="noopener">ACM Website ↗</a>
+</nav>
+
+<main>
+  <section id="c">
+    <h2>C Programming</h2>
+    <div class="grid">
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/AAqC4986NbY?list=PLB-xaZrULY18" title="Variables" allowfullscreen></iframe></div><p>Topic 1 — Variables</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/TQBKGYLQRBU?list=PLB-xaZrULY18" title="Data Types" allowfullscreen></iframe></div><p>Topic 2 — Data Types</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/S_E6PvGi22U?list=PLB-xaZrULY18" title="Input and output" allowfullscreen></iframe></div><p>Topic 3 — Input &amp; Output</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/mXkiz8hkod0?list=PLB-xaZrULY18" title="Operators and Precedence" allowfullscreen></iframe></div><p>Topic 4 — Operators &amp; Precedence</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/HNOSHsWTsFY?list=PLB-xaZrULY18" title="Type conversion" allowfullscreen></iframe></div><p>Topic 5 — Type Conversion</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/DIKnmpiunls?list=PLB-xaZrULY18" title="If else" allowfullscreen></iframe></div><p>Topic 6 — If / Else</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/wKpveEQ3x_4?list=PLB-xaZrULY18" title="Switch statement" allowfullscreen></iframe></div><p>Topic 7 — Switch Statement</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/cwrHn9W0mgA?list=PLB-xaZrULY18" title="For loop" allowfullscreen></iframe></div><p>Topic 8 — For Loop</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/cgpU2OFyIW8?list=PLB-xaZrULY18" title="While and Do while" allowfullscreen></iframe></div><p>Topic 9 — While &amp; Do-While</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/8gg5XEL4rMk?list=PLB-xaZrULY18" title="Break, Continue and goto" allowfullscreen></iframe></div><p>Topic 10 — Break, Continue &amp; goto</p></div>
+    </div>
+    <a class="plink" href="https://www.youtube.com/playlist?list=PLB-xaZrULY18" target="_blank" rel="noopener">Open full playlist ↗</a>
+  </section>
+
+  <section id="java">
+    <h2>Java</h2>
+    <div class="grid">
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/_b-lmIJBono?list=PLBvt4KEhqNAY" title="Motivation" allowfullscreen></iframe></div><p>TechJam — Motivation</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/_81DgLPs_cs?list=PLBvt4KEhqNAY" title="Basics of Java" allowfullscreen></iframe></div><p>1 — Basics of Java</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/b5CEyhyralY?list=PLBvt4KEhqNAY" title="Operators" allowfullscreen></iframe></div><p>2 — Operators</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/QFLIvtKHq_4?list=PLBvt4KEhqNAY" title="Loops" allowfullscreen></iframe></div><p>3 — Loops</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/8XrTgXNrjkg?list=PLBvt4KEhqNAY" title="Arrays" allowfullscreen></iframe></div><p>4 — Arrays</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/38MWDM1TgwM?list=PLBvt4KEhqNAY" title="Strings" allowfullscreen></iframe></div><p>5 — Strings</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/5KslaodVm_c?list=PLBvt4KEhqNAY" title="Functions" allowfullscreen></iframe></div><p>6 — Functions</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/2rF0Two5Cfs?list=PLBvt4KEhqNAY" title="Inheritance" allowfullscreen></iframe></div><p>7 — Inheritance</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/vnAzwUjeNDE?list=PLBvt4KEhqNAY" title="Divide and Conquer" allowfullscreen></iframe></div><p>CP-1 — Divide &amp; Conquer</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/mqSQvJ3x9K0?list=PLBvt4KEhqNAY" title="Graphs and Trees" allowfullscreen></iframe></div><p>CP-2 — Graphs &amp; Trees</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/s6ZaRh69zV4?list=PLBvt4KEhqNAY" title="Greedy Approach" allowfullscreen></iframe></div><p>CP-3 — Greedy Approach</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/_t-SJ9pGk2k?list=PLBvt4KEhqNAY" title="Dynamic Programming" allowfullscreen></iframe></div><p>CP-4 — Dynamic Programming</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/6IHIGA66r5I?list=PLBvt4KEhqNAY" title="Backtracking" allowfullscreen></iframe></div><p>CP-5 — Backtracking</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/l1i7UbcKpOc?list=PLBvt4KEhqNAY" title="Pattern Recognition" allowfullscreen></iframe></div><p>CP-6 — Pattern Recognition</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/HMQKai4r2qE?list=PLBvt4KEhqNAY" title="Branch and Bound" allowfullscreen></iframe></div><p>CP-7 — Branch &amp; Bound</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/1_mhdWB2qMk?list=PLBvt4KEhqNAY" title="Bit Manipulation" allowfullscreen></iframe></div><p>CP-8 — Bit Manipulation</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/fe07Hgyhhug?list=PLBvt4KEhqNAY" title="Dynamic Programming" allowfullscreen></iframe></div><p>Dynamic Programming</p></div>
+    </div>
+    <a class="plink" href="https://www.youtube.com/playlist?list=PLBvt4KEhqNAY" target="_blank" rel="noopener">Open full playlist ↗</a>
+
+    <h3 style="margin:28px 0 0">Java DSA Basics</h3>
+    <div class="editor">
+      <div class="tabs" id="tabs"></div>
+      <pre><code id="codeview"></code></pre>
+    </div>
+  </section>
+
+  <section id="hacking">
+    <h2>Ethical Hacking</h2>
+    <div class="grid">
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/_JSuj5Q-NOE?list=PLDmkC5dNS-uo" title="Introduction" allowfullscreen></iframe></div><p>1 — Introduction</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/5ndqRM9L-_M?list=PLDmkC5dNS-uo" title="File Permissions" allowfullscreen></iframe></div><p>2 — File Permissions</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/o95koZnf1nw?list=PLDmkC5dNS-uo" title="SQL Injection" allowfullscreen></iframe></div><p>3 — SQL Injection</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/enoZvwxoIjI?list=PLDmkC5dNS-uo" title="Privilege Escalation" allowfullscreen></iframe></div><p>4 — Privilege Escalation</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/FfUYXbmMwfA?list=PLDmkC5dNS-uo" title="Introduction" allowfullscreen></iframe></div><p>Intro (alt)</p></div>
+    </div>
+    <a class="plink" href="https://www.youtube.com/playlist?list=PLDmkC5dNS-uo" target="_blank" rel="noopener">Open full playlist ↗</a>
+  </section>
+
+  <section id="ml">
+    <h2>Machine Learning</h2>
+    <div class="grid">
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/4eyKRGi5Sdg?list=PLKc9dFk8haDI" title="Notebooks, numpy, torch" allowfullscreen></iframe></div><p>1 — Notebooks, NumPy, Torch</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/DX5OMLRepK0?list=PLKc9dFk8haDI" title="PyTorch and tensors" allowfullscreen></iframe></div><p>2 — PyTorch &amp; Tensor Ops</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/0SpGg0SdinA?list=PLKc9dFk8haDI" title="Training a neural network" allowfullscreen></iframe></div><p>3 — Training a Neural Network</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/ROKVX02A4Lc?list=PLKc9dFk8haDI" title="Layer types and optimizing" allowfullscreen></iframe></div><p>4 — Layer Types &amp; Optimizing</p></div>
+    </div>
+    <a class="plink" href="https://www.youtube.com/playlist?list=PLKc9dFk8haDI" target="_blank" rel="noopener">Open full playlist ↗</a>
+  </section>
+
+  <section id="cloud">
+    <h2>Cloud Computing</h2>
+    <div class="grid">
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/NQaod73usOY?list=PLEP7_XsUHAc8" title="Intro to Azure" allowfullscreen></iframe></div><p>1 — Intro to Azure</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/m4BML53d8uQ?list=PLEP7_XsUHAc8" title="Cloud computing with Azure" allowfullscreen></iframe></div><p>2 — Cloud Computing with Azure</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/euIqZRer6Rg?list=PLEP7_XsUHAc8" title="Azure AI Services" allowfullscreen></iframe></div><p>3 — Azure AI Services</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/6OamefPgIGY?list=PLEP7_XsUHAc8" title="Computer Vision" allowfullscreen></iframe></div><p>4 — Computer Vision</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/07QZLM9aCaA?list=PLEP7_XsUHAc8" title="MSFI AI Chatbot" allowfullscreen></iframe></div><p>5 — MSFI AI Chatbot</p></div>
+      <div class="card"><div class="video"><iframe loading="lazy" src="https://www.youtube.com/embed/kXDKgPaQp_E?list=PLEP7_XsUHAc8" title="OpenAI" allowfullscreen></iframe></div><p>6 — OpenAI</p></div>
+    </div>
+    <a class="plink" href="https://www.youtube.com/playlist?list=PLEP7_XsUHAc8" target="_blank" rel="noopener">Open full playlist ↗</a>
+  </section>
+
+  <section id="repo">
+    <h2>DSA Java Basics</h2>
+    <div class="editor">
+      <div class="tabs" id="tabs2"></div>
+      <pre><code id="codeview2"></code></pre>
+    </div>
+  </section>
+</main>
+
+<footer>TechJam 3.0 · ACM Student Chapter, VIT Chennai</footer>
+
+<script>
+// All repo source hardcoded — no fetch, works from file://
+const CODE = {
+"JavaElements.java": `/* Java Elements
+ * The main class to contain all the basic
+ * syntax of what a Java program looks like
+ */
+public class JavaElements {
+
+    // The main method is the entry point to any java program
+    public static void main(String[] args) {
+
+        // variable declaration
+        // Type variableName = content;
+
+        String name = "Aditya";
+        String occupation = "SDE";
+        int salary = 10000;
+
+        // conditions
+        // if statement, difference between == and =
+
+        if (salary == 10000) {
+            System.out.println("good salary");
+        }
+
+        // loops
+        // basic for loop
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i);
+        }
+
+        // print
+        System.out.print("hello");
+        System.out.print("world");
+
+        // println
+        System.out.println();
+        System.out.println("hello");
+        System.out.println("world");
+    }
+}`,
+"DataTypes.java": `/* Data Types
+ * Main class which holds all the examples for java datatypes
+ */
+public class DataTypes {
+    public static void main(String[] args) {
+        boolean thisIsABoolean = true; // true or false
+
+        byte thisIsAByte = 100; // -128 to 127
+
+        char thisIsAChar = 'a'; // character representation of ascii values
+
+        short thisIsAShort = 32767; // -32,768 to 32,767
+
+        int thisIsAInt = 2147483647; // -2,147,483,648 to 2,147,483,647
+
+        long thisIsALong = 9223372036854775807L; // -9,223,372,036,854,775,808L to 9,223,372,036,854,775,807L
+
+        float thisIsAFloat = 12.632F; // up to 7 decimal places
+
+        double thisIsADouble = 1231.12421412D; // up to 16 decimal places
+
+        String thisIsAString = "aditya";
+
+        // Object, Interface, Arrays
+    }
+}`,
+"Operators.java": `public class Operators {
+    public static void main(String[] args) {
+        System.out.println(!(1 == 1 && 2 == 3));
+    }
+}`,
+"OperatorPrecedence.java": `public class OperatorPrecedence {
+    public static void main(String[] args) {
+        int result1 = 10 + 5 * 2;
+        int result2 = (10 + 5) * 2;
+
+        System.out.println("Result 1: " + result1);
+        System.out.println("Result 2: " + result2);
+
+        boolean condition1 = true || false && false;
+        boolean condition2 = (true || false) && false;
+
+        System.out.println("Condition 1: " + condition1);
+        System.out.println("Condition 2: " + condition2);
+    }
+}`,
+"TypeCastingAndTernary.java": `public class TypeCastingAndTernary {
+    public static void main(String[] args) {
+        // Implicit Type Casting
+        int startValue = 10;
+        double newValue = startValue;
+
+        System.out.println(startValue);
+        System.out.println(newValue);
+
+        // Explicit Type Casting
+        double initValue = 3.14;
+        int newInit = (int) initValue;
+
+        System.out.println(initValue);
+        System.out.println(newInit);
+
+        // ternary operator
+
+        // data indentifier = (expression) ? valueTrue : valueFalse;
+        int ternary = (startValue > initValue) ? 50: 100;
+        System.out.println(ternary);
+    }
+}`,
+"IfElse.java": `import java.util.*;
+
+public class IfElse {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("enter a number: ");
+        int num = scanner.nextInt();
+
+        if (num < 5) {
+            System.out.println("less than 5");
+        } else if (5 < num && num < 10) {
+            System.out.println("between 5 and 10");
+        } else {
+            System.out.println("greater than 10");
+        }
+    }
+}`,
+"Switch.java": `import java.util.*;
+
+public class Switch {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("enter a day of week: ");
+        int dayOfWeek = scanner.nextInt();
+
+        switch (dayOfWeek) {
+            case 1:
+                System.out.println("It's Monday!");
+                break;
+            case 2:
+                System.out.println("It's Tuesday!");
+                break;
+            case 3:
+                System.out.println("It's Wednesday!");
+                break;
+            case 4:
+                System.out.println("It's Thursday!");
+                break;
+            case 5:
+                System.out.println("It's Friday!");
+                break;
+            case 6:
+                System.out.println("It's Saturday!");
+                break;
+            case 7:
+                System.out.println("It's Sunday!");
+                break;
+            default:
+                System.out.println("Invalid day of the week!");
+                break;
+        }
+    }
+}`,
+"ForLoops.java": `public class ForLoops {
+    public static void main(String[] args) {
+        // basic for loop
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i);
+        }
+        System.out.println();
+
+        // nested for loop
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.println("i:" + i + " j:" + j);
+            }
+            System.out.println();
+        }
+
+        // drawing pattern
+        for (int i = 1; i < 6; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}`,
+"WhileLoop.java": `public class WhileLoop {
+    public static void main(String[] args) {
+        int counter = 0;
+
+        while (counter < 5) {
+            System.out.println(counter);
+            counter++;
+        }
+    }
+}`,
+"DoWhileLoops.java": `public class DoWhileLoops {
+    public static void main(String[] args) {
+        int counter = 0;
+
+        do {
+            System.out.println(counter);
+           counter++;
+        } while (counter < 0);
+    }
+}`,
+"Person.java": `/* Person
+ * class made to explain what an object is
+ */
+public class Person {
+    private String name; // variable
+    private int age; // variable
+
+    // Constructor
+    Person(String name, int age) {
+       this.name = name;
+       this.age = age;
+    }
+
+    // method
+    String getName() {
+        return this.name;
+    }
+
+    // method
+    int getAge() {
+        return this.age;
+    }
+
+    public static void main(String[] args) {
+        Person person1 = new Person("Aditya", 19);
+        Person person2 = new Person("Jyoti", 18);
+
+        System.out.println(person2.getName());
+        System.out.println(person1.getAge());
+    }
+}`,
+"MathLibrary.java": `public class MathLibrary {
+    public static void main(String[] args) {
+        int num1 = 3;
+        int num2 = 10;
+        int num3 = 4;
+        int num4 = 27;
+
+        System.out.println(Math.pow(num2, num1));
+        System.out.println(Math.sqrt(num3));
+        System.out.println(Math.cbrt(num4));
+    }
+}`
+};
+
+function buildViewer(tabsId, codeId) {
+  const tabs = document.getElementById(tabsId), codeEl = document.getElementById(codeId);
+  const names = Object.keys(CODE);
+  const show = (name, btn) => {
+    tabs.querySelectorAll("button").forEach(x => x.classList.remove("active"));
+    btn.classList.add("active");
+    codeEl.textContent = CODE[name]; // textContent escapes HTML safely
+  };
+  names.forEach((name, i) => {
+    const b = document.createElement("button");
+    b.textContent = name;
+    b.onclick = () => show(name, b);
+    tabs.appendChild(b);
+    if (i === 0) show(name, b);
+  });
+}
+
+buildViewer("tabs", "codeview");
+buildViewer("tabs2", "codeview2");
+</script>
+</body>
+</html>
