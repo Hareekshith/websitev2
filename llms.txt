@@ -14,6 +14,7 @@ Awarded the "Best Technical Chapter" in the VIT Chennai Campus for the academic 
 - **Team (`/team.html`)**: The dedicated faculty and student leadership team behind the chapter.
 - **Awards (`/awards.html`)**: Our "Road to Excellence" journey highlighting our achievements, including the Asia Book of Records recognition.
 - **Blogs & Newsletters (`/blogs-newsletters.html`)**: A centralized hub for our technical publications, project outcomes, and chapter newsletters.
+- **Annual Newsletter (`/newsletterAY25.html`)**: Comprehensive yearly newsletter publication reviewing all chapter events, workshops, and achievements.
 - **Contact (`/contact.html`)**: Ways to reach out to us and our social media links.
 
 ## Technologies Used
