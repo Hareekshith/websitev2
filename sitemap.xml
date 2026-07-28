@@ -2,38 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vitchennai.acm.org/</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://vitchennai.acm.org/about.html</loc>
-    <lastmod>2025-12-13</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vitchennai.acm.org/events.html</loc>
-    <lastmod>2025-12-13</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://vitchennai.acm.org/team.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://vitchennai.acm.org/contact.html</loc>
-    <lastmod>2025-12-13</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://vitchennai.acm.org/blogs-newsletters.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vitchennai.acm.org/newsletterAY25.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -43,32 +49,44 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://vitchennai.acm.org/events/club_expo_jul_2026.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://vitchennai.acm.org/events/club_expo_oct_2025.html</loc>
-    <lastmod>2025-12-13</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://vitchennai.acm.org/events/code_pulse.html</loc>
-    <lastmod>2025-12-13</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://vitchennai.acm.org/events/code_pulse_march_2026.html</loc>
-    <lastmod>2026-03-01</lastmod>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://vitchennai.acm.org/events/codepulse-june.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://vitchennai.acm.org/events/docker_workshop.html</loc>
-    <lastmod>2025-12-13</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://vitchennai.acm.org/events/dsa_bootcamp.html</loc>
-    <lastmod>2026-01-01</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -86,31 +104,37 @@
   </url>
   <url>
     <loc>https://vitchennai.acm.org/events/hour_of_ai.html</loc>
-    <lastmod>2025-12-13</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://vitchennai.acm.org/events/industrial_visit.html</loc>
-    <lastmod>2025-12-13</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://vitchennai.acm.org/events/linux_git_workshop.html</loc>
-    <lastmod>2025-12-13</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://vitchennai.acm.org/events/pages_to_progress.html</loc>
-    <lastmod>2025-12-13</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://vitchennai.acm.org/events/server_surfers.html</loc>
     <lastmod>2026-04-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://vitchennai.acm.org/events/techjam26.html</loc>
+    <lastmod>2026-06-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
