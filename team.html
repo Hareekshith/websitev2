@@ -44,13 +44,47 @@
 
     <title>Our Team - ACM Student Chapter VIT Chennai</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css?v=20260412" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20260817" />
+    <style>
+        .members-table-wrap {
+            background: var(--glass-bg);
+            border: var(--glass-border);
+            border-radius: var(--card-radius);
+            padding: 2rem;
+            box-shadow: var(--glass-shadow);
+            backdrop-filter: blur(20px);
+            overflow-x: auto;
+        }
+        .members-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        .members-table th {
+            font-family: var(--font-display);
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .members-table td {
+            padding: 1.2rem 1.5rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .members-table tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-bright);
+        }
+    </style>
 </head>
 
 <body>
-    <!-- NAVIGATION -->
-    <!-- NAVIGATION (Floating Luxury Pill) -->
-    <nav class="navbar animate-fade-up">
+    <!-- NAVIGATION (Floating Spatial Pill) -->
+    <nav class="navbar">
         <a href="index.html" class="navbar-logo">
             <img src="assets/logo.webp" alt="ACM Logo" />
             ACM <span>VIT Chennai</span>
@@ -59,415 +93,270 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="events.html">Events</a></li>
-            <li><a href="team.html">Team</a></li>
+            <li><a href="team.html" class="active">Team</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="blogs-newsletters.html">Blogs</a></li>
         </ul>
     </nav>
 
-    <!-- PAGE HEADER -->
-    <main>
+    <!-- 3D SPATIAL MAIN STAGE -->
+    <div class="spatial-stage">
+
         <!-- LUXURY HERO -->
-        <header class="hero" style="height: 95vh; min-height: 400px">
-            <img src="images/about_premium.webp" alt="Our Team" class="hero-background" />
+        <header class="hero spatial-scene" style="min-height: 75vh;">
+            <img src="images/about_premium.webp" alt="Our Team" class="hero-background depth-bg" />
             <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1 class="animate-fade-up">Visionaries & Leaders</h1>
-                <p class="animate-fade-up delay-100">
-                    The Minds Behind the Movement
-                </p>
+            <div class="hero-content depth-fg">
+                <span class="hero-pretitle">✦ Leadership &amp; Vision ✦</span>
+                <h1>Visionaries &amp; <span>Leaders</span></h1>
+                <p>The minds driving innovation, student engagement, and technical excellence at ACM VIT Chennai.</p>
             </div>
         </header>
-    <!-- NEWS TICKER -->
-    <div class="news-ticker">
-        <div class="news-ticker-content">
-            📢 Membership is now OPEN! Become a member of the ACM Student
-            Chapter VIT Chennai today. Join us to advance computing as a
-            science and profession! 🚀
-        </div>
-    </div>
-        <!-- TEAM CAROUSEL -->
-        <section class="section-padding">
+
+        <!-- TEAM BOARD -->
+        <section class="section-padding spatial-scene">
             <div class="container">
                 <div class="section-header">
                     <h2>The Board</h2>
-                    <span class="subtitle">Leadership</span>
+                    <span class="subtitle">Chapter Leadership</span>
                 </div>
 
                 <div class="team-carousel-wrapper">
-                    <div class="team-carousel-track">
-                        <!-- First set of cards -->
+                    <div class="team-carousel-track depth-mid">
                         <div class="team-card">
-                            <img src="images/office-br/subbulakshmi.webp" alt="Subbulakshmi" class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Subbulakshmi</h3>
-                                <span class="role">Faculty Coordinator</span>
-                                <p class="description">
-                                    Steering vision and guidance with
-                                    leadership excellence
-                                </p>
-                            </div>
+                            <img src="images/office-br/subbulakshmi.webp" alt="Subbulakshmi" />
+                            <h3>Dr. T. Subbulakshmi</h3>
+                            <span class="team-role">Faculty Coordinator</span>
+                            <p class="description">Steering chapter vision and academic guidance with leadership excellence.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/david.webp" alt="David J Arun" class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>David J Arun</h3>
-                                <span class="role">Chair</span>
-                                <p class="description">
-                                    Steering chapter vision and strategy
-                                    with leadership excellence
-                                </p>
-                            </div>
+                            <img src="images/office-br/david.webp" alt="David J Arun" />
+                            <h3>David J Arun</h3>
+                            <span class="team-role">Chair</span>
+                            <p class="description">Steering chapter vision, strategy, and partnerships with leadership excellence.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/sidharth.webp" alt="Sidharth M" class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Sidharth M</h3>
-                                <span class="role">Vice Chair</span>
-                                <p class="description">
-                                    Supporting leadership with coordination
-                                    and strategic initiatives
-                                </p>
-                            </div>
+                            <img src="images/office-br/sidharth.webp" alt="Sidharth M" />
+                            <h3>Sidharth M</h3>
+                            <span class="team-role">Vice Chair</span>
+                            <p class="description">Supporting executive leadership with strategic execution and operations.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/adithyan.webp" alt="Adithyan P" class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Adithyan P</h3>
-                                <span class="role">Secretary</span>
-                                <p class="description">
-                                    Managing communications, documentation,
-                                    and chapter records
-                                </p>
-                            </div>
+                            <img src="images/office-br/adithyan.webp" alt="Adithyan P" />
+                            <h3>Adithyan P</h3>
+                            <span class="team-role">Secretary</span>
+                            <p class="description">Managing chapter documentation, communications, and official records.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/RahulR.webp" alt="Rahul R" class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Rahul R</h3>
-                                <span class="role">Treasurer</span>
-                                <p class="description">
-                                    Managing finances, budgets, and
-                                    financial planning for events
-                                </p>
-                            </div>
+                            <img src="images/office-br/RahulR.webp" alt="Rahul R" />
+                            <h3>Rahul R</h3>
+                            <span class="team-role">Treasurer</span>
+                            <p class="description">Managing finances, allocations, budgets, and fiscal sponsorships.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/women.webp" alt="R.Jyoshika" class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>R Jyoshika</h3>
-                                <span class="role">Membership Chair</span>
-                                <p class="description">
-                                    Recruiting members and growing the ACM
-                                    community at VIT
-                                </p>
-                            </div>
+                            <img src="images/office-br/women.webp" alt="R Jyoshika" />
+                            <h3>R Jyoshika</h3>
+                            <span class="team-role">Membership Chair</span>
+                            <p class="description">Expanding chapter reach, member onboarding, and student engagement.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/travel_grands_chair_Siddharth_Sailesh.webp" alt="Siddharth S"
-                                class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Siddharth S</h3>
-                                <span class="role">Travel Grants Chair</span>
-                                <p class="description">
-                                    Facilitating student travel
-                                    opportunities and grant disbursement
-                                </p>
-                            </div>
+                            <img src="images/office-br/travel_grands_chair_Siddharth_Sailesh.webp" alt="Siddharth S" />
+                            <h3>Siddharth S</h3>
+                            <span class="team-role">Travel Grants Chair</span>
+                            <p class="description">Facilitating student travel opportunities and grant disbursements.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/Dharsni.webp" alt="Dharshini Jayaraman"
-                                class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Dharshini Jayaraman</h3>
-                                <span class="role">Technical Lead</span>
-                                <p class="description">
-                                    Driving technical workshops, projects,
-                                    and innovation initiatives
-                                </p>
-                            </div>
+                            <img src="images/office-br/Dharsni.webp" alt="Dharshini Jayaraman" />
+                            <h3>Dharshini Jayaraman</h3>
+                            <span class="team-role">Technical Lead</span>
+                            <p class="description">Driving technical workshops, project buildouts, and innovation.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/Ganeshvar.webp" alt="Ganeshvar K S" class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Ganeshvar K S</h3>
-                                <span class="role">Technical Lead</span>
-                                <p class="description">
-                                    Coordinating tech talks, research, and
-                                    development teams
-                                </p>
-                            </div>
+                            <img src="images/office-br/Ganeshvar.webp" alt="Ganeshvar K S" />
+                            <h3>Ganeshvar K S</h3>
+                            <span class="team-role">Technical Lead</span>
+                            <p class="description">Coordinating tech talks, research paper development, and hackathons.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/women.webp" alt="Swati Gouda" class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Swati Gouda</h3>
-                                <span class="role">Webmaster</span>
-                                <p class="description">
-                                    Managing website, online presence, and
-                                    digital platforms
-                                </p>
-                            </div>
+                            <img src="images/office-br/women.webp" alt="Swati Gouda" />
+                            <h3>Swati Gouda</h3>
+                            <span class="team-role">Webmaster</span>
+                            <p class="description">Architecting and maintaining web infrastructure and digital platforms.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/man.webp" alt="Ganta Sai Animesh Reddy"
-                                class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Ganta Sai Animesh Reddy</h3>
-                                <span class="role">Webmaster</span>
-                                <p class="description">
-                                    Building and maintaining technical
-                                    infrastructure for the web
-                                </p>
-                            </div>
+                            <img src="images/office-br/man.webp" alt="Ganta Sai Animesh Reddy" />
+                            <h3>Ganta Sai Animesh Reddy</h3>
+                            <span class="team-role">Webmaster</span>
+                            <p class="description">Building scalable online experiences and digital portals for ACM VITC.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/muthu_venakat.webp" alt="Muthu Venkatesh M"
-                                class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Muthu Venkatesh M</h3>
-                                <span class="role">Management & Marketing Lead</span>
-                                <p class="description">
-                                    Leading branding, partnerships, and
-                                    chapter visibility strategies
-                                </p>
-                            </div>
+                            <img src="images/office-br/muthu_venakat.webp" alt="Muthu Venkatesh M" />
+                            <h3>Muthu Venkatesh M</h3>
+                            <span class="team-role">Management &amp; Marketing</span>
+                            <p class="description">Leading branding, industry sponsorships, and visibility campaigns.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/man.webp" alt="Rahul S" class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Rahul S</h3>
-                                <span class="role">Management & Digital Marketing
-                                    Lead</span>
-                                <p class="description">
-                                    Driving digital campaigns and online
-                                    community engagement
-                                </p>
-                            </div>
+                            <img src="images/office-br/man.webp" alt="Rahul S" />
+                            <h3>Rahul S</h3>
+                            <span class="team-role">Digital Marketing Lead</span>
+                            <p class="description">Driving digital outreach and online community engagement.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/women.webp" alt="Gauri A G" class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Gauri A G</h3>
-                                <span class="role">Design Lead</span>
-                                <p class="description">
-                                    Creating visual identity and design
-                                    assets for all chapter materials
-                                </p>
-                            </div>
+                            <img src="images/office-br/women.webp" alt="Gauri A G" />
+                            <h3>Gauri A G</h3>
+                            <span class="team-role">Design Lead</span>
+                            <p class="description">Crafting visual identity, branding guidelines, and multimedia assets.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/man.webp" alt="Adithiaya Mururgan K S" class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Adithiaya Mururgan K S</h3>
-                                <span class="role">Design Lead</span>
-                                <p class="description">
-                                    Designing UI/UX for digital platforms
-                                    and event materials
-                                </p>
-                            </div>
+                            <img src="images/office-br/man.webp" alt="Adithiaya Murugan K S" />
+                            <h3>Adithiaya Murugan K S</h3>
+                            <span class="team-role">Design Lead</span>
+                            <p class="description">Designing UI/UX for digital platforms and flagship event media.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/women.webp" alt="Ayushi Singh" class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Ayushi Singh</h3>
-                                <span class="role">Content & Social Media Lead</span>
-                                <p class="description">
-                                    Managing social media presence and
-                                    creating engaging content
-                                </p>
-                            </div>
+                            <img src="images/office-br/women.webp" alt="Ayushi Singh" />
+                            <h3>Ayushi Singh</h3>
+                            <span class="team-role">Content &amp; Social Lead</span>
+                            <p class="description">Directing technical writing, blog curation, and social storytelling.</p>
                         </div>
 
                         <div class="team-card">
-                            <img src="images/office-br/awards_chair.webp" alt="Snigdha Neya Baskar"
-                                class="team-card-image" />
-                            <div class="team-card-content">
-                                <h3>Snigdha Neya Baskar</h3>
-                                <span class="role"></span>
-                                <p class="description">
-                                    Awards & Achievements Chair
-                                </p>
-                            </div>
+                            <img src="images/office-br/awards_chair.webp" alt="Snigdha Neya Baskar" />
+                            <h3>Snigdha Neya Baskar</h3>
+                            <span class="team-role">Awards &amp; Recognition Chair</span>
+                            <p class="description">Spearheading chapter accreditation, award dossiers, and honors.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="section-padding">
+
+        <!-- WEBSITE MAINTAINERS & CONTRIBUTORS -->
+        <section class="section-padding spatial-scene" style="background: var(--void-black);">
             <div class="container">
                 <div class="section-header">
-                    <h2>Members</h2>
-                    <span class="subtitle">Website Maintainers</span>
+                    <h2>Website Maintainers</h2>
+                    <span class="subtitle">Digital Builders</span>
                 </div>
 
-                <table class="members-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Role</th>
-                            <th>GitHub</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>Hareekshith AS</td>
-                            <td>Technical Member</td>
-                            <td>
-                                <a href="https://github.com/hareekshith" target="_blank">
-                                    View Profile
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Ganta Sai Animesh Reddy</td>
-                            <td>Webmaster</td>
-                            <td>
-                                <a href="https://github.com/gsaianimesh" target="_blank">
-                                    View Profile
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jaaiwanth K</td>
-                            <td>Technical Member</td>
-                            <td>
-                                <a href="https://github.com/Jaaiwanth" target="_blank">
-                                    View Profile
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Prodhosh V S</td>
-                            <td>Technical Member</td>
-                            <td>
-                                <a href="https://github.com/prodhosh" target="_blank">
-                                    View Profile
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Akshith Mahesh K</td>
-                            <td>Technical Member</td>
-                            <td>
-                                <a href="https://github.com/akshi-x" target="_blank">
-                                    View Profile
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Adithyan P</td>
-                            <td>Secretary</td>
-                            <td>
-                                <a href="https://github.com/legitcoconut" target="_blank">
-                                    View Profile
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sidharth M</td>
-                            <td>Vice Chair</td>
-                            <td>
-                                <a href="https://github.com/ERROR-SIDDH" target="_blank">
-                                    View Profile
-                                </a>
-                            </td>
-                        </tr>
-                        <!-- Add more members like this -->
-                    </tbody>
-                </table>
+                <div class="members-table-wrap depth-mid">
+                    <table class="members-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Role</th>
+                                <th>GitHub</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Hareekshith AS</strong></td>
+                                <td>Technical Member</td>
+                                <td><a href="https://github.com/hareekshith" target="_blank" rel="noopener noreferrer">View Profile <i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ganta Sai Animesh Reddy</strong></td>
+                                <td>Webmaster</td>
+                                <td><a href="https://github.com/gsaianimesh" target="_blank" rel="noopener noreferrer">View Profile <i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jaaiwanth K</strong></td>
+                                <td>Technical Member</td>
+                                <td><a href="https://github.com/Jaaiwanth" target="_blank" rel="noopener noreferrer">View Profile <i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Prodhosh V S</strong></td>
+                                <td>Technical Member</td>
+                                <td><a href="https://github.com/prodhosh" target="_blank" rel="noopener noreferrer">View Profile <i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Akshith Mahesh K</strong></td>
+                                <td>Technical Member</td>
+                                <td><a href="https://github.com/akshi-x" target="_blank" rel="noopener noreferrer">View Profile <i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Adithyan P</strong></td>
+                                <td>Secretary</td>
+                                <td><a href="https://github.com/legitcoconut" target="_blank" rel="noopener noreferrer">View Profile <i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sidharth M</strong></td>
+                                <td>Vice Chair</td>
+                                <td><a href="https://github.com/ERROR-SIDDH" target="_blank" rel="noopener noreferrer">View Profile <i class="fas fa-external-link-alt"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
 
-    </main>
+        <!-- FOOTER -->
+        <footer class="footer spatial-scene">
+            <div class="footer-container depth-fg">
+                <div class="footer-section">
+                    <h3>
+                        <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo" />
+                        ACM Student Chapter
+                    </h3>
+                    <p style="color: var(--gold-primary); font-weight: 600">VIT Chennai</p>
+                    <p style="opacity: 0.75; margin-top: 0.5rem">
+                        Advancing Computing as a Science &amp; Profession.
+                    </p>
+                </div>
 
-    <!-- FOOTER -->
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>
-                    <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo" />
-                    ACM Student Chapter
-                </h3>
-                <p style="color: var(--gold-primary); font-weight: 600">
-                    VIT Chennai
-                </p>
-                <p style="opacity: 0.7; margin-top: 1rem">
-                    Advancing Computing as a Science & Profession.
-                </p>
-            </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blogs-newsletters.html">Blogs &amp; Newsletters</a></li>
+                        <li><a href="awards.html">Awards &amp; Recognition</a></li>
+                    </ul>
+                </div>
 
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="blogs-newsletters.html">Blogs & Newsletters</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <p class="footer-email" style="margin-bottom: 1rem">
-                    <span style="margin-right: 8px">📧</span>
-                    <a href="mailto:vitcc.acmsc@vit.ac.in">vitcc.acmsc@vit.ac.in</a>
-                </p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link"
-                        title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link"
-                        title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub"><i
-                            class="fab fa-github"></i></a>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <p style="margin-bottom: 1rem">
+                        <span style="margin-right: 8px">📧</span>
+                        <a href="mailto:vitcc.acmsc@vit.ac.in">vitcc.acmsc@vit.ac.in</a>
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link" title="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link" title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="footer-bottom">
-            <p>
-                &copy; 2024 ACM Student Chapter - VIT Chennai. All Rights
-                Reserved.
-            </p>
-            <p style="font-size: 0.8rem; opacity: 0.5">
-                Designed for ACM SC VIT Chennai
-            </p>
-        </div>
-    </footer>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ACM Student Chapter - VIT Chennai. All Rights Reserved.</p>
+                <p style="opacity: 0.5">Designed for ACM SC VIT Chennai</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="assets/js/spatial-engine.js"></script>
     <script src="assets/js/script.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const tracks = document.querySelectorAll('.team-carousel-track');
-
-            tracks.forEach(track => {
-                const cards = track.children;
-
-                if (cards.length <= 1) {
-                    track.classList.add("single-card");
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
