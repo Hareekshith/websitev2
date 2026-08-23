@@ -18,7 +18,7 @@
     <meta name="description"
         content="Learn about ACM Student Chapter at VIT Chennai. Our mission, vision, values, and commitment to advancing computing education and fostering innovation." />
     <meta name="keywords"
-        content="About ACM VIT Chennai, ACM Mission, Computer Science Community, Tech Education, Student Organization, VITCC ACM" />
+        content="About ACM VIT Chennai, ACM Mission, Computer Science Community, Tech Education, Student Organization, VITCC ACM, Best Technical Chapter" />
     <meta name="author" content="ACM Student Chapter VIT Chennai" />
     <meta name="robots" content="index, follow" />
 
@@ -44,14 +44,14 @@
 
     <title>About - ACM Student Chapter VIT Chennai</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css?v=20260817" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20260822" />
 </head>
 
 <body>
-    <!-- NAVIGATION (Floating Spatial Pill) -->
-    <nav class="navbar">
+    <!-- NAVIGATION (Smart Floating Pill) -->
+    <nav class="navbar" aria-label="Main Navigation">
         <a href="index.html" class="navbar-logo">
-            <img src="assets/logo.webp" alt="ACM Logo" />
+            <img src="assets/logo.webp" alt="ACM Logo" width="34" height="34" />
             ACM <span>VIT Chennai</span>
         </a>
         <ul class="navbar-menu">
@@ -64,52 +64,98 @@
         </ul>
     </nav>
 
-    <!-- 3D SPATIAL MAIN STAGE -->
+    <!-- MAIN STAGE -->
     <div class="spatial-stage">
-
-        <!-- LUXURY HERO -->
-        <header class="hero spatial-scene" style="min-height: 75vh;">
-            <img src="images/about_page.webp" alt="About ACM VIT Chennai" class="hero-background depth-bg" />
+        <!-- HERO (100VH VIEWPORT WITH MARQUEE) -->
+        <header class="hero spatial-scene" id="hero">
+            <img src="images/about_page.webp" alt="About ACM VIT Chennai" class="hero-background" />
             <div class="hero-overlay"></div>
-            <div class="hero-content depth-fg">
+            <div class="hero-content">
                 <span class="hero-pretitle">✦ Who We Are ✦</span>
                 <h1>Architects of the<br /><span>Digital Future</span></h1>
                 <p>
-                    Advancing computing as a science and profession through innovation, research, and collaborative excellence at VIT Chennai.
+                    Advancing computing as a science and profession through innovation, research, and collaborative
+                    excellence at VIT Chennai.
                 </p>
+            </div>
+            <!-- CHAPTER MARQUEE RIBBON -->
+            <div class="tech-marquee-section" aria-label="Chapter Highlights">
+                <div class="tech-marquee-track">
+                    <div class="tech-tag-pill"><span class="icon">🏛️</span> Best Chapter of Campus</div>
+                    <div class="tech-tag-pill"><span class="icon">🌐</span> Global ACM Network</div>
+                    <div class="tech-tag-pill"><span class="icon">📚</span> ACM Digital Library</div>
+                    <div class="tech-tag-pill"><span class="icon">🔬</span> Undergraduate Research</div>
+                    <div class="tech-tag-pill"><span class="icon">💡</span> Ethics in Computing</div>
+                    <div class="tech-tag-pill"><span class="icon">🌱</span> Social Outreach</div>
+                    <div class="tech-tag-pill"><span class="icon">🤝</span> 300+ Active Members</div>
+                    <div class="tech-tag-pill"><span class="icon">🎖️</span> Asia Book of Records</div>
+                    <!-- Duplicate for seamless looping -->
+                    <div class="tech-tag-pill"><span class="icon">🏛️</span> Best Chapter of Campus</div>
+                    <div class="tech-tag-pill"><span class="icon">🌐</span> Global ACM Network</div>
+                    <div class="tech-tag-pill"><span class="icon">📚</span> ACM Digital Library</div>
+                    <div class="tech-tag-pill"><span class="icon">🔬</span> Undergraduate Research</div>
+                    <div class="tech-tag-pill"><span class="icon">💡</span> Ethics in Computing</div>
+                    <div class="tech-tag-pill"><span class="icon">🌱</span> Social Outreach</div>
+                    <div class="tech-tag-pill"><span class="icon">🤝</span> 300+ Active Members</div>
+                    <div class="tech-tag-pill"><span class="icon">🎖️</span> Asia Book of Records</div>
+                </div>
             </div>
         </header>
 
         <!-- INTRODUCTION SECTION -->
         <section class="section-padding spatial-scene">
             <div class="container">
-                <div class="bento-card large depth-fg" style="max-width: 960px; margin: 0 auto; padding: 3.5rem 3rem;">
-                    <span class="hero-pretitle">Our Heritage</span>
-                    <h2>ACM Student Chapter at VIT Chennai</h2>
+                <div class="bento-card large" style="max-width: 980px; margin: 0 auto; padding: 3rem 2.5rem;">
+                    <span class="hero-pretitle" style="margin-bottom: 0.75rem;">Our Heritage</span>
+                    <h2 style="font-size: 2.2rem; margin-bottom: 1.25rem;">ACM Student Chapter at VIT Chennai</h2>
                     <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
-                        The Association for Computing Machinery (ACM) is the world's largest educational and scientific computing society. Founded in 1947, ACM brings together computing educators, researchers, and professionals to inspire dialogue, share resources, and address the field's challenges.
+                        The Association for Computing Machinery (ACM) is the world's largest educational and scientific
+                        computing society. Founded in 1947, ACM brings together computing educators, researchers, and
+                        professionals to inspire dialogue, share resources, and address the field's most pressing
+                        challenges.
                     </p>
-                    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
-                        The ACM Student Chapter at VIT Chennai was established to create a vibrant community of computing enthusiasts on campus. We serve as a bridge between academic learning and real-world application, providing students with opportunities to explore, innovate, and excel.
+                    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 0;">
+                        The ACM Student Chapter at VIT Chennai serves as the campus bridge between foundational computer
+                        science curriculum and industry-standard software engineering. Awarded the <strong>Best
+                            Technical Chapter in Campus</strong> (AY 2025-26), we empower students to lead hackathons,
+                        publish original research, and build lasting career networks.
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- KINETIC PARALLAX DIVERGENCE -->
+        <section class="kinetic-text-section spatial-scene" aria-label="About Philosophy">
+            <div class="kinetic-text-container">
+                <div class="kinetic-line diverge-up-far">innovation • legacy</div>
+                <div class="kinetic-line diverge-up-near">research • impact</div>
+                <div class="kinetic-line diverge-center">
+                    <span class="side-accent">Because</span>
+                    <span class="outlined-word">Community</span>
+                    <span class="side-accent">Matters</span>
+                </div>
+                <div class="kinetic-line diverge-down-near">collaboration • growth</div>
+                <div class="kinetic-line diverge-down-far">global • excellence</div>
+            </div>
+        </section>
+
         <!-- MISSION & VISION SECTION -->
-        <section class="section-padding spatial-scene" style="background: radial-gradient(circle at 50% 50%, rgba(11, 23, 54, 0.5) 0%, var(--void-black) 70%);">
+        <section class="section-padding spatial-scene"
+            style="background: radial-gradient(circle at 50% 50%, rgba(19, 34, 71, 0.45) 0%, var(--void-black) 80%);">
             <div class="container">
                 <div class="section-header">
                     <h2>Mission &amp; Vision</h2>
-                    <span class="subtitle">Guiding Our Journey</span>
+                    <span class="subtitle">Guiding Our Journey in Computing</span>
                 </div>
 
-                <div class="bento-grid depth-mid" style="grid-template-columns: 1fr 1fr;">
+                <div class="bento-grid" style="grid-template-columns: 1fr 1fr;">
                     <div class="bento-card">
                         <div class="card-icon">🎯</div>
                         <h3>Our Mission</h3>
                         <p>
-                            To foster a community of learners and innovators passionate about computing, providing resources, mentorship, and opportunities that enable students to advance their technical skills, professional development, and contribute meaningfully to the field of computer science.
+                            To foster a community of learners and innovators passionate about computing, providing
+                            hands-on resources, mentorship, and opportunities that advance technical capability and
+                            professional development across all branches of engineering.
                         </p>
                     </div>
 
@@ -117,7 +163,9 @@
                         <div class="card-icon">👁️</div>
                         <h3>Our Vision</h3>
                         <p>
-                            To be the premier student organization at VIT Chennai that shapes the future of computing by nurturing talent, promoting ethical practices, encouraging research, and creating a sustainable ecosystem where innovation thrives and students transform into industry-ready leaders.
+                            To be the premier student computing organization that shapes technical excellence by
+                            nurturing talent, promoting ethical engineering practices, supporting open-source
+                            contributions, and launching students into top global engineering roles.
                         </p>
                     </div>
                 </div>
@@ -132,64 +180,79 @@
                     <span class="subtitle">What We Strive To Achieve</span>
                 </div>
 
-                <div class="bento-grid depth-mid">
+                <div class="bento-grid">
                     <div class="bento-card">
                         <div class="card-icon">⚡</div>
                         <h3>Technical Excellence</h3>
-                        <p>Enhance technical proficiency through workshops, coding competitions, and hands-on projects that challenge students to solve complex real-world problems.</p>
+                        <p>Enhance technical proficiency through masterclasses, competitive coding championships, and
+                            real-world system architecture projects.</p>
                     </div>
 
                     <div class="bento-card">
                         <div class="card-icon">📈</div>
                         <h3>Professional Growth</h3>
-                        <p>Develop professional skills including communication, leadership, teamwork, and project management through collaborative initiatives.</p>
+                        <p>Develop core communication, technical leadership, and collaborative project management
+                            through student-led initiatives.</p>
                     </div>
 
                     <div class="bento-card">
                         <div class="card-icon">🌐</div>
                         <h3>Industry Connect</h3>
-                        <p>Bridge the gap between academia and industry by organizing guest lectures, industrial visits, and networking sessions with tech giants.</p>
+                        <p>Bridge academia and tech enterprises by hosting guest lectures and interactive sessions with
+                            leaders like Kaspersky and Google.</p>
                     </div>
 
                     <div class="bento-card">
                         <div class="card-icon">🔬</div>
                         <h3>Research &amp; Innovation</h3>
-                        <p>Encourage a research mindset by supporting student publications, patents, and participation in international conferences.</p>
+                        <p>Support undergraduate research papers, NS-3 networking libraries, and tech publications in
+                            Open Source For You.</p>
                     </div>
 
                     <div class="bento-card">
                         <div class="card-icon">🤝</div>
                         <h3>Community Building</h3>
-                        <p>Create an inclusive and supportive environment where students from all backgrounds can learn, share knowledge, and build together.</p>
+                        <p>Create an inclusive, supportive environment where students from all backgrounds can build,
+                            learn, and excel together.</p>
                     </div>
 
                     <div class="bento-card">
                         <div class="card-icon">🌱</div>
                         <h3>Social Responsibility</h3>
-                        <p>Promote ethical computing practices and encourage the use of technology for social good through awareness and community outreach.</p>
+                        <p>Promote ethical computing practices and community outreach programs like Hour of AI for
+                            school children.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- WHY ACM AT VIT CHENNAI -->
-        <section class="section-padding spatial-scene" style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(6, 15, 36, 0.9) 100%);">
+        <section class="section-padding spatial-scene"
+            style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(7, 13, 30, 0.95) 100%);">
             <div class="container">
-                <div class="split-section" style="border-radius: var(--card-radius); border: var(--glass-border); box-shadow: var(--glass-shadow); background: transparent;">
-                    <div class="split-image depth-bg">
-                        <img src="images/why-join-acm.webp" alt="ACM Membership Benefits" />
+                <div class="split-section" style="padding: 0;">
+                    <div class="split-image">
+                        <img src="images/why-join-acm.webp" alt="ACM Membership Benefits" loading="lazy" />
                     </div>
-                    <div class="split-content depth-fg">
+                    <div class="split-content">
                         <span class="hero-pretitle">Why Join Us</span>
                         <h2>Benefits of Membership</h2>
-                        <ul class="impact-achievement-list" style="margin-top: 1.5rem;">
-                            <li>Access to exclusive ACM Digital Library and research publications.</li>
-                            <li>Networking opportunities with global industry professionals and distinguished alumni.</li>
-                            <li>Participation in flagship hackathons, CTFs, and coding championships.</li>
-                            <li>Direct mentorship from senior students and experienced industry engineers.</li>
-                            <li>Hands-on technical workshops spanning Cloud, GenAI, Web3, and Systems.</li>
-                            <li>Recognized certifications and leadership opportunities on the student chapter board.</li>
+                        <ul class="impact-achievement-list" style="margin-top: 1.25rem;">
+                            <li>Access to the prestigious <strong>ACM Digital Library</strong> and worldwide technical
+                                research.</li>
+                            <li>Direct networking with global industry professionals, visiting faculty, and
+                                distinguished alumni.</li>
+                            <li>Priority participation in flagship hackathons, CTFs, and CodePulse tournaments.</li>
+                            <li>Mentorship from senior engineers in systems, cloud native, security, and machine
+                                learning.</li>
+                            <li>Hands-on workshops spanning Linux CLI, Docker, Kubernetes, and Agentic AI.</li>
+                            <li>Leadership opportunities on the student chapter board with verifiable credentials.</li>
                         </ul>
+                        <div style="margin-top: 1.5rem;">
+                            <a href="http://vitchennai.acm.org/join/membership" target="_blank"
+                                rel="noopener noreferrer" class="btn-luxury">Join ACM Today <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -200,48 +263,49 @@
             <div class="container text-center">
                 <div class="section-header">
                     <h2>Our Core Values</h2>
-                    <span class="subtitle">The Principles That Guide Us</span>
+                    <span class="subtitle">The Principles That Guide Every Chapter Activity</span>
                 </div>
 
-                <div class="impact-kpi-grid depth-mid" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="impact-kpi-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
                     <div class="impact-kpi-card">
-                        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">💡</span>
-                        <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Innovation</h3>
-                        <p class="impact-kpi-label">Embracing creativity and out-of-the-box problem solving</p>
+                        <span style="font-size: 2.2rem; display: block; margin-bottom: 0.5rem;">💡</span>
+                        <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Innovation</h3>
+                        <p class="impact-kpi-label">Embracing creative and out-of-the-box technical solutions</p>
                     </div>
 
                     <div class="impact-kpi-card">
-                        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🤝</span>
-                        <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Collaboration</h3>
-                        <p class="impact-kpi-label">Working together to achieve common goals and share knowledge</p>
+                        <span style="font-size: 2.2rem; display: block; margin-bottom: 0.5rem;">🤝</span>
+                        <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Collaboration</h3>
+                        <p class="impact-kpi-label">Working together to build open knowledge and empower peers</p>
                     </div>
 
                     <div class="impact-kpi-card">
-                        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">⚖️</span>
-                        <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Integrity</h3>
-                        <p class="impact-kpi-label">Maintaining high ethical standards in all technology endeavors</p>
+                        <span style="font-size: 2.2rem; display: block; margin-bottom: 0.5rem;">⚖️</span>
+                        <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Integrity</h3>
+                        <p class="impact-kpi-label">Maintaining high ethical standards across all technical work</p>
                     </div>
 
                     <div class="impact-kpi-card">
-                        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🌟</span>
-                        <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Excellence</h3>
-                        <p class="impact-kpi-label">Striving for the highest quality in every workshop and initiative</p>
+                        <span style="font-size: 2.2rem; display: block; margin-bottom: 0.5rem;">🌟</span>
+                        <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Excellence</h3>
+                        <p class="impact-kpi-label">Striving for the highest quality in every workshop &amp; competition
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- FOOTER -->
-        <footer class="footer spatial-scene">
-            <div class="footer-container depth-fg">
+        <footer class="footer">
+            <div class="footer-container">
                 <div class="footer-section">
                     <h3>
-                        <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo" />
+                        <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo" width="32" height="32" />
                         ACM Student Chapter
                     </h3>
-                    <p style="color: var(--gold-primary); font-weight: 600">VIT Chennai</p>
-                    <p style="opacity: 0.75; margin-top: 0.5rem">
-                        Advancing Computing as a Science &amp; Profession.
+                    <p style="color: var(--gold-primary); font-weight: 600">VIT Chennai Campus</p>
+                    <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 0.5rem">
+                        Advancing Computing as a Science &amp; Profession. Awarded Best Technical Chapter AY 2025-26.
                     </p>
                 </div>
 
@@ -249,10 +313,10 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Chapter</a></li>
+                        <li><a href="events.html">Events &amp; Workshops</a></li>
+                        <li><a href="team.html">Leadership Team</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                         <li><a href="blogs-newsletters.html">Blogs &amp; Newsletters</a></li>
                         <li><a href="awards.html">Awards &amp; Recognition</a></li>
                     </ul>
@@ -261,26 +325,30 @@
                 <div class="footer-section">
                     <h3>Connect With Us</h3>
                     <p style="margin-bottom: 1rem">
-                        <span style="margin-right: 8px">📧</span>
-                        <a href="mailto:vitcc.acmsc@vit.ac.in">vitcc.acmsc@vit.ac.in</a>
+                        <a href="mailto:vitcc.acmsc@vit.ac.in" style="color: var(--text-muted)"><i
+                                class="fas fa-envelope" style="color: var(--gold-light); margin-right: 6px"></i>
+                            vitcc.acmsc@vit.ac.in</a>
                     </p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link" title="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link" title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link"
+                            title="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link"
+                            title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub"
+                            rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2026 ACM Student Chapter - VIT Chennai. All Rights Reserved.</p>
-                <p style="opacity: 0.5">Designed for ACM SC VIT Chennai</p>
+                <p>Designed for ACM SC VIT Chennai</p>
             </div>
         </footer>
 
     </div>
 
-    <!-- SCRIPTS -->
+    <!-- PERFORMANCE SCRIPTS -->
     <script src="assets/js/spatial-engine.js"></script>
     <script src="assets/js/script.js"></script>
 </body>

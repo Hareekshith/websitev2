@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -11,106 +11,169 @@
         gtag('config', 'G-KQJG4HGBW0');
     </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Explore ACM VIT Chennai events - Workshops on AI, Docker, Linux, hackathons, tech talks, and innovation-driven programs. Join our community events.">
+        content="Explore ACM VIT Chennai events - Workshops on AI, Docker, Linux, hackathons, tech talks, and innovation-driven programs. Join our community events." />
     <meta name="keywords"
-        content="ACM Events, Tech Workshops, Hackathons, HackVIT, Gen AI Workshop, Docker Workshop, Tech Talks, VIT Chennai Events, Student Tech Events">
-    <meta name="author" content="ACM Student Chapter VIT Chennai">
-    <meta name="robots" content="index, follow">
+        content="ACM Events, Tech Workshops, Hackathons, HackVIT, Gen AI Workshop, Docker Workshop, Tech Talks, VIT Chennai Events, Student Tech Events" />
+    <meta name="author" content="ACM Student Chapter VIT Chennai" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vitchennai.acm.org/events.html">
-    <meta property="og:title" content="Events - ACM Student Chapter VIT Chennai">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vitchennai.acm.org/events.html" />
+    <meta property="og:title" content="Events - ACM Student Chapter VIT Chennai" />
     <meta property="og:description"
-        content="Join our workshops, hackathons, and tech events. Experience hands-on learning and innovation.">
-    <meta property="og:image" content="https://vitchennai.acm.org/images/acm_event_hackathon_1765469366568.webp">
+        content="Join our workshops, hackathons, and tech events. Experience hands-on learning and innovation." />
+    <meta property="og:image" content="https://vitchennai.acm.org/images/acm_event_hackathon_1765469366568.webp" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://vitchennai.acm.org/events.html">
-    <meta property="twitter:title" content="Events - ACM Student Chapter VIT Chennai">
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://vitchennai.acm.org/events.html" />
+    <meta property="twitter:title" content="Events - ACM Student Chapter VIT Chennai" />
     <meta property="twitter:description"
-        content="Join our workshops, hackathons, and tech events. Experience hands-on learning and innovation.">
-    <meta property="twitter:image" content="https://vitchennai.acm.org/images/acm_event_hackathon_1765469366568.webp">
+        content="Join our workshops, hackathons, and tech events. Experience hands-on learning and innovation." />
+    <meta property="twitter:image" content="https://vitchennai.acm.org/images/acm_event_hackathon_1765469366568.webp" />
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/favicon.ico">
-    <link rel="apple-touch-icon" href="assets/logo.webp">
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/logo.webp" />
 
     <title>Events - ACM Student Chapter VIT Chennai</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=20260817">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20260822" />
     <style>
         .luxury-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
             gap: 1.5rem;
         }
+
         .gallery-event-card {
             background: var(--glass-bg);
             border: var(--glass-border);
-            border-radius: 18px;
+            border-radius: var(--card-radius);
             overflow: hidden;
             box-shadow: var(--glass-shadow);
             display: block;
             position: relative;
-            transition: all var(--transition-fast);
+            transition: transform var(--transition-fast), border-color var(--transition-fast);
         }
+
+        .gallery-event-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold-primary);
+        }
+
         .gallery-image-wrapper {
             position: relative;
             aspect-ratio: 4/3;
             overflow: hidden;
+            background: var(--midnight-navy);
         }
+
         .gallery-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s var(--ease-spring);
+            transition: transform 0.4s var(--ease-spring);
         }
+
         .gallery-event-card:hover .gallery-image-wrapper img {
-            transform: scale(1.08);
+            transform: scale(1.06);
         }
+
         .gallery-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 1.2rem;
-            background: linear-gradient(180deg, transparent 0%, rgba(2, 6, 18, 0.95) 100%);
+            padding: 1.1rem 1.25rem;
+            background: linear-gradient(180deg, transparent 0%, rgba(3, 7, 18, 0.95) 100%);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .gallery-overlay h3 {
-            font-size: 1rem;
+            font-size: 1.05rem;
             margin-bottom: 0;
             color: var(--text-bright);
         }
+
         .btn-gallery {
             font-size: 0.75rem;
             font-weight: 700;
             color: var(--gold-light);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.06em;
+            background: rgba(245, 158, 11, 0.15);
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--pill-radius);
+            border: 1px solid rgba(245, 158, 11, 0.3);
         }
+
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: var(--glass-bg);
+            border: var(--glass-border);
+            border-radius: var(--card-radius);
+            padding: 1.75rem 2rem;
+            box-shadow: var(--glass-shadow);
+            transition: transform var(--transition-fast), border-color var(--transition-fast);
+        }
+
+        .timeline-item:hover {
+            transform: translateX(6px);
+            border-color: var(--gold-light);
+        }
+
+        .timeline-item .date {
+            font-family: var(--font-display);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            display: inline-block;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-bright);
+        }
+
+        .timeline-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
         .timeline-content .btn-luxury.small {
-            padding: 0.5rem 1.2rem;
-            font-size: 0.8rem;
-            margin-top: 1rem;
+            padding: 0.45rem 1.1rem;
+            font-size: 0.82rem;
         }
     </style>
 </head>
 
 <body>
-    <!-- NAVIGATION (Floating Spatial Pill) -->
-    <nav class="navbar">
+    <!-- NAVIGATION (Smart Floating Pill) -->
+    <nav class="navbar" aria-label="Main Navigation">
         <a href="index.html" class="navbar-logo">
-            <img src="assets/logo.webp" alt="ACM Logo">
+            <img src="assets/logo.webp" alt="ACM Logo" width="34" height="34" />
             ACM <span>VIT Chennai</span>
         </a>
         <ul class="navbar-menu">
@@ -123,166 +186,264 @@
         </ul>
     </nav>
 
-    <!-- 3D SPATIAL MAIN STAGE -->
+    <!-- MAIN STAGE -->
     <div class="spatial-stage">
 
-        <!-- IMMERSIVE HERO SECTION -->
-        <header class="hero spatial-scene" style="min-height: 75vh;">
-            <img src="images/acm_event_hackathon_1765469366568.webp" alt="Events Hero" class="hero-background depth-bg">
+        <!-- HERO (100VH VIEWPORT WITH MARQUEE) -->
+        <header class="hero spatial-scene" id="hero">
+            <img src="images/acm_event_hackathon_1765469366568.webp" alt="Events Hero" class="hero-background" />
             <div class="hero-overlay"></div>
-            <div class="hero-content depth-fg">
+            <div class="hero-content">
                 <span class="hero-pretitle">✦ Flagship Initiatives ✦</span>
-                <h1>Experiences <br><span>That Define Us</span></h1>
-                <p>Workshops, Hackathons, Guest Keynotes, and Competitive Battles that empower future leaders.</p>
+                <h1>Experiences <br /><span>That Define Us</span></h1>
+                <p>Workshops, Hackathons, Cybersecurity CTFs, and Keynote Sessions that empower technical minds.</p>
+            </div>
+
+            <!-- EVENTS MARQUEE RIBBON -->
+            <div class="tech-marquee-section" aria-label="Event Series">
+                <div class="tech-marquee-track">
+                    <div class="tech-tag-pill"><span class="icon">⚡</span> CodePulse Tournaments</div>
+                    <div class="tech-tag-pill"><span class="icon">🛡️</span> Server Surfers CTF</div>
+                    <div class="tech-tag-pill"><span class="icon">🤖</span> Gen AI Agentic Systems</div>
+                    <div class="tech-tag-pill"><span class="icon">🐳</span> Docker Showdowns</div>
+                    <div class="tech-tag-pill"><span class="icon">🌱</span> Sustain-A-Thon 24h</div>
+                    <div class="tech-tag-pill"><span class="icon">📚</span> Hour of AI Outreach</div>
+                    <div class="tech-tag-pill"><span class="icon">🐧</span> Linux &amp; Git Mastery</div>
+                    <div class="tech-tag-pill"><span class="icon">💼</span> Fintech Masterclasses</div>
+                    <!-- Duplicate for seamless looping -->
+                    <div class="tech-tag-pill"><span class="icon">⚡</span> CodePulse Tournaments</div>
+                    <div class="tech-tag-pill"><span class="icon">🛡️</span> Server Surfers CTF</div>
+                    <div class="tech-tag-pill"><span class="icon">🤖</span> Gen AI Agentic Systems</div>
+                    <div class="tech-tag-pill"><span class="icon">🐳</span> Docker Showdowns</div>
+                    <div class="tech-tag-pill"><span class="icon">🌱</span> Sustain-A-Thon 24h</div>
+                    <div class="tech-tag-pill"><span class="icon">📚</span> Hour of AI Outreach</div>
+                    <div class="tech-tag-pill"><span class="icon">🐧</span> Linux &amp; Git Mastery</div>
+                    <div class="tech-tag-pill"><span class="icon">💼</span> Fintech Masterclasses</div>
+                </div>
             </div>
         </header>
 
-        <!-- EVENTS TIMELINE (3D SPATIAL SPINE) -->
-        <section class="section-padding spatial-scene">
+        <!-- KINETIC PARALLAX DIVERGENCE -->
+        <section class="kinetic-text-section spatial-scene" aria-label="Event Experiences">
+            <div class="kinetic-text-container">
+                <div class="kinetic-line diverge-up-far">experiences • hackathons</div>
+                <div class="kinetic-line diverge-up-near">workshops • challenges</div>
+                <div class="kinetic-line diverge-center">
+                    <span class="side-accent">Because</span>
+                    <span class="outlined-word">Experiences</span>
+                    <span class="side-accent">Matter</span>
+                </div>
+                <div class="kinetic-line diverge-down-near">learning • innovation</div>
+                <div class="kinetic-line diverge-down-far">networking • impact</div>
+            </div>
+        </section>
+
+        <!-- EVENT TIMELINE (ALTERNATING TWO-COLUMN AXIS) -->
+        <section class="section-padding spatial-scene"
+            style="background: radial-gradient(circle at 50% 50%, rgba(10, 20, 48, 0.5) 0%, var(--void-black) 80%);">
             <div class="container">
-                <div class="section-header">
+                <div class="timeline-header-wrap">
                     <h2>Event Timeline</h2>
-                    <span class="subtitle">Our Journey So Far</span>
+                    <span class="timeline-subtitle">Our Journey So Far</span>
                 </div>
 
-                <div class="timeline-container depth-mid">
-                    <div class="timeline-line"></div>
-
-                    <!-- Event: Club Expo Jul 2026 -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <span class="date">Jul 22, 2026</span>
-                            <h3>Club Expo July 2026</h3>
-                            <p>ACM showcased technical culture through interactive coding games and live demonstrations to incoming students.</p>
-                            <a href="events/club_expo_jul_2026.html" class="btn-luxury small">View Details</a>
+                <div class="alternating-timeline">
+                    <!-- Entry 1 (Left) -->
+                    <div class="timeline-entry left">
+                        <div class="timeline-card">
+                            <span class="entry-date">Jun 14, 2026</span>
+                            <h3 class="entry-title">Code Pulse June 2026</h3>
+                            <p class="entry-desc">
+                                This June edition runs on <b>Code Arena</b> — a purpose-built contest platform with live
+                                leaderboards, multiple scoring models, automated test-case grading, and AI-assisted
+                                evaluation.
+                            </p>
+                            <a href="events/codepulse-june.html" class="btn-timeline-outline">VIEW DETAILS</a>
                         </div>
                     </div>
 
-                    <!-- Event: Code Pulse June 2026 -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <span class="date">Jun 14, 2026</span>
-                            <h3>Code Pulse June 2026</h3>
-                            <p>This June edition runs on <b>Code Arena</b> — a purpose-built contest platform with live leaderboards, multiple scoring models, and AI evaluation.</p>
-                            <a href="events/codepulse-june.html" class="btn-luxury small">View Details</a>
+                    <!-- Entry 2 (Right) -->
+                    <div class="timeline-entry right">
+                        <div class="timeline-card">
+                            <span class="entry-date">Mar 24, 2026</span>
+                            <h3 class="entry-title">Server Surfers – CTF</h3>
+                            <p class="entry-desc">
+                                Capture The Flag – Cybersecurity Challenge. Keynote: Arun Gantayat (<b>Kaspersky</b>).
+                                Venue: VOC Auditorium, 10am–5pm.
+                            </p>
+                            <a href="events/server_surfers.html" class="btn-timeline-outline">VIEW DETAILS</a>
                         </div>
                     </div>
 
-                    <!-- Event: Server Surfers CTF -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <span class="date">Mar 24, 2026</span>
-                            <h3>Server Surfers – CTF</h3>
-                            <p>Capture The Flag – Cybersecurity Challenge. Keynote: Arun Gantayat (Kaspersky). Venue: VOC Auditorium.</p>
-                            <a href="events/server_surfers.html" class="btn-luxury small">View Details</a>
+                    <!-- Entry 3 (Left) -->
+                    <div class="timeline-entry left">
+                        <div class="timeline-card">
+                            <span class="entry-date">Mar 7, 2026</span>
+                            <h3 class="entry-title">CodePulse – March Edition</h3>
+                            <p class="entry-desc">
+                                High-stakes algorithmic contest designed to test problem-solving, optimal data
+                                structures, and edge-case execution under strict time limits.
+                            </p>
+                            <a href="events/code_pulse_march_2026.html" class="btn-timeline-outline">VIEW DETAILS</a>
                         </div>
                     </div>
 
-                    <!-- Event: CodePulse March 2026 -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <span class="date">Mar 7, 2026</span>
-                            <h3>CodePulse – March Edition</h3>
-                            <p>Think fast. Code faster. Competitive coding on HackerRank — test your logic and algorithmic skills under pressure.</p>
-                            <a href="events/code_pulse_march_2026.html" class="btn-luxury small">View Details</a>
+                    <!-- Entry 4 (Right) -->
+                    <div class="timeline-entry right">
+                        <div class="timeline-card">
+                            <span class="entry-date">Feb 15, 2026</span>
+                            <h3 class="entry-title">DSA for DeepTech Bootcamp</h3>
+                            <p class="entry-desc">
+                                Month-long national DSA intensive. Propelled our chapter into the <b>Top 20 of Asia Book
+                                    of Records</b> with 198 active participants.
+                            </p>
+                            <a href="events/dsa_bootcamp.html" class="btn-timeline-outline">VIEW DETAILS</a>
                         </div>
                     </div>
 
-                    <!-- Event: DSA Bootcamp -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <span class="date">Mar, 2026</span>
-                            <h3>DSA Bootcamp</h3>
-                            <p>A month-long national DSA bootcamp combining expert-led training with a high-stakes algorithmic challenge.</p>
-                            <a href="events/dsa_bootcamp.html" class="btn-luxury small">View Details</a>
+                    <!-- Entry 5 (Left) -->
+                    <div class="timeline-entry left">
+                        <div class="timeline-card">
+                            <span class="entry-date">Dec 11, 2025</span>
+                            <h3 class="entry-title">Hour of AI</h3>
+                            <p class="entry-desc">
+                                Community outreach introducing school students to prompt engineering, vibe coding, and
+                                AI-powered game development architectures.
+                            </p>
+                            <a href="events/hour_of_ai.html" class="btn-timeline-outline">VIEW DETAILS</a>
                         </div>
                     </div>
 
-                    <!-- Event: Hour of AI -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <span class="date">Dec 11, 2025</span>
-                            <h3>Hour of AI</h3>
-                            <p>Introducing school students to the future of AI Game Development and creative computational logic.</p>
-                            <a href="events/hour_of_ai.html" class="btn-luxury small">View Details</a>
+                    <!-- Entry 6 (Right) -->
+                    <div class="timeline-entry right">
+                        <div class="timeline-card">
+                            <span class="entry-date">Nov 5, 2025</span>
+                            <h3 class="entry-title">Docker Showdown &amp; Workshop</h3>
+                            <p class="entry-desc">
+                                Hands-on containerization masterclass covering Dockerfiles, multi-stage builds, compose
+                                networks, and production microservice deployments.
+                            </p>
+                            <a href="events/docker_workshop.html" class="btn-timeline-outline">VIEW DETAILS</a>
                         </div>
                     </div>
 
-                    <!-- Event: Docker Showdown -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <span class="date">Nov 5, 2025</span>
-                            <h3>Docker Showdown</h3>
-                            <p>Networking and technical exchange for developers related to software deployment and DevOps practices.</p>
-                            <a href="events/docker_workshop.html" class="btn-luxury small">View Details</a>
+                    <!-- Entry 7 (Left) -->
+                    <div class="timeline-entry left">
+                        <div class="timeline-card">
+                            <span class="entry-date">Oct 29, 2025</span>
+                            <h3 class="entry-title">Gen AI Workshop: Agentic Systems</h3>
+                            <p class="entry-desc">
+                                Deep dive into autonomous agentic workflows with <b>Google ADK</b>, MCP Toolboxes, and
+                                Gemini CLI for context-aware autonomous systems.
+                            </p>
+                            <a href="events/gen_ai_workshop.html" class="btn-timeline-outline">VIEW DETAILS</a>
                         </div>
                     </div>
 
-                    <!-- Event: Personal Finance -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <span class="date">Oct 30, 2025</span>
-                            <h3>Personal Finance Workshop</h3>
-                            <p>Bridging the gap between university students and real-world financial literacy and budgeting.</p>
-                            <a href="events/finance_workshop.html" class="btn-luxury small">View Details</a>
+                    <!-- Entry 8 (Right) -->
+                    <div class="timeline-entry right">
+                        <div class="timeline-card">
+                            <span class="entry-date">Oct 24, 2025</span>
+                            <h3 class="entry-title">ACM India Visit &amp; Global Connect</h3>
+                            <p class="entry-desc">
+                                Interactive research seminar with <b>ACM India Leadership</b> exploring publication
+                                avenues, research mentorship, and international networking.
+                            </p>
+                            <a href="events/industrial_visit.html" class="btn-timeline-outline">VIEW DETAILS</a>
                         </div>
                     </div>
 
-                    <!-- Event: Gen AI Workshop -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <span class="date">Oct 29, 2025</span>
-                            <h3>Gen AI Workshop</h3>
-                            <p>The Agentic Shift: Building autonomous systems with Google's MCP Toolbox &amp; Gemini integration.</p>
-                            <a href="events/gen_ai_workshop.html" class="btn-luxury small">View Details</a>
+                    <!-- Entry 9 (Left) -->
+                    <div class="timeline-entry left">
+                        <div class="timeline-card">
+                            <span class="entry-date">Oct 21–27, 2024</span>
+                            <h3 class="entry-title">Cyber Security Awareness Month</h3>
+                            <p class="entry-desc">
+                                Value Added Program and ethical hacking hackathon covering Kali Linux sandboxing, OS
+                                hardening, Wireshark packet analysis, and cloud defense.
+                            </p>
+                            <a href="EventsDetails/cybermonth.html" class="btn-timeline-outline">VIEW DETAILS</a>
                         </div>
                     </div>
 
-                    <!-- Event: ACM India Visit -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <span class="date">Oct 24, 2025</span>
-                            <h3>ACM India Visit</h3>
-                            <p>Global Research Interaction and networking with ACM India leadership and distinguished fellows.</p>
-                            <a href="events/industrial_visit.html" class="btn-luxury small">View Details</a>
+                    <!-- Entry 10 (Right) -->
+                    <div class="timeline-entry right">
+                        <div class="timeline-card">
+                            <span class="entry-date">Sep 25, 2024</span>
+                            <h3 class="entry-title">Pages to Progress</h3>
+                            <p class="entry-desc">
+                                Empowering critical thinking and open-source contribution through structured literature
+                                reviews, tech discussions, and peer learning.
+                            </p>
+                            <a href="events/pages_to_progress.html" class="btn-timeline-outline">VIEW DETAILS</a>
                         </div>
                     </div>
 
-                    <!-- Event: Cybermonth -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <span class="date">Oct 21-26, 2025</span>
-                            <h3>Cybermonth</h3>
-                            <p>Cyber Security Hackathon &amp; Value Added Program — learn, compete, and master ethical hacking.</p>
-                            <a href="EventsDetails/cybermonth.html" class="btn-luxury small">View Details</a>
+                    <!-- Entry 11 (Left) -->
+                    <div class="timeline-entry left">
+                        <div class="timeline-card">
+                            <span class="entry-date">Sep 11, 2024</span>
+                            <h3 class="entry-title">Linux &amp; Git Mastery</h3>
+                            <p class="entry-desc">
+                                Core systems workshop introducing 340+ developers to command-line mastery, shell
+                                scripting, and Git branch collaboration workflows.
+                            </p>
+                            <a href="events/linux_git_workshop.html" class="btn-timeline-outline">VIEW DETAILS</a>
                         </div>
                     </div>
 
-                    <!-- Event: Linux & Git -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <span class="date">Aug 02, 2025</span>
-                            <h3>Linux &amp; Git Workshop</h3>
-                            <p>Empowering developers with Open Source fundamentals, bash scripting, and version control.</p>
-                            <a href="events/linux_git_workshop.html" class="btn-luxury small">View Details</a>
+                    <!-- Entry 12 (Right) -->
+                    <div class="timeline-entry right">
+                        <div class="timeline-card">
+                            <span class="entry-date">Jan 10–11, 2024</span>
+                            <h3 class="entry-title">Sustain-A-Thon</h3>
+                            <p class="entry-desc">
+                                24-hour non-stop hackathon addressing UN Sustainable Development Goals with intensive
+                                code sprints, continuous mentor reviews, and jury pitches.
+                            </p>
+                            <a href="EventsDetails/Sustainathon.html" class="btn-timeline-outline">VIEW DETAILS</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ALL EVENTS GALLERY -->
-        <section class="section-padding spatial-scene" style="background: var(--void-black);">
+        <!-- KINETIC PARALLAX DIVERGENCE -->
+        <section class="kinetic-text-section spatial-scene" aria-label="Event Experiences">
+            <div class="kinetic-text-container">
+                <div class="kinetic-line diverge-up-far">experiences • hackathons</div>
+                <div class="kinetic-line diverge-up-near">workshops • challenges</div>
+                <div class="kinetic-line diverge-center">
+                    <span class="side-accent">Because</span>
+                    <span class="outlined-word">Experiences</span>
+                    <span class="side-accent">Matter</span>
+                </div>
+                <div class="kinetic-line diverge-down-near">learning • innovation</div>
+                <div class="kinetic-line diverge-down-far">networking • impact</div>
+            </div>
+        </section>
+
+        <!-- ALL EVENTS GALLERY WITH CATEGORY FILTERS -->
+        <section class="section-padding spatial-scene">
             <div class="container">
                 <div class="section-header">
-                    <h2>All Events</h2>
-                    <span class="subtitle">Gallery of Innovation</span>
+                    <h2>Events &amp; Competitions</h2>
+                    <span class="subtitle">Filter by Vertical</span>
                 </div>
 
-                <div class="luxury-gallery-grid depth-mid">
-                    <a href="events/server_surfers.html" class="gallery-event-card">
+                <!-- CATEGORY FILTER TABS -->
+                <div class="event-filter-tabs">
+                    <button class="filter-tab-btn active" data-category="all">All Events</button>
+                    <button class="filter-tab-btn" data-category="hackathon">Hackathons &amp; Contests</button>
+                    <button class="filter-tab-btn" data-category="workshop">Workshops</button>
+                    <button class="filter-tab-btn" data-category="talk">Keynotes &amp; Visits</button>
+                </div>
+
+                <div class="luxury-gallery-grid">
+                    <!-- Event 1 -->
+                    <a href="events/server_surfers.html" class="gallery-event-card" data-category="hackathon">
                         <div class="gallery-image-wrapper">
-                            <img src="images/Poster/Server_Surfers_CTF.webp" alt="Server Surfers 2026">
+                            <img src="images/Poster/Server_Surfers_CTF.webp" alt="Server Surfers CTF" loading="lazy" />
                             <div class="gallery-overlay">
                                 <h3>Server Surfers CTF</h3>
                                 <span class="btn-gallery">Details</span>
@@ -290,9 +451,10 @@
                         </div>
                     </a>
 
-                    <a href="events/code_pulse_march_2026.html" class="gallery-event-card">
+                    <!-- Event 2 -->
+                    <a href="events/code_pulse_march_2026.html" class="gallery-event-card" data-category="hackathon">
                         <div class="gallery-image-wrapper">
-                            <img src="images/Poster/Code_Pulse.webp" alt="CodePulse March 2026">
+                            <img src="images/Poster/Code_Pulse.webp" alt="CodePulse March 2026" loading="lazy" />
                             <div class="gallery-overlay">
                                 <h3>CodePulse March</h3>
                                 <span class="btn-gallery">Details</span>
@@ -300,9 +462,10 @@
                         </div>
                     </a>
 
-                    <a href="events/dsa_bootcamp.html" class="gallery-event-card">
+                    <!-- Event 3 -->
+                    <a href="events/dsa_bootcamp.html" class="gallery-event-card" data-category="workshop">
                         <div class="gallery-image-wrapper">
-                            <img src="events/event-img/dsa_bootcamp/poster.webp" alt="DSA Bootcamp">
+                            <img src="events/event-img/dsa_bootcamp/poster.webp" alt="DSA Bootcamp" loading="lazy" />
                             <div class="gallery-overlay">
                                 <h3>DSA Bootcamp</h3>
                                 <span class="btn-gallery">Recap</span>
@@ -310,29 +473,11 @@
                         </div>
                     </a>
 
-                    <a href="events/pages_to_progress.html" class="gallery-event-card">
+                    <!-- Event 4 -->
+                    <a href="events/gen_ai_workshop.html" class="gallery-event-card" data-category="workshop">
                         <div class="gallery-image-wrapper">
-                            <img src="events/event-img/pages_to_progress/poster.webp" alt="Pages to Progress">
-                            <div class="gallery-overlay">
-                                <h3>Pages to Progress</h3>
-                                <span class="btn-gallery">Recap</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="events/hour_of_ai.html" class="gallery-event-card">
-                        <div class="gallery-image-wrapper">
-                            <img src="events/event-img/hour_of_ai/poster.webp" alt="Hour of AI">
-                            <div class="gallery-overlay">
-                                <h3>Hour of AI</h3>
-                                <span class="btn-gallery">Recap</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="events/gen_ai_workshop.html" class="gallery-event-card">
-                        <div class="gallery-image-wrapper">
-                            <img src="events/event-img/gen_ai_workshop/poster.webp" alt="Gen AI Workshop">
+                            <img src="events/event-img/gen_ai_workshop/poster.webp" alt="Gen AI Workshop"
+                                loading="lazy" />
                             <div class="gallery-overlay">
                                 <h3>Gen AI Workshop</h3>
                                 <span class="btn-gallery">Recap</span>
@@ -340,29 +485,11 @@
                         </div>
                     </a>
 
-                    <a href="events/industrial_visit.html" class="gallery-event-card">
+                    <!-- Event 5 -->
+                    <a href="events/docker_workshop.html" class="gallery-event-card" data-category="workshop">
                         <div class="gallery-image-wrapper">
-                            <img src="events/event-img/industrial_visit/GMC24102025_112615.webp" alt="ACM India Visit">
-                            <div class="gallery-overlay">
-                                <h3>ACM India Visit</h3>
-                                <span class="btn-gallery">Recap</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="events/finance_workshop.html" class="gallery-event-card">
-                        <div class="gallery-image-wrapper">
-                            <img src="events/event-img/finance_workshop/poster.webp" alt="Finance Workshop">
-                            <div class="gallery-overlay">
-                                <h3>Personal Finance</h3>
-                                <span class="btn-gallery">Recap</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="events/docker_workshop.html" class="gallery-event-card">
-                        <div class="gallery-image-wrapper">
-                            <img src="events/event-img/docker_workshop/poster.webp" alt="Docker Workshop">
+                            <img src="events/event-img/docker_workshop/poster.webp" alt="Docker Workshop"
+                                loading="lazy" />
                             <div class="gallery-overlay">
                                 <h3>Docker Workshop</h3>
                                 <span class="btn-gallery">Recap</span>
@@ -370,19 +497,11 @@
                         </div>
                     </a>
 
-                    <a href="events/code_pulse.html" class="gallery-event-card">
+                    <!-- Event 6 -->
+                    <a href="events/linux_git_workshop.html" class="gallery-event-card" data-category="workshop">
                         <div class="gallery-image-wrapper">
-                            <img src="events/event-img/code_pulse/poster.webp" alt="Code Pulse">
-                            <div class="gallery-overlay">
-                                <h3>Code Pulse</h3>
-                                <span class="btn-gallery">Recap</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="events/linux_git_workshop.html" class="gallery-event-card">
-                        <div class="gallery-image-wrapper">
-                            <img src="events/event-img/linux_git_workshop/poster.webp" alt="Linux Workshop">
+                            <img src="events/event-img/linux_git_workshop/poster.webp" alt="Linux & Git Workshop"
+                                loading="lazy" />
                             <div class="gallery-overlay">
                                 <h3>Linux &amp; Git</h3>
                                 <span class="btn-gallery">Recap</span>
@@ -390,9 +509,45 @@
                         </div>
                     </a>
 
-                    <a href="EventsDetails/Sustainathon.html" class="gallery-event-card">
+                    <!-- Event 7 -->
+                    <a href="events/industrial_visit.html" class="gallery-event-card" data-category="talk">
                         <div class="gallery-image-wrapper">
-                            <img src="images/Poster/sustainathon.webp" alt="Sustainathon">
+                            <img src="events/event-img/industrial_visit/GMC24102025_112615.webp" alt="ACM India Visit"
+                                loading="lazy" />
+                            <div class="gallery-overlay">
+                                <h3>ACM India Visit</h3>
+                                <span class="btn-gallery">Recap</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Event 8 -->
+                    <a href="events/finance_workshop.html" class="gallery-event-card" data-category="workshop">
+                        <div class="gallery-image-wrapper">
+                            <img src="events/event-img/finance_workshop/poster.webp" alt="Finance Workshop"
+                                loading="lazy" />
+                            <div class="gallery-overlay">
+                                <h3>Personal Finance</h3>
+                                <span class="btn-gallery">Recap</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Event 9 -->
+                    <a href="events/hour_of_ai.html" class="gallery-event-card" data-category="workshop">
+                        <div class="gallery-image-wrapper">
+                            <img src="events/event-img/hour_of_ai/poster.webp" alt="Hour of AI" loading="lazy" />
+                            <div class="gallery-overlay">
+                                <h3>Hour of AI</h3>
+                                <span class="btn-gallery">Recap</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Event 10 -->
+                    <a href="EventsDetails/Sustainathon.html" class="gallery-event-card" data-category="hackathon">
+                        <div class="gallery-image-wrapper">
+                            <img src="images/Poster/sustainathon.webp" alt="Sustainathon" loading="lazy" />
                             <div class="gallery-overlay">
                                 <h3>Sustain-A-Thon</h3>
                                 <span class="btn-gallery">Recap</span>
@@ -404,16 +559,16 @@
         </section>
 
         <!-- FOOTER -->
-        <footer class="footer spatial-scene">
-            <div class="footer-container depth-fg">
+        <footer class="footer">
+            <div class="footer-container">
                 <div class="footer-section">
                     <h3>
-                        <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo">
+                        <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo" width="32" height="32" />
                         ACM Student Chapter
                     </h3>
-                    <p style="color: var(--gold-primary); font-weight: 600">VIT Chennai</p>
-                    <p style="opacity: 0.75; margin-top: 0.5rem">
-                        Empowering the next generation of computing professionals through education, innovation, and community.
+                    <p style="color: var(--gold-primary); font-weight: 600">VIT Chennai Campus</p>
+                    <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 0.5rem">
+                        Advancing Computing as a Science &amp; Profession. Awarded Best Technical Chapter AY 2025-26.
                     </p>
                 </div>
 
@@ -421,10 +576,10 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Chapter</a></li>
+                        <li><a href="events.html">Events &amp; Workshops</a></li>
+                        <li><a href="team.html">Leadership Team</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                         <li><a href="blogs-newsletters.html">Blogs &amp; Newsletters</a></li>
                         <li><a href="awards.html">Awards &amp; Recognition</a></li>
                     </ul>
@@ -433,26 +588,30 @@
                 <div class="footer-section">
                     <h3>Connect With Us</h3>
                     <p style="margin-bottom: 1rem">
-                        <span style="margin-right: 8px">📧</span>
-                        <a href="mailto:vitcc.acmsc@vit.ac.in">vitcc.acmsc@vit.ac.in</a>
+                        <a href="mailto:vitcc.acmsc@vit.ac.in" style="color: var(--text-muted)"><i
+                                class="fas fa-envelope" style="color: var(--gold-light); margin-right: 6px"></i>
+                            vitcc.acmsc@vit.ac.in</a>
                     </p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link" title="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link" title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link"
+                            title="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link"
+                            title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub"
+                            rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2026 ACM Student Chapter - VIT Chennai. All Rights Reserved.</p>
-                <p style="opacity: 0.5">Designed for ACM SC VIT Chennai</p>
+                <p>Designed for ACM SC VIT Chennai</p>
             </div>
         </footer>
 
     </div>
 
-    <!-- SCRIPTS -->
+    <!-- PERFORMANCE SCRIPTS -->
     <script src="assets/js/spatial-engine.js"></script>
     <script src="assets/js/script.js"></script>
 </body>

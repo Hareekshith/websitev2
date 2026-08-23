@@ -40,18 +40,18 @@
 
     <!-- Favicon -->
     <link rel="icon" href="assets/favicon.ico" />
-    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/vitccacm/websitev2/main/assets/logo.webp" />
+    <link rel="apple-touch-icon" href="assets/logo.webp" />
 
-    <title>Best Technical Chapter - ACM Student Chapter VIT Chennai | Home</title>
+    <title>ACM Student Chapter VIT Chennai | Best Technical Chapter</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css?v=20260817" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20260822" />
 </head>
 
 <body class="home-page">
-    <!-- NAVIGATION (Floating Spatial Pill) -->
-    <nav class="navbar">
+    <!-- NAVIGATION (Smart Floating Pill) -->
+    <nav class="navbar" aria-label="Main Navigation">
         <a href="index.html" class="navbar-logo">
-            <img src="assets/logo.webp" alt="ACM Logo" />
+            <img src="assets/logo.webp" alt="ACM Logo" width="34" height="34" />
             ACM <span>VIT Chennai</span>
         </a>
         <ul class="navbar-menu">
@@ -64,59 +64,52 @@
         </ul>
     </nav>
 
-    <!-- 3D SPATIAL MAIN STAGE -->
+    <!-- MAIN STAGE -->
     <div class="spatial-stage">
 
-        <!-- SCENE 1: 3D HERO REALM -->
+        <!-- SCENE 1: HERO SECTION -->
         <header class="hero spatial-scene" id="hero">
-            <img src="images/hero_luxury_dark.webp" alt="Abstract Luxury Spatial Background" class="hero-background depth-bg" />
+            <img src="images/hero_luxury_dark.webp" alt="Abstract Spatial Tech Background" class="hero-background" />
             <div class="hero-overlay"></div>
 
-            <div class="hero-content depth-fg">
+            <div class="hero-content">
                 <img src="images/acmheader.png" alt="ACM Header" class="hero-header-img"
-                    style="display: block; margin: 0 auto 1.5rem auto; max-width: 480px; width: 100%; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.6));" />
-                <span class="hero-pretitle">✦ Welcome to the Future ✦</span>
+                    style="display: block; margin: 0 auto 1.25rem auto; max-width: 440px; width: 100%; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.6));" />
+                <span class="hero-pretitle">✦ Best Technical Chapter — VIT Chennai ✦</span>
                 <h1>
                     Advancing Computing<br />
                     <span>Beyond Limits.</span>
                 </h1>
                 <p>
-                    The Association for Computing Machinery Student Chapter at VIT Chennai. Where innovation meets professional excellence in a digital-first world.
+                    The Association for Computing Machinery Student Chapter at VIT Chennai. Where technical passion
+                    meets excellence, research, and collaborative innovation.
                 </p>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="#explore" class="btn-luxury">Explore Verticals</a>
+                    <a href="#explore" class="btn-luxury">Explore Verticals <i class="fas fa-arrow-right"></i></a>
                     <a href="#best-chapter" class="btn-outline-glass">Best Chapter Award 🏆</a>
                 </div>
             </div>
 
-            <!-- VICTORY STRIP MARQUEE -->
-            <div class="hero-victory-strip depth-mid">
-                <div class="hero-victory-track">
-                    <span class="hv-item">🏆 Best Technical Chapter of Campus — AY 2025-26</span>
-                    <span class="hv-sep">✦</span>
-                    <span class="hv-item">18 Events &amp; 1,900+ Participants</span>
-                    <span class="hv-sep">✦</span>
-                    <span class="hv-item">Out of 130+ Clubs</span>
-                    <span class="hv-sep">✦</span>
-                    <span class="hv-item">Top 20 — Asia Book of Records</span>
-                    <span class="hv-sep">✦</span>
-                    <span class="hv-item">CodePulse v5 — 315 students in one event</span>
-                    <span class="hv-sep">✦</span>
-                    <span class="hv-item">45+ Institutions Participated</span>
-                    <span class="hv-sep">✦</span>
-                    <!-- Seamless loop duplicate -->
-                    <span class="hv-item">🏆 Best Technical Chapter of Campus — AY 2025-26</span>
-                    <span class="hv-sep">✦</span>
-                    <span class="hv-item">18 Events &amp; 1,900+ Participants</span>
-                    <span class="hv-sep">✦</span>
-                    <span class="hv-item">Out of 130+ Clubs</span>
-                    <span class="hv-sep">✦</span>
-                    <span class="hv-item">Top 20 — Asia Book of Records</span>
-                    <span class="hv-sep">✦</span>
-                    <span class="hv-item">CodePulse v5 — 315 students in one event</span>
-                    <span class="hv-sep">✦</span>
-                    <span class="hv-item">45+ Institutions Participated</span>
-                    <span class="hv-sep">✦</span>
+            <!-- HERO MARQUEE RIBBON -->
+            <div class="tech-marquee-section" aria-label="Chapter Accolades & Domains">
+                <div class="tech-marquee-track">
+                    <div class="tech-tag-pill"><span class="icon">🏆</span> Best Technical Chapter — AY 2025-26</div>
+                    <div class="tech-tag-pill"><span class="icon">🤖</span> Generative AI &amp; Agents</div>
+                    <div class="tech-tag-pill"><span class="icon">🛡️</span> Cybersecurity &amp; CTF</div>
+                    <div class="tech-tag-pill"><span class="icon">⚡</span> 18 Events &amp; 1,900+ Participants</div>
+                    <div class="tech-tag-pill"><span class="icon">🐳</span> Docker &amp; Cloud DevOps</div>
+                    <div class="tech-tag-pill"><span class="icon">🎖️</span> Top 20 — Asia Book of Records</div>
+                    <div class="tech-tag-pill"><span class="icon">🐧</span> Linux &amp; Kernel Hacking</div>
+                    <div class="tech-tag-pill"><span class="icon">🌐</span> Full-Stack Systems</div>
+                    <!-- Duplicate for seamless looping -->
+                    <div class="tech-tag-pill"><span class="icon">🏆</span> Best Technical Chapter — AY 2025-26</div>
+                    <div class="tech-tag-pill"><span class="icon">🤖</span> Generative AI &amp; Agents</div>
+                    <div class="tech-tag-pill"><span class="icon">🛡️</span> Cybersecurity &amp; CTF</div>
+                    <div class="tech-tag-pill"><span class="icon">⚡</span> 18 Events &amp; 1,900+ Participants</div>
+                    <div class="tech-tag-pill"><span class="icon">🐳</span> Docker &amp; Cloud DevOps</div>
+                    <div class="tech-tag-pill"><span class="icon">🎖️</span> Top 20 — Asia Book of Records</div>
+                    <div class="tech-tag-pill"><span class="icon">🐧</span> Linux &amp; Kernel Hacking</div>
+                    <div class="tech-tag-pill"><span class="icon">🌐</span> Full-Stack Systems</div>
                 </div>
             </div>
         </header>
@@ -126,40 +119,42 @@
             <div class="container bc-container">
 
                 <!-- LEFT: Award info + Stats Matrix -->
-                <div class="bc-left-col depth-fg">
+                <div class="bc-left-col">
                     <div class="bc-title-row">
                         <div class="award-badge-wrap">
                             <div class="award-badge">
                                 <span>🏆</span>
                             </div>
-                            <div class="award-rays"></div>
                         </div>
                         <div class="bc-title-text">
-                            <span class="hero-pretitle" style="margin-bottom: 0.3rem;">AY 2025 – 2026</span>
-                            <h2 class="best-chapter-title">Best Technical Chapter<br /><span class="best-chapter-subtitle-gold">of the Campus</span></h2>
+                            <span class="hero-pretitle" style="margin-bottom: 0.25rem;">AY 2025 – 2026</span>
+                            <h2 class="best-chapter-title">Best Technical Chapter<br /><span
+                                    class="best-chapter-subtitle-gold">of the Campus</span></h2>
                         </div>
                     </div>
 
                     <p class="best-chapter-desc">
                         Out of <strong>130+ clubs</strong>, <strong>ACM Student Chapter VITC</strong> earned the
-                        <strong>Best Technical Chapter</strong> of campus. From Linux &amp; Git to CTF events,
-                        we made lasting impact across South India — with <strong>Code Vipassana</strong>,
-                        <strong>Kaspersky</strong> &amp; <strong>ACM India</strong>.
+                        <strong>Best Technical Chapter</strong> distinction. From Linux &amp; Git masterclasses to
+                        cybersecurity CTFs and DSA Bootcamps,
+                        we deliver nationwide impact alongside premier partners including <strong>Code Vipassana by
+                            Google</strong>,
+                        <strong>Kaspersky</strong>, and <strong>ACM India</strong>.
                     </p>
 
                     <!-- Stats Chips -->
                     <div class="bc-stats-chips">
                         <div class="bc-chip bc-chip-gold">
                             <span class="bc-chip-num" data-target="18">0</span>
-                            <span class="bc-chip-lbl">Events</span>
+                            <span class="bc-chip-lbl">Events Conducted</span>
                         </div>
                         <div class="bc-chip">
                             <span class="bc-chip-num" data-target="1900" data-suffix="+">0</span>
-                            <span class="bc-chip-lbl">Participants</span>
+                            <span class="bc-chip-lbl">Total Participants</span>
                         </div>
                         <div class="bc-chip">
                             <span class="bc-chip-num" data-target="315">0</span>
-                            <span class="bc-chip-lbl">Single event peak</span>
+                            <span class="bc-chip-lbl">Single Event Peak</span>
                         </div>
                         <div class="bc-chip">
                             <span class="bc-chip-num" data-target="45" data-suffix="+">0</span>
@@ -167,59 +162,68 @@
                         </div>
                         <div class="bc-chip">
                             <span class="bc-chip-num" data-target="50" data-suffix="+">0</span>
-                            <span class="bc-chip-lbl">Blogs published</span>
-                        </div>
-                        <div class="bc-chip">
-                            <span class="bc-chip-num" data-target="60">0</span>
-                            <span class="bc-chip-lbl">School students</span>
+                            <span class="bc-chip-lbl">Blogs Published</span>
                         </div>
                         <div class="bc-chip bc-chip-purple">
                             <span class="bc-chip-num" style="font-size:1.3rem;">Top 20</span>
                             <span class="bc-chip-lbl">Asia Book of Records</span>
                         </div>
-                        <div class="bc-chip">
-                            <span class="bc-chip-num" data-target="130" data-suffix="+">0</span>
-                            <span class="bc-chip-lbl">Clubs competed</span>
-                        </div>
-                        <div class="bc-chip">
-                            <span class="bc-chip-num" data-target="7" data-suffix="+">0</span>
-                            <span class="bc-chip-lbl">Colleges — CodePulse</span>
-                        </div>
                     </div>
 
                     <!-- Partners -->
                     <div class="bc-partners-inline">
-                        <span class="bc-partners-label">With support from</span>
-                        <span class="bc-partner-pill"><i class="fas fa-code"></i> Code Vipassana</span>
+                        <span class="bc-partners-label">Supported by:</span>
+                        <span class="bc-partner-pill"><i class="fas fa-code"></i> Code Vipassana (Google)</span>
                         <span class="bc-partner-pill"><i class="fas fa-shield-alt"></i> Kaspersky</span>
                         <span class="bc-partner-pill"><i class="fas fa-globe"></i> ACM India</span>
                     </div>
                 </div>
 
-                <!-- RIGHT: 3D Certificate & Moment Gallery -->
-                <div class="bc-right-col depth-mid">
+                <!-- RIGHT: Certificate & Moment Gallery -->
+                <div class="bc-right-col">
                     <div class="bc-gallery-header">
-                        <span class="hero-pretitle" style="font-size:0.75rem; margin-bottom:0.3rem; display:inline-block;">Award Ceremony</span>
-                        <h3 class="bc-gallery-title">The Moment We Earned It</h3>
+                        <span class="hero-pretitle"
+                            style="font-size:0.75rem; margin-bottom:0.25rem; display:inline-block;">Award
+                            Ceremony</span>
+                        <h3 class="bc-gallery-title">The Moment of Excellence</h3>
                     </div>
                     <div class="bc-gallery-grid">
                         <div class="bc-gallery-item bc-gallery-cert">
-                            <img src="events/event-img/best-chapter-campus/cert.webp" alt="Best Technical Chapter Certificate" loading="lazy" />
-                            <div class="bc-gallery-overlay"><span>🏅 Certificate of Excellence</span></div>
+                            <img src="events/event-img/best-chapter-campus/cert.webp"
+                                alt="Best Technical Chapter Certificate of Excellence" loading="lazy" />
+                            <div class="bc-gallery-overlay"><span>🏅 Certificate of Excellence (Click to View)</span>
+                            </div>
                         </div>
                         <div class="bc-gallery-right">
                             <div class="bc-gallery-item">
-                                <img src="events/event-img/best-chapter-campus/img_1.webp" alt="ACM VITC receiving Best Chapter Award" loading="lazy" />
+                                <img src="events/event-img/best-chapter-campus/img_1.webp"
+                                    alt="ACM VITC receiving Best Chapter Award" loading="lazy" />
                                 <div class="bc-gallery-overlay"><span>📸 Award Ceremony</span></div>
                             </div>
                             <div class="bc-gallery-item">
-                                <img src="events/event-img/best-chapter-campus/img_2.webp" alt="ACM VITC Team with Best Chapter Award" loading="lazy" />
-                                <div class="bc-gallery-overlay"><span>👥 Celebrating Together</span></div>
+                                <img src="events/event-img/best-chapter-campus/img_2.webp"
+                                    alt="ACM VITC Team Celebrating" loading="lazy" />
+                                <div class="bc-gallery-overlay"><span>👥 Team Celebration</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- KINETIC PARALLAX DIVERGENCE -->
+        <section class="kinetic-text-section spatial-scene" aria-label="Computing Statement">
+            <div class="kinetic-text-container">
+                <div class="kinetic-line diverge-up-far">computing • excellence</div>
+                <div class="kinetic-line diverge-up-near">computing • innovation</div>
+                <div class="kinetic-line diverge-center">
+                    <span class="side-accent">Because</span>
+                    <span class="outlined-word">Computing</span>
+                    <span class="side-accent">Matters</span>
+                </div>
+                <div class="kinetic-line diverge-down-near">community • research</div>
+                <div class="kinetic-line diverge-down-far">advancing • technology</div>
             </div>
         </section>
 
@@ -227,271 +231,272 @@
         <section class="section-padding partners-section spatial-scene" id="patrons">
             <div class="container text-center">
                 <div class="section-header">
-                    <h2>Our Patrons</h2>
-                    <span class="subtitle">Empowering Our Vision</span>
+                    <h2>Our Patrons &amp; Partners</h2>
+                    <span class="subtitle">Empowering Our Technical Vision</span>
                 </div>
-                <div class="partners-grid depth-mid">
-                    <img src="images/sponsors/cv.webp" alt="Code Vipassana" class="partner-logo" />
-                    <img src="images/sponsors/il.webp" alt="Imagi" class="partner-logo" />
-                    <img src="images/sponsors/kp.webp" alt="Kaspersky" class="partner-logo" />
+                <div class="partners-grid">
+                    <img src="images/sponsors/cv.webp" alt="Code Vipassana by Google" class="partner-logo"
+                        loading="lazy" />
+                    <img src="images/sponsors/il.webp" alt="Imagi" class="partner-logo" loading="lazy" />
+                    <img src="images/sponsors/kp.webp" alt="Kaspersky" class="partner-logo" loading="lazy" />
                 </div>
             </div>
         </section>
 
-        <!-- SCENE 4: RECRUITMENT BANNER (MEMBERSHIP PORTAL) -->
+        <!-- SCENE 4: RECRUITMENT & MEMBERSHIP -->
         <section class="section-padding membership-banner spatial-scene" id="membership">
-            <div class="container membership-banner-inner text-center depth-fg">
+            <div class="container membership-banner-inner text-center">
                 <h2>Join Our Ranks!</h2>
                 <p class="membership-tagline">
-                    Step into a thriving tech community where ideas turn into impact. As a member of ACM Student Chapter VIT
-                    Chennai, you’ll gain hands-on experience, expand your network, and unlock opportunities designed to
-                    accelerate your journey in technology.
+                    Step into an elite student community where ideas turn into impact. Gain hands-on engineering
+                    experience,
+                    expand your professional network, and unlock industry-standard opportunities designed to accelerate
+                    your career.
                 </p>
-                <div class="membership-perks-wrap">
+                <div class="membership-perks-wrap" aria-label="Membership Benefits">
                     <div class="membership-perks-track">
                         <div class="perks-set">
-                            <span class="perk-item"><i class="fas fa-laptop-code"></i> Workshops & hands-on learning</span>
-                            <span class="perk-item"><i class="fas fa-trophy"></i> Hackathons & competitions</span>
-                            <span class="perk-item"><i class="fas fa-network-wired"></i> Industry networking</span>
-                            <span class="perk-item"><i class="fas fa-flask"></i> Research opportunities</span>
-                            <span class="perk-item"><i class="fas fa-calendar-star"></i> Exclusive events</span>
-                            <span class="perk-item"><i class="fas fa-users"></i> Mentorship & guidance</span>
-                            <span class="perk-item"><i class="fas fa-book"></i> ACM resources & publications</span>
-                            <span class="perk-item"><i class="fas fa-briefcase"></i> Career support</span>
+                            <span class="perk-item"><i class="fas fa-laptop-code"></i> Technical Workshops</span>
+                            <span class="perk-item"><i class="fas fa-trophy"></i> Premier Hackathons</span>
+                            <span class="perk-item"><i class="fas fa-network-wired"></i> Industry Mentorship</span>
+                            <span class="perk-item"><i class="fas fa-flask"></i> Research Papers</span>
+                            <span class="perk-item"><i class="fas fa-star"></i> Exclusive Chapter Events</span>
+                            <span class="perk-item"><i class="fas fa-book"></i> ACM Digital Library</span>
                         </div>
                         <div class="perks-set" aria-hidden="true">
-                            <span class="perk-item"><i class="fas fa-laptop-code"></i> Workshops & hands-on learning</span>
-                            <span class="perk-item"><i class="fas fa-trophy"></i> Hackathons & competitions</span>
-                            <span class="perk-item"><i class="fas fa-network-wired"></i> Industry networking</span>
-                            <span class="perk-item"><i class="fas fa-flask"></i> Research opportunities</span>
-                            <span class="perk-item"><i class="fas fa-calendar-star"></i> Exclusive events</span>
-                            <span class="perk-item"><i class="fas fa-users"></i> Mentorship & guidance</span>
-                            <span class="perk-item"><i class="fas fa-book"></i> ACM resources & publications</span>
-                            <span class="perk-item"><i class="fas fa-briefcase"></i> Career support</span>
+                            <span class="perk-item"><i class="fas fa-laptop-code"></i> Technical Workshops</span>
+                            <span class="perk-item"><i class="fas fa-trophy"></i> Premier Hackathons</span>
+                            <span class="perk-item"><i class="fas fa-network-wired"></i> Industry Mentorship</span>
+                            <span class="perk-item"><i class="fas fa-flask"></i> Research Papers</span>
+                            <span class="perk-item"><i class="fas fa-star"></i> Exclusive Chapter Events</span>
+                            <span class="perk-item"><i class="fas fa-book"></i> ACM Digital Library</span>
                         </div>
                     </div>
                 </div>
-                <a href="http://vitchennai.acm.org/join/membership" class="btn-luxury" target="_blank" rel="noopener noreferrer">
+                <a href="http://vitchennai.acm.org/join/membership" class="btn-luxury" target="_blank"
+                    rel="noopener noreferrer">
                     Apply for Membership 🚀
                 </a>
             </div>
         </section>
 
-        <!-- SCENE 5: CORE VERTICALS (3D BENTO GRID) -->
+        <!-- SCENE 5: CORE VERTICALS (BENTO GRID) -->
         <section id="explore" class="section-padding spatial-scene">
             <div class="container">
                 <div class="section-header">
                     <h2>Core Verticals</h2>
-                    <span class="subtitle">Our Pillars of Excellence</span>
+                    <span class="subtitle">Our Pillars of Technical Excellence</span>
                 </div>
 
-                <div class="bento-grid depth-mid">
+                <div class="bento-grid">
                     <!-- Large Feature Card -->
                     <div class="bento-card large">
                         <div class="card-icon">🔬</div>
-                        <h3>Research & Innovation</h3>
+                        <h3>Research &amp; Innovation</h3>
                         <p>
-                            Pushing the boundaries of computer science through cutting-edge research, technical paper publications,
-                            and collaboration with industry leaders to solve real-world problems.
+                            Pushing the frontiers of computer science through cutting-edge exploration, publication
+                            mentorship in Open Source For You, NS-3 network simulations, and industry research
+                            collaborations.
                         </p>
                     </div>
 
                     <!-- Tall Feature Card -->
                     <div class="bento-card tall">
                         <div class="card-icon">🏆</div>
-                        <h3>Hackathons & Competitions</h3>
+                        <h3>Hackathons &amp; Competitions</h3>
                         <p>
-                            Organizing premier coding battles like CodeStorm and HackVIT to challenge the brightest minds. A deeper
-                            look into competitive programming culture.
+                            Host of flagship competitions like CodePulse and CTFs. Fostering a high-caliber competitive
+                            coding and development ecosystem across South India.
                         </p>
                     </div>
 
                     <!-- Standard Cards -->
                     <div class="bento-card">
                         <div class="card-icon">💻</div>
-                        <h3>Workshops</h3>
-                        <p>Hands-on training in AI, Cloud, and Blockchain.</p>
+                        <h3>Technical Workshops</h3>
+                        <p>Hands-on sessions spanning Generative AI, Docker &amp; DevOps, Linux kernel tools, and Cloud
+                            Native development.</p>
                     </div>
 
                     <div class="bento-card">
                         <div class="card-icon">🤝</div>
-                        <h3>Community</h3>
-                        <p>A vibrant network of passionate technologists and mentors.</p>
+                        <h3>Community &amp; Mentorship</h3>
+                        <p>A connected network of passionate student engineers, alumni in top tech companies, and ACM
+                            India leadership.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SCENE 6: ABOUT PREVIEW (3D SPLIT PORTAL) -->
+        <!-- SCENE 6: ABOUT PREVIEW (SPLIT SECTION) -->
         <section class="split-section spatial-scene" id="who-we-are">
-            <div class="split-image depth-bg">
-                <img src="images/grp-img/personal-finance.webp" alt="ACM Community at VIT Chennai" />
+            <div class="split-image">
+                <img src="images/grp-img/personal-finance.webp" alt="ACM Community at VIT Chennai" loading="lazy" />
             </div>
-            <div class="split-content depth-fg">
+            <div class="split-content">
                 <span class="hero-pretitle">Who We Are</span>
-                <h2>Global Excellence.<br />Local Impact.</h2>
-                <p style="color: var(--text-muted); margin-top: 1.5rem">
-                    As the world's largest educational and scientific computing society, ACM delivers resources that advance computing as a
-                    science and profession. At VIT Chennai, we translate this global vision into impactful student experiences.
+                <h2>Global Excellence.<br />Campus Impact.</h2>
+                <p style="color: var(--text-muted); margin-top: 1rem">
+                    As part of the world's largest educational and scientific computing society, ACM VIT Chennai
+                    translates international technical standards into transformative experiences for undergraduate
+                    engineers.
                 </p>
-                <a href="about.html" class="btn-luxury" style="align-self: flex-start; margin-top: 1.5rem">Discover Our Mission</a>
+                <a href="about.html" class="btn-luxury" style="display: inline-flex; margin-top: 1.25rem">Discover Our
+                    Mission <i class="fas fa-arrow-right"></i></a>
             </div>
         </section>
 
-        <!-- SCENE 7: REPORTS & STATISTICS (3D DATA HUB) -->
+        <!-- SCENE 7: REPORTS & STATISTICS (DATA HUB) -->
         <section class="section-padding impact-section spatial-scene" id="reports">
             <div class="container">
                 <div class="section-header">
-                    <h2>Reports & Statistics</h2>
-                    <span class="subtitle">Exceptional club impact across events, participation, and outcomes</span>
+                    <h2>Reports &amp; Statistics</h2>
+                    <span class="subtitle">Measurable Outcomes Across Events, Reach, and Quality</span>
                 </div>
 
                 <p class="impact-intro">
-                    Our chapter has delivered consistently strong results in AY 2025-26 with large-scale participation,
-                    cross-institution collaboration, and measurable satisfaction. These outcomes showcase the impact of
-                    ACM VIT Chennai across technical learning, community building, and national-level recognition.
+                    Our chapter has delivered record-breaking results in AY 2025-26 with 1,900+ active participants,
+                    multi-university engagements, and exceptional participant satisfaction ratings.
                 </p>
 
                 <!-- KPI Grid -->
-                <div class="impact-kpi-grid depth-mid">
+                <div class="impact-kpi-grid">
                     <article class="impact-kpi-card">
                         <span class="impact-kpi-value" data-target="18">0</span>
-                        <p class="impact-kpi-label">Events listed in AY 2025-26 report</p>
+                        <p class="impact-kpi-label">Flagship Events &amp; Workshops</p>
                     </article>
                     <article class="impact-kpi-card">
                         <span class="impact-kpi-value" data-target="1900" data-suffix="+">0</span>
-                        <p class="impact-kpi-label">Participants engaged across India</p>
+                        <p class="impact-kpi-label">Active Participants Engaged</p>
                     </article>
                     <article class="impact-kpi-card">
                         <span class="impact-kpi-value" data-target="100" data-suffix="+">0</span>
-                        <p class="impact-kpi-label">Institutions reached nationwide</p>
+                        <p class="impact-kpi-label">Institutions Reached</p>
                     </article>
                     <article class="impact-kpi-card">
-                        <span class="impact-kpi-value" data-target="92.7" data-suffix="%">92.7%</span>
-                        <p class="impact-kpi-label">Satisfaction ratings at 4/5 or 5/5</p>
+                        <span class="impact-kpi-value" data-target="92.7" data-suffix="%">0%</span>
+                        <p class="impact-kpi-label">Satisfaction Rating (4/5 or 5/5)</p>
                     </article>
                     <article class="impact-kpi-card">
                         <span class="impact-kpi-value" data-target="50" data-suffix="+">0</span>
-                        <p class="impact-kpi-label">Technical blogs published</p>
+                        <p class="impact-kpi-label">Technical Articles Published</p>
                     </article>
                 </div>
 
                 <!-- Main Grid -->
-                <div class="impact-main-grid depth-mid">
+                <div class="impact-main-grid">
                     <article class="impact-card">
-                        <h3>Event Participation Highlights</h3>
+                        <h3>Event Attendance Highlights</h3>
                         <ul class="impact-bars">
                             <li>
                                 <div class="impact-bar-head">
-                                    <span>Linux & Git Workshop</span>
-                                    <span>347</span>
+                                    <span>Linux &amp; Git Workshop</span>
+                                    <span>347 Participants</span>
                                 </div>
-                                <div class="impact-bar-track"><span class="impact-bar-fill" style="width: 100%"></span></div>
+                                <div class="impact-bar-track"><span class="impact-bar-fill" style="width: 100%"></span>
+                                </div>
                             </li>
                             <li>
                                 <div class="impact-bar-head">
-                                    <span>CodePulse v5</span>
-                                    <span>315</span>
+                                    <span>CodePulse v5 Flagship</span>
+                                    <span>315 Participants</span>
                                 </div>
-                                <div class="impact-bar-track"><span class="impact-bar-fill" style="width: 91%"></span></div>
+                                <div class="impact-bar-track"><span class="impact-bar-fill" style="width: 91%"></span>
+                                </div>
                             </li>
                             <li>
                                 <div class="impact-bar-head">
                                     <span>DSA Bootcamp (Asia Book of Records)</span>
-                                    <span>198</span>
+                                    <span>198 Participants</span>
                                 </div>
-                                <div class="impact-bar-track"><span class="impact-bar-fill" style="width: 57%"></span></div>
+                                <div class="impact-bar-track"><span class="impact-bar-fill" style="width: 57%"></span>
+                                </div>
                             </li>
                             <li>
                                 <div class="impact-bar-head">
                                     <span>Personal Finance Workshop</span>
-                                    <span>160</span>
+                                    <span>160 Participants</span>
                                 </div>
-                                <div class="impact-bar-track"><span class="impact-bar-fill" style="width: 46%"></span></div>
-                            </li>
-                            <li>
-                                <div class="impact-bar-head">
-                                    <span>Recruitment Drive</span>
-                                    <span>150</span>
+                                <div class="impact-bar-track"><span class="impact-bar-fill" style="width: 46%"></span>
                                 </div>
-                                <div class="impact-bar-track"><span class="impact-bar-fill" style="width: 43%"></span></div>
                             </li>
                             <li>
                                 <div class="impact-bar-head">
                                     <span>Server Surfers CTF</span>
-                                    <span>140</span>
+                                    <span>140 Participants</span>
                                 </div>
-                                <div class="impact-bar-track"><span class="impact-bar-fill" style="width: 40%"></span></div>
+                                <div class="impact-bar-track"><span class="impact-bar-fill" style="width: 40%"></span>
+                                </div>
                             </li>
                         </ul>
                         <p class="impact-note">
-                            Additional events included CodePulse v4 (70), CodePulse March (78), Guest Lecture (60),
-                            Pages to Progress (25), Dive into Dockers (60), ACM India Members Visit (50), GenAI
-                            Workshop (80), Docker Showdown (110), Hour of AI (60), and Club Expo (2 editions).
+                            Additional sessions: Docker Showdown (110), GenAI Workshop (80), CodePulse March (78), Hour
+                            of AI (60), and Club Expos.
                         </p>
                     </article>
 
                     <article class="impact-card">
-                        <h3>Overall Satisfaction Distribution</h3>
-                        <div class="impact-donut" aria-hidden="true">
+                        <h3>Participant Satisfaction</h3>
+                        <div class="impact-donut" aria-label="Satisfaction chart">
                             <div class="impact-donut-center">
                                 <strong>92.7%</strong>
-                                <span>Rated 4 or 5</span>
+                                <span>Positive Rating</span>
                             </div>
                         </div>
                         <ul class="impact-legend">
-                            <li><span class="impact-dot rating-5"></span>5/5: 58.2%</li>
-                            <li><span class="impact-dot rating-4"></span>4/5: 34.5%</li>
-                            <li><span class="impact-dot rating-3"></span>3/5: 3.6%</li>
-                            <li><span class="impact-dot rating-2"></span>2/5: 1.8%</li>
-                            <li><span class="impact-dot rating-1"></span>1/5: 1.8%</li>
+                            <li><span class="impact-dot rating-5"></span>5/5 Rating: 58.2%</li>
+                            <li><span class="impact-dot rating-4"></span>4/5 Rating: 34.5%</li>
+                            <li><span class="impact-dot rating-3"></span>3/5 Rating: 3.6%</li>
+                            <li><span class="impact-dot rating-2"></span>1-2/5 Rating: 3.6%</li>
                         </ul>
                     </article>
                 </div>
 
                 <!-- Lower Reach & Achievements Grid -->
-                <div class="impact-lower-grid depth-mid">
+                <div class="impact-lower-grid">
                     <article class="impact-card">
-                        <h3>People & Reach at a Glance</h3>
+                        <h3>Community Reach Summary</h3>
                         <div class="impact-reach-grid">
                             <div class="reach-pill">
                                 <strong>1700+</strong>
-                                <span>Internal participants</span>
+                                <span>VIT Students</span>
                             </div>
                             <div class="reach-pill">
-                                <strong>300</strong>
-                                <span>External participants</span>
+                                <strong>300+</strong>
+                                <span>External Participants</span>
                             </div>
                             <div class="reach-pill">
-                                <strong>300</strong>
-                                <span>ACM SC members</span>
+                                <strong>300+</strong>
+                                <span>ACM SC Members</span>
                             </div>
                             <div class="reach-pill">
                                 <strong>16</strong>
-                                <span>Office bearers</span>
+                                <span>Office Bearers</span>
                             </div>
                             <div class="reach-pill">
-                                <strong>10</strong>
-                                <span>Resource persons</span>
+                                <strong>10+</strong>
+                                <span>Industry Experts</span>
                             </div>
                             <div class="reach-pill">
                                 <strong>2</strong>
-                                <span>ACM India resource persons</span>
+                                <span>ACM India Visitors</span>
                             </div>
                         </div>
                     </article>
 
                     <article class="impact-card">
-                        <h3>Key Achievements & Outcomes</h3>
+                        <h3>Key Chapter Milestones</h3>
                         <ul class="impact-achievement-list">
-                            <li>Published 50+ technical blogs through the ACM SC blog initiative.</li>
-                            <li>Built an NS3-focused library with mentorship from ACM SC alumni.</li>
-                            <li>Published 4 articles in Open Source For You with ACM SC alumni support.</li>
-                            <li>Delivered the Hour of AI platform and 15 games with 60 school students from 2 schools.</li>
-                            <li>Collaborated with Brainovision for DSA Bootcamp with India &amp; Asia Book of Records top-20 standing.</li>
-                            <li>Secured Google Cloud credits through Code Vipassana collaboration.</li>
-                            <li>Hosted guest sessions with industry leaders including Dr. Hariharasudhan (Johnson Controls).</li>
-                            <li>Received Kaspersky support worth Rs. 20,000+ and KIPS cloud access for 200 participants.</li>
+                            <li><strong>Best Technical Chapter:</strong> Ranked #1 among 130+ clubs across VIT Chennai
+                                campus.</li>
+                            <li><strong>Asia Book of Records:</strong> Top 20 ranking for Mega DSA Bootcamp with
+                                Brainovision.</li>
+                            <li><strong>Google Cloud &amp; AI:</strong> Direct workshop collaboration with Code
+                                Vipassana by Google.</li>
+                            <li><strong>Kaspersky Cyber Partnership:</strong> Enterprise cybersecurity session and KIPS
+                                platform access.</li>
+                            <li><strong>Technical Publications:</strong> 50+ medium blogs &amp; 4 articles in Open
+                                Source For You.</li>
                         </ul>
                     </article>
                 </div>
@@ -502,149 +507,114 @@
         <section class="section-padding partners-section spatial-scene" id="speakers">
             <div class="container">
                 <div class="section-header">
-                    <h2>Prominent Partners & Speakers</h2>
-                    <span class="subtitle">Industry experts who partner with ACM VIT Chennai</span>
+                    <h2>Industry Speakers &amp; Mentors</h2>
+                    <span class="subtitle">Distinguished Experts Mentoring ACM VIT Chennai</span>
                 </div>
 
                 <p class="partners-intro">
-                    We are proud to collaborate with accomplished professionals from industry and developer communities.
-                    Their participation has helped us deliver high-impact events, practical learning, and stronger opportunities for students.
+                    We collaborate closely with senior technology executives and community leaders to bring real-world
+                    engineering paradigms directly to our students.
                 </p>
 
-                <div class="bento-grid depth-mid" style="margin-bottom: 2rem;">
-                    <article class="partner-card" style="grid-column: span 1.5;">
+                <div class="bento-grid" style="margin-bottom: 2rem;">
+                    <article class="partner-card">
                         <h3>Arun Gantayat</h3>
                         <p class="partner-role">Head of Presales - India Region at Kaspersky</p>
                         <p class="partner-about">
-                            Arun brings deep expertise in cybersecurity, customer-focused solution design, and malware
-                            defense strategies. In his KIPS session with ACM VIT Chennai, he highlighted why nurturing
-                            young cybersecurity talent early is critical to closing the gap between academics and real
-                            security challenges.
+                            Led an interactive session on cybersecurity fundamentals, threat response architectures, and
+                            career paths in defensive infosec.
                         </p>
                         <p class="partner-quote">
-                            "Grateful to the VIT ACM Student Chapter for the opportunity to engage with bright,
-                            curious minds and inspire the next generation of defenders."
+                            "Grateful to the VIT ACM Student Chapter for the opportunity to engage with bright, curious
+                            minds and inspire the next generation of defenders."
                         </p>
                         <a href="https://www.linkedin.com/posts/%E0%AC%85%E0%AC%B0%E0%AD%81%E0%AC%A3-arun-%E0%AC%97%E0%AC%A8%E0%AD%8D%E0%AC%A4%E0%AC%BE%E0%AD%9F%E0%AC%A4-gantayat-a040771b_cybersecurity-infosec-kaspersky-activity-7445785284333498368-MIn1"
-                            class="partner-link" target="_blank" rel="noopener noreferrer">View LinkedIn Post <i class="fas fa-arrow-right"></i></a>
+                            class="partner-link" target="_blank" rel="noopener noreferrer">View LinkedIn Post <i
+                                class="fas fa-external-link-alt"></i></a>
                     </article>
 
-                    <article class="partner-card" style="grid-column: span 1.5;">
+                    <article class="partner-card" style="grid-column: span 2;">
                         <h3>Ajoe Joseph</h3>
                         <p class="partner-role">Software Engineer | Community Lead - Code Vipassana by Google</p>
                         <p class="partner-about">
-                            Ajoe collaborated with us during TechnoVIT to lead an advanced workshop on building
-                            agentic applications with Google ADK and MCP Toolbox, with practical deployment flows on
-                            Cloud Run and Gemini integration for real-world apps.
+                            Conducted an advanced hands-on masterclass on building agentic AI workflows with Google ADK,
+                            Model Context Protocol (MCP) Toolboxes, and deployment on Google Cloud Run.
                         </p>
                         <p class="partner-quote">
-                            "Looking forward to interacting with students and exploring how these tools come together
-                            to build smarter, more capable applications."
+                            "Looking forward to interacting with students and exploring how these tools come together to
+                            build smarter, more capable applications."
                         </p>
                         <a href="https://www.linkedin.com/posts/ajoejoseph99_technovit-vitchennai-codevipassana-activity-7388429228276477952-bKv4"
-                            class="partner-link" target="_blank" rel="noopener noreferrer">View LinkedIn Post <i class="fas fa-arrow-right"></i></a>
+                            class="partner-link" target="_blank" rel="noopener noreferrer">View LinkedIn Post <i
+                                class="fas fa-external-link-alt"></i></a>
                     </article>
-                </div>
-
-                <div class="partner-posts-grid depth-mid">
-                    <div class="partner-embed-shell">
-                        <h3 style="font-size: 1.15rem; margin-bottom: 1rem;">Arun Gantayat - Kaspersky Session</h3>
-                        <div class="partner-embed-frame linkedin-embed-frame">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7445785284333498368"
-                                frameborder="0" allowfullscreen="" title="Embedded LinkedIn post by Arun Gantayat" loading="lazy"></iframe>
-                        </div>
-                    </div>
-
-                    <div class="partner-embed-shell">
-                        <h3 style="font-size: 1.15rem; margin-bottom: 1rem;">Ajoe Joseph - Code Vipassana Session</h3>
-                        <div class="partner-embed-frame linkedin-embed-frame">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7388429228276477952"
-                                frameborder="0" allowfullscreen="" title="Embedded LinkedIn post by Ajoe Joseph" loading="lazy"></iframe>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SCENE 9: STUDENT TESTIMONIALS (FLOATING 3D PERSPECTIVE) -->
+        <!-- SCENE 9: STUDENT TESTIMONIALS -->
         <section class="section-padding testimonials-section spatial-scene" id="testimonials">
             <div class="container">
                 <div class="section-header">
-                    <h2>Student Testimonials</h2>
-                    <span class="subtitle">Voices from workshops, hackathons, and flagship events</span>
+                    <h2>Student Voices</h2>
+                    <span class="subtitle">Feedback from Workshops, Bootcamps, and Hackathons</span>
                 </div>
 
-                <div class="testimonials-grid depth-mid">
+                <div class="testimonials-grid">
                     <article class="testimonial-card featured">
                         <div class="testimonial-head">
-                            <img src="events/event-img/gen_ai_workshop/IMG_9504.webp" alt="GenAI Workshop Participant" />
+                            <img src="events/event-img/gen_ai_workshop/IMG_9504.webp" alt="GenAI Workshop Participant"
+                                loading="lazy" />
                             <div>
                                 <h3>Aadhya R.</h3>
-                                <p>CSE Core | GenAI Workshop Participant</p>
+                                <p>CSE Core | GenAI Workshop</p>
                             </div>
                         </div>
                         <p class="testimonial-quote">
-                            "The way ACM VIT Chennai structured the GenAI session made advanced ideas feel practical.
-                            I left with a working prototype and a clear roadmap to improve it further."
+                            "The way ACM VIT Chennai structured the GenAI session made advanced concepts accessible. I
+                            left with a functional prototype and clear steps to scale it."
                         </p>
                         <div class="testimonial-tags">
                             <span>GenAI Workshop</span>
-                            <span>Hands-on Learning</span>
-                            <span>Industry Mentorship</span>
+                            <span>Hands-on Code</span>
                         </div>
                     </article>
 
                     <article class="testimonial-card">
                         <div class="testimonial-head">
-                            <img src="events/event-img/linux_git_workshop/linux_git_3.webp" alt="Linux Git Participant" />
+                            <img src="events/event-img/linux_git_workshop/linux_git_3.webp" alt="Linux Git Participant"
+                                loading="lazy" />
                             <div>
                                 <h3>Harish K.</h3>
                                 <p>ECE | Linux &amp; Git Workshop</p>
                             </div>
                         </div>
                         <p class="testimonial-quote">
-                            "I had zero confidence with command-line workflows earlier, but this event gave me skills
-                            I now use every week in projects and internships."
+                            "I had zero terminal confidence previously, but this workshop taught me practical Git and
+                            shell workflows I now rely on in every project."
                         </p>
                         <div class="testimonial-tags">
-                            <span>Linux</span>
+                            <span>Linux CLI</span>
                             <span>Version Control</span>
                         </div>
                     </article>
 
                     <article class="testimonial-card">
                         <div class="testimonial-head">
-                            <img src="events/event-img/docker_workshop/2.webp" alt="Docker Showdown Participant" />
+                            <img src="events/event-img/docker_workshop/2.webp" alt="Docker Showdown Participant"
+                                loading="lazy" />
                             <div>
                                 <h3>Nivetha S.</h3>
                                 <p>IT | Docker Showdown</p>
                             </div>
                         </div>
                         <p class="testimonial-quote">
-                            "From containers to deployment strategy, the ACM mentors explained every step with real
-                            examples. It was one of the most practical sessions this semester."
+                            "From containerization to multi-stage builds, ACM mentors explained every detail with live
+                            demonstrations. Extremely high-value session!"
                         </p>
                         <div class="testimonial-tags">
+                            <span>Containers</span>
                             <span>DevOps</span>
-                            <span>Deployment Skills</span>
-                        </div>
-                    </article>
-
-                    <article class="testimonial-card">
-                        <div class="testimonial-head">
-                            <img src="events/event-img/finance_workshop/3.webp" alt="Personal Finance Participant" />
-                            <div>
-                                <h3>Rohit M.</h3>
-                                <p>Mechanical | Personal Finance Workshop</p>
-                            </div>
-                        </div>
-                        <p class="testimonial-quote">
-                            "I joined out of curiosity and came back with a complete starter plan for savings,
-                            budgeting, and investing. The session was super actionable."
-                        </p>
-                        <div class="testimonial-tags">
-                            <span>Interdisciplinary Impact</span>
-                            <span>Career Readiness</span>
                         </div>
                     </article>
                 </div>
@@ -655,71 +625,51 @@
         <section class="section-padding spatial-scene" id="upcoming-events" style="background: var(--void-black)">
             <div class="container">
                 <div class="section-header">
-                    <h2>Upcoming Events</h2>
-                    <span class="subtitle">Join the Revolution</span>
+                    <h2>Events Radar</h2>
+                    <span class="subtitle">Flagship Competitions &amp; Technical Workshops</span>
                 </div>
 
-                <div class="event-list depth-mid">
+                <div class="event-list">
                     <a href="events/server_surfers.html" class="event-row">
                         <span class="event-date">Mar 24, 2026</span>
-                        <h3 class="event-title">Server Surfers – CTF</h3>
+                        <h3 class="event-title">Server Surfers – Cybersecurity CTF</h3>
                         <span class="event-arrow"><i class="fas fa-arrow-right"></i></span>
                     </a>
                     <a href="events/code_pulse_march_2026.html" class="event-row">
                         <span class="event-date">Mar 7, 2026</span>
-                        <h3 class="event-title">CodePulse – March Edition</h3>
+                        <h3 class="event-title">CodePulse – March Competitive Edition</h3>
                         <span class="event-arrow"><i class="fas fa-arrow-right"></i></span>
                     </a>
                     <a href="events/dsa_bootcamp.html" class="event-row">
                         <span class="event-date">Mar, 2026</span>
-                        <h3 class="event-title">DSA Bootcamp</h3>
-                        <span class="event-arrow"><i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <a href="events/hour_of_ai.html" class="event-row">
-                        <span class="event-date">Dec 11, 2025</span>
-                        <h3 class="event-title">Hour of AI</h3>
-                        <span class="event-arrow"><i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <a href="events/docker_workshop.html" class="event-row">
-                        <span class="event-date">Nov 5, 2025</span>
-                        <h3 class="event-title">Docker Showdown</h3>
-                        <span class="event-arrow"><i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <a href="events/finance_workshop.html" class="event-row">
-                        <span class="event-date">Oct 30, 2025</span>
-                        <h3 class="event-title">Personal Finance Workshop</h3>
+                        <h3 class="event-title">DSA Bootcamp (Asia Records Standing)</h3>
                         <span class="event-arrow"><i class="fas fa-arrow-right"></i></span>
                     </a>
                     <a href="events/gen_ai_workshop.html" class="event-row">
                         <span class="event-date">Oct 29, 2025</span>
-                        <h3 class="event-title">Gen AI Workshop</h3>
+                        <h3 class="event-title">Gen AI &amp; Agentic Systems Masterclass</h3>
                         <span class="event-arrow"><i class="fas fa-arrow-right"></i></span>
                     </a>
-                    <a href="events/industrial_visit.html" class="event-row">
-                        <span class="event-date">Oct 24, 2025</span>
-                        <h3 class="event-title">ACM India Visit</h3>
-                        <span class="event-arrow"><i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <a href="events/pages_to_progress.html" class="event-row">
-                        <span class="event-date">Sep 24, 2025</span>
-                        <h3 class="event-title">Pages to Progress</h3>
-                        <span class="event-arrow"><i class="fas fa-arrow-right"></i></span>
-                    </a>
+                </div>
+
+                <div class="text-center" style="margin-top: 2.5rem;">
+                    <a href="events.html" class="btn-outline-glass">View All Events &amp; Archives <i
+                            class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
 
-        <!-- SCENE 11: FOOTER (ARCHITECTURAL DOCK) -->
-        <footer class="footer spatial-scene">
-            <div class="footer-container depth-fg">
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-container">
                 <div class="footer-section">
                     <h3>
-                        <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo" />
+                        <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo" width="32" height="32" />
                         ACM Student Chapter
                     </h3>
-                    <p style="color: var(--gold-primary); font-weight: 600">VIT Chennai</p>
-                    <p style="opacity: 0.75; margin-top: 0.5rem">
-                        Advancing Computing as a Science &amp; Profession.
+                    <p style="color: var(--gold-primary); font-weight: 600">VIT Chennai Campus</p>
+                    <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 0.5rem">
+                        Advancing Computing as a Science &amp; Profession. Awarded Best Technical Chapter AY 2025-26.
                     </p>
                 </div>
 
@@ -727,10 +677,10 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Chapter</a></li>
+                        <li><a href="events.html">Events &amp; Workshops</a></li>
+                        <li><a href="team.html">Leadership Team</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                         <li><a href="blogs-newsletters.html">Blogs &amp; Newsletters</a></li>
                         <li><a href="awards.html">Awards &amp; Recognition</a></li>
                     </ul>
@@ -739,26 +689,30 @@
                 <div class="footer-section">
                     <h3>Connect With Us</h3>
                     <p style="margin-bottom: 1rem">
-                        <span style="margin-right: 8px">📧</span>
-                        <a href="mailto:vitcc.acmsc@vit.ac.in">vitcc.acmsc@vit.ac.in</a>
+                        <a href="mailto:vitcc.acmsc@vit.ac.in" style="color: var(--text-muted)"><i
+                                class="fas fa-envelope" style="color: var(--gold-light); margin-right: 6px"></i>
+                            vitcc.acmsc@vit.ac.in</a>
                     </p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link" title="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link" title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link"
+                            title="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link"
+                            title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub"
+                            rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2026 ACM Student Chapter - VIT Chennai. All Rights Reserved.</p>
-                <p style="opacity: 0.5">Designed for ACM SC VIT Chennai</p>
+                <p>Designed for ACM SC VIT Chennai</p>
             </div>
         </footer>
 
     </div>
 
-    <!-- SCRIPTS -->
+    <!-- PERFORMANCE-OPTIMIZED SCRIPTS -->
     <script src="assets/js/spatial-engine.js"></script>
     <script src="assets/js/script.js"></script>
 </body>

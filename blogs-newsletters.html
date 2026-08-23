@@ -17,7 +17,7 @@
     <meta name="description"
         content="ACM VIT Chennai Blogs and Newsletters hub: sample blog highlights, newsletter editions, and digital evidence links for chapter outcomes." />
     <meta name="keywords"
-        content="ACM VIT Chennai blogs, newsletters, chapter updates, technical articles, student outcomes" />
+        content="ACM VIT Chennai blogs, newsletters, chapter updates, technical articles, student outcomes, research papers" />
     <meta name="author" content="ACM Student Chapter VIT Chennai" />
     <meta name="robots" content="index, follow" />
 
@@ -38,107 +38,126 @@
     <link rel="icon" href="assets/favicon.ico" />
     <link rel="apple-touch-icon" href="assets/logo.webp" />
 
-    <title>Blogs & Newsletters - ACM Student Chapter VIT Chennai</title>
+    <title>Blogs &amp; Newsletters - ACM Student Chapter VIT Chennai</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css?v=20260817" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20260822" />
     <style>
         .bn-card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
         }
+
         .bn-card {
             background: var(--glass-bg);
             border: var(--glass-border);
             border-radius: var(--card-radius);
-            padding: 2.2rem;
+            padding: 2rem 1.75rem;
             box-shadow: var(--glass-shadow);
-            backdrop-filter: blur(20px);
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-            transition: all var(--transition-fast);
+            gap: 0.85rem;
+            transition: transform var(--transition-fast), border-color var(--transition-fast);
         }
+
         .bn-card:hover {
             border-color: var(--gold-primary);
-            transform: translateY(-5px);
+            transform: translateY(-4px);
         }
+
         .bn-kicker {
             font-family: var(--font-display);
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             font-weight: 700;
             color: var(--gold-light);
             text-transform: uppercase;
             letter-spacing: 0.08em;
         }
+
         .bn-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--text-bright);
-            line-height: 1.3;
-            margin-bottom: 0.2rem;
+            line-height: 1.35;
+            margin-bottom: 0.15rem;
         }
+
         .bn-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 0.5rem 0 1rem 0;
+            gap: 0.4rem;
+            margin: 0.25rem 0 0.75rem 0;
         }
+
         .bn-tag {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            color: var(--gold-primary);
-            padding: 0.25rem 0.65rem;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            color: var(--gold-light);
+            padding: 0.2rem 0.6rem;
             border-radius: var(--pill-radius);
             text-transform: uppercase;
         }
+
         .bn-link-btn {
             font-family: var(--font-display);
             font-weight: 700;
-            font-size: 0.88rem;
-            color: var(--gold-light);
+            font-size: 0.85rem;
+            color: var(--cyan-accent);
             display: inline-flex;
             align-items: center;
             gap: 6px;
             margin-top: auto;
         }
+
+        .bn-link-btn:hover {
+            color: #ffffff;
+        }
+
         .bn-newsletter-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            gap: 1.75rem;
         }
+
         .bn-newsletter-card {
             background: var(--glass-bg);
             border: var(--glass-border);
             border-radius: var(--card-radius);
-            padding: 2.5rem;
+            padding: 2.2rem 2rem;
             box-shadow: var(--glass-shadow);
-            backdrop-filter: blur(20px);
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1rem;
+            transition: transform var(--transition-fast), border-color var(--transition-fast);
         }
+
+        .bn-newsletter-card:hover {
+            transform: translateY(-4px);
+        }
+
         .bn-issue {
             font-family: var(--font-display);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
             color: var(--gold-light);
-            background: rgba(212, 175, 55, 0.12);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 0.3rem 0.8rem;
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 0.25rem 0.75rem;
             border-radius: var(--pill-radius);
             align-self: flex-start;
             text-transform: uppercase;
         }
+
         .bn-newsletter-card ul {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.6rem;
+            gap: 0.5rem;
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.9rem;
         }
+
         .bn-newsletter-card ul li::before {
             content: "✦ ";
             color: var(--gold-primary);
@@ -147,10 +166,10 @@
 </head>
 
 <body class="blogs-hub-page">
-    <!-- NAVIGATION (Floating Spatial Pill) -->
-    <nav class="navbar">
+    <!-- NAVIGATION (Smart Floating Pill) -->
+    <nav class="navbar" aria-label="Main Navigation">
         <a href="index.html" class="navbar-logo">
-            <img src="assets/logo.webp" alt="ACM Logo" />
+            <img src="assets/logo.webp" alt="ACM Logo" width="34" height="34" />
             ACM <span>VIT Chennai</span>
         </a>
         <ul class="navbar-menu">
@@ -163,157 +182,220 @@
         </ul>
     </nav>
 
-    <!-- 3D SPATIAL MAIN STAGE -->
+    <!-- MAIN STAGE -->
     <div class="spatial-stage">
 
-        <!-- LUXURY HERO -->
-        <header class="hero spatial-scene" style="min-height: 75vh;">
-            <img src="images/grp-img/codevipassana.webp" alt="Blogs and Newsletters Showcase" class="hero-background depth-bg" />
+        <!-- HERO (100VH VIEWPORT WITH MARQUEE) -->
+        <header class="hero spatial-scene" id="hero">
+            <img src="images/grp-img/codevipassana.webp" alt="Blogs and Newsletters Showcase" class="hero-background" />
             <div class="hero-overlay"></div>
-            <div class="hero-content depth-fg">
+            <div class="hero-content">
                 <span class="hero-pretitle">✦ Digital Outcomes Hub ✦</span>
-                <h1>Blogs &amp; <span>Publications</span></h1>
+                <h1>Blogs &amp; <br /><span>Publications</span></h1>
                 <p>
-                    A dedicated showcase of written impact, technical publications, research papers, and chapter newsletters.
+                    A showcase of chapter technical writing, research papers in Open Source For You, network libraries,
+                    and annual newsletters.
                 </p>
+            </div>
+
+            <!-- PUBLICATIONS MARQUEE RIBBON -->
+            <div class="tech-marquee-section" aria-label="Publication Verticals">
+                <div class="tech-marquee-track">
+                    <div class="tech-tag-pill"><span class="icon">📖</span> Open Source For You</div>
+                    <div class="tech-tag-pill"><span class="icon">🔬</span> Peer-Reviewed Research</div>
+                    <div class="tech-tag-pill"><span class="icon">📰</span> AY 25-26 Yearbooks</div>
+                    <div class="tech-tag-pill"><span class="icon">🌐</span> NS-3 Zero Trust IoT</div>
+                    <div class="tech-tag-pill"><span class="icon">🛡️</span> Snort IDS Defense</div>
+                    <div class="tech-tag-pill"><span class="icon">🐳</span> Docker Testbeds</div>
+                    <div class="tech-tag-pill"><span class="icon">📝</span> Technical Writing</div>
+                    <div class="tech-tag-pill"><span class="icon">🏆</span> Editorial Archive</div>
+                    <!-- Duplicate for seamless looping -->
+                    <div class="tech-tag-pill"><span class="icon">📖</span> Open Source For You</div>
+                    <div class="tech-tag-pill"><span class="icon">🔬</span> Peer-Reviewed Research</div>
+                    <div class="tech-tag-pill"><span class="icon">📰</span> AY 25-26 Yearbooks</div>
+                    <div class="tech-tag-pill"><span class="icon">🌐</span> NS-3 Zero Trust IoT</div>
+                    <div class="tech-tag-pill"><span class="icon">🛡️</span> Snort IDS Defense</div>
+                    <div class="tech-tag-pill"><span class="icon">🐳</span> Docker Testbeds</div>
+                    <div class="tech-tag-pill"><span class="icon">📝</span> Technical Writing</div>
+                    <div class="tech-tag-pill"><span class="icon">🏆</span> Editorial Archive</div>
+                </div>
             </div>
         </header>
 
-        <!-- TECHNICAL OUTCOMES & BLOGS SHOWCASE -->
-        <section class="section-padding spatial-scene">
+        <!-- NEWSLETTER EDITIONS -->
+        <section class="section-padding spatial-scene"
+            style="background: radial-gradient(circle at 50% 50%, rgba(19, 34, 71, 0.45) 0%, var(--void-black) 80%);">
             <div class="container">
                 <div class="section-header">
-                    <h2>Technical Publications</h2>
-                    <span class="subtitle">Research papers, Open Source guides, and software projects</span>
+                    <h2>Newsletter Editions</h2>
+                    <span class="subtitle">Structured chapter communications and yearbooks</span>
                 </div>
 
-                <div class="bn-card-grid depth-mid">
-                    <article class="bn-card">
-                        <span class="bn-kicker">Software Repository</span>
-                        <h3>NS3 Library - Zero Trust IoT</h3>
-                        <p style="color: var(--text-muted); font-size: 0.92rem;">By Arun Santhosh, Rahul R, Muthu Venkatesh, Rahul S</p>
-                        <div class="bn-tags">
-                            <span class="bn-tag">IoT Security</span>
-                            <span class="bn-tag">Network Simulation</span>
-                            <span class="bn-tag">Zero Trust</span>
-                        </div>
-                        <a href="https://apps.nsnam.org/app/zero-trust-iot/" target="_blank" rel="noopener noreferrer" class="bn-link-btn">View Project <i class="fas fa-external-link-alt"></i></a>
+                <div class="bn-newsletter-grid">
+                    <article class="bn-newsletter-card">
+                        <span class="bn-issue">Edition 2025-26</span>
+                        <h3>AY 25-26 Foundation Edition</h3>
+                        <p style="color: var(--text-muted); font-size: 0.92rem;">
+                            The comprehensive yearbook covering chapter onboarding, flagship event outcomes, and student
+                            achievements.
+                        </p>
+                        <ul>
+                            <li>Membership and chapter governance overview</li>
+                            <li>Flagship hackathons and contest recaps</li>
+                            <li>Community partnerships and sponsor highlights</li>
+                        </ul>
+                        <a href="newsletterAY25.html" class="btn-luxury"
+                            style="align-self: flex-start; margin-top: auto;">Read Issue 📖</a>
                     </article>
 
-                    <article class="bn-card">
-                        <span class="bn-kicker">Jan 2026 | Open Source For You</span>
-                        <h3>A Hands-On Guide to Silex: Building Static Sites Visually</h3>
-                        <p style="color: var(--text-muted); font-size: 0.92rem;">Published on Magzter &bull; Technology</p>
-                        <div class="bn-tags">
-                            <span class="bn-tag">Web Development</span>
-                            <span class="bn-tag">Static Sites</span>
-                            <span class="bn-tag">UI Builder</span>
-                        </div>
-                        <a href="https://www.magzter.com/stories/technology/Open-Source-For-You/A-HANDSON-GUIDE-TO-SILEX-BUILDING-STATIC-SITES-VISUALLY" target="_blank" rel="noopener noreferrer" class="bn-link-btn">Read Article <i class="fas fa-external-link-alt"></i></a>
-                    </article>
-
-                    <article class="bn-card">
-                        <span class="bn-kicker">Dec 2025 | Open Source For You</span>
-                        <h3>Setting Up Snort to Secure Your Network</h3>
-                        <p style="color: var(--text-muted); font-size: 0.92rem;">By: Dr T. Subbulakshmi &bull; Magzter.com</p>
-                        <div class="bn-tags">
-                            <span class="bn-tag">Cybersecurity</span>
-                            <span class="bn-tag">Network Defense</span>
-                            <span class="bn-tag">IDS</span>
-                        </div>
-                        <a href="https://www.magzter.com/stories/technology/Open-Source-For-You/SETTING-UP-SNORT-TO-SECURE-YOUR-NETWORK" target="_blank" rel="noopener noreferrer" class="bn-link-btn">Read Article <i class="fas fa-external-link-alt"></i></a>
-                    </article>
-
-                    <article class="bn-card">
-                        <span class="bn-kicker">Aug 2025 | Open Source For You</span>
-                        <h3>A Simple System that Uses Duplicati for Backing Up Data</h3>
-                        <p style="color: var(--text-muted); font-size: 0.92rem;">By: Dr T. Subbulakshmi and Arun Santhosh R.A.</p>
-                        <div class="bn-tags">
-                            <span class="bn-tag">Data Backup</span>
-                            <span class="bn-tag">System Redundancy</span>
-                            <span class="bn-tag">Open Source</span>
-                        </div>
-                        <a href="https://www.magzter.com/stories/technology/Open-Source-For-You/A-SIMPLE-SYSTEM-THAT-USES-DUPLICATI-FOR-BACKING-UP-DATA" target="_blank" rel="noopener noreferrer" class="bn-link-btn">Read Article <i class="fas fa-external-link-alt"></i></a>
-                    </article>
-
-                    <article class="bn-card">
-                        <span class="bn-kicker">July 2025 | Open Source For You</span>
-                        <h3>Setting up a Security Testbed in Windows Using Docker</h3>
-                        <p style="color: var(--text-muted); font-size: 0.92rem;">By: Dr T. Subbulakshmi, Aditya Kushwaha and Sidharth M.</p>
-                        <div class="bn-tags">
-                            <span class="bn-tag">Docker</span>
-                            <span class="bn-tag">Security Testbed</span>
-                            <span class="bn-tag">Containerization</span>
-                        </div>
-                        <a href="https://www.magzter.com/stories/technology/Open-Source-For-You/SETTING-UP-A-SECURITY-TESTBED-IN-WINDOWS-USING-DOCKER" target="_blank" rel="noopener noreferrer" class="bn-link-btn">Read Article <i class="fas fa-external-link-alt"></i></a>
-                    </article>
-
-                    <article class="bn-card">
-                        <span class="bn-kicker">Research Publication</span>
-                        <h3>Analysis and Visualization of Cloud Native Attacks in a Secure Testbed</h3>
-                        <p style="color: var(--text-muted); font-size: 0.92rem;">Dr Subbulakshmi T, Adithyan P, Sidharth M, Arun Santhosh R A</p>
-                        <div class="bn-tags">
-                            <span class="bn-tag">Cloud Security</span>
-                            <span class="bn-tag">Attack Visualization</span>
-                            <span class="bn-tag">Research</span>
-                        </div>
-                        <a href="https://aircconline.com/abstract/ijcnc/v18n2/18226cnc06.html" target="_blank" rel="noopener noreferrer" class="bn-link-btn">Read Paper <i class="fas fa-external-link-alt"></i></a>
+                    <article class="bn-newsletter-card" style="border-color: rgba(245, 158, 11, 0.4);">
+                        <span class="bn-issue"
+                            style="background: rgba(245, 158, 11, 0.15); color: var(--gold-light);">Special
+                            Feature</span>
+                        <h3>Awards &amp; Recognition Journey</h3>
+                        <p style="color: var(--text-muted); font-size: 0.92rem;">
+                            A deep dive into how ACM Student Chapter VITC was crowned the Best Technical Chapter in
+                            campus out of 130+ clubs.
+                        </p>
+                        <ul>
+                            <li>Best Technical Chapter Award Journey</li>
+                            <li>Asia Book of Records Top 20 Standing</li>
+                            <li>Full Chapter Reports &amp; Verified Statistics</li>
+                        </ul>
+                        <a href="awards.html" class="btn-luxury" style="align-self: flex-start; margin-top: auto;">View
+                            Journey 🏆</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- NEWSLETTER EDITIONS -->
-        <section class="section-padding spatial-scene" style="background: radial-gradient(circle at 50% 50%, rgba(11, 23, 54, 0.5) 0%, var(--void-black) 70%);">
+        <!-- KINETIC PARALLAX DIVERGENCE -->
+        <section class="kinetic-text-section spatial-scene" aria-label="Publications Philosophy">
+            <div class="kinetic-text-container">
+                <div class="kinetic-line diverge-up-far">research • discovery</div>
+                <div class="kinetic-line diverge-up-near">insights • articles</div>
+                <div class="kinetic-line diverge-center">
+                    <span class="side-accent">Because</span>
+                    <span class="outlined-word">Knowledge</span>
+                    <span class="side-accent">Matters</span>
+                </div>
+                <div class="kinetic-line diverge-down-near">open source • writing</div>
+                <div class="kinetic-line diverge-down-far">stories • progress</div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL OUTCOMES & BLOGS SHOWCASE -->
+        <section class="section-padding spatial-scene">
             <div class="container">
                 <div class="section-header">
-                    <h2>Newsletter Editions</h2>
-                    <span class="subtitle">Structured chapter communication for stakeholders</span>
+                    <h2>Technical Publications &amp; Code</h2>
+                    <span class="subtitle">Open Source guides, research papers, and libraries</span>
                 </div>
 
-                <div class="bn-newsletter-grid depth-mid">
-                    <article class="bn-newsletter-card">
-                        <span class="bn-issue">Issue 01</span>
-                        <h3>AY 25-26 Foundation Edition</h3>
-                        <p style="color: var(--text-muted);">
-                            Issue covering chapter onboarding, launch events, and early technical milestones.
-                        </p>
-                        <ul>
-                            <li>Membership and chapter structure highlights</li>
-                            <li>Flagship event previews and registration links</li>
-                            <li>Community and partnerships snapshot</li>
-                        </ul>
-                        <a href="newsletterAY25.html" class="btn-luxury" style="align-self: flex-start;">Read Issue 📖</a>
+                <div class="bn-card-grid">
+                    <article class="bn-card">
+                        <span class="bn-kicker">Software Repository</span>
+                        <h3>NS3 Library - Zero Trust IoT</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">By Arun Santhosh, Rahul R, Muthu
+                            Venkatesh, Rahul S</p>
+                        <div class="bn-tags">
+                            <span class="bn-tag">IoT Security</span>
+                            <span class="bn-tag">NS-3 Sim</span>
+                            <span class="bn-tag">Zero Trust</span>
+                        </div>
+                        <a href="https://apps.nsnam.org/app/zero-trust-iot/" target="_blank" rel="noopener noreferrer"
+                            class="bn-link-btn">View App Repository <i class="fas fa-external-link-alt"></i></a>
                     </article>
 
-                    <article class="bn-newsletter-card" style="border-color: rgba(212, 175, 55, 0.4);">
-                        <span class="bn-issue" style="background: rgba(212, 175, 55, 0.15); color: var(--gold-light);">Special Feature</span>
-                        <h3>Awards &amp; Achievements</h3>
-                        <p style="color: var(--text-muted);">
-                            A comprehensive look back at the defining milestones of our award-winning year as Best Technical Chapter.
-                        </p>
-                        <ul>
-                            <li>Best Technical Chapter Award Journey</li>
-                            <li>Asia Book of Records Recognition</li>
-                            <li>Complete Chapter Impact Statistics</li>
-                        </ul>
-                        <a href="awards.html" class="btn-luxury" style="align-self: flex-start;">View Journey 🏆</a>
+                    <article class="bn-card">
+                        <span class="bn-kicker">Open Source For You &bull; Jan 2026</span>
+                        <h3>A Hands-On Guide to Silex: Building Static Sites Visually</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Published in Open Source For You
+                            Magazine (Technology)</p>
+                        <div class="bn-tags">
+                            <span class="bn-tag">Web Dev</span>
+                            <span class="bn-tag">Static Sites</span>
+                            <span class="bn-tag">UI Builder</span>
+                        </div>
+                        <a href="https://www.magzter.com/stories/technology/Open-Source-For-You/A-HANDSON-GUIDE-TO-SILEX-BUILDING-STATIC-SITES-VISUALLY"
+                            target="_blank" rel="noopener noreferrer" class="bn-link-btn">Read Article <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </article>
+
+                    <article class="bn-card">
+                        <span class="bn-kicker">Open Source For You &bull; Dec 2025</span>
+                        <h3>Setting Up Snort to Secure Your Network</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">By Dr. T. Subbulakshmi &bull; Magzter
+                            Publishing</p>
+                        <div class="bn-tags">
+                            <span class="bn-tag">Cybersecurity</span>
+                            <span class="bn-tag">Snort IDS</span>
+                            <span class="bn-tag">Defense</span>
+                        </div>
+                        <a href="https://www.magzter.com/stories/technology/Open-Source-For-You/SETTING-UP-SNORT-TO-SECURE-YOUR-NETWORK"
+                            target="_blank" rel="noopener noreferrer" class="bn-link-btn">Read Article <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </article>
+
+                    <article class="bn-card">
+                        <span class="bn-kicker">Open Source For You &bull; Aug 2025</span>
+                        <h3>Duplicati: Automated Encrypted Backups</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">By Dr. T. Subbulakshmi and Arun Santhosh
+                            R.A.</p>
+                        <div class="bn-tags">
+                            <span class="bn-tag">Data Backup</span>
+                            <span class="bn-tag">Redundancy</span>
+                            <span class="bn-tag">Open Source</span>
+                        </div>
+                        <a href="https://www.magzter.com/stories/technology/Open-Source-For-You/A-SIMPLE-SYSTEM-THAT-USES-DUPLICATI-FOR-BACKING-UP-DATA"
+                            target="_blank" rel="noopener noreferrer" class="bn-link-btn">Read Article <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </article>
+
+                    <article class="bn-card">
+                        <span class="bn-kicker">Open Source For You &bull; Jul 2025</span>
+                        <h3>Dockerized Security Testbed in Windows</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">By Dr. T. Subbulakshmi, Aditya Kushwaha
+                            and Sidharth M.</p>
+                        <div class="bn-tags">
+                            <span class="bn-tag">Docker</span>
+                            <span class="bn-tag">Testbed</span>
+                            <span class="bn-tag">Infosec</span>
+                        </div>
+                        <a href="https://www.magzter.com/stories/technology/Open-Source-For-You/SETTING-UP-A-SECURITY-TESTBED-IN-WINDOWS-USING-DOCKER"
+                            target="_blank" rel="noopener noreferrer" class="bn-link-btn">Read Article <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </article>
+
+                    <article class="bn-card">
+                        <span class="bn-kicker">Peer-Reviewed Research</span>
+                        <h3>Cloud Native Attack Visualization</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Dr. Subbulakshmi T, Adithyan P, Sidharth
+                            M, Arun Santhosh</p>
+                        <div class="bn-tags">
+                            <span class="bn-tag">Cloud Security</span>
+                            <span class="bn-tag">Visualization</span>
+                            <span class="bn-tag">Research</span>
+                        </div>
+                        <a href="https://aircconline.com/abstract/ijcnc/v18n2/18226cnc06.html" target="_blank"
+                            rel="noopener noreferrer" class="bn-link-btn">Read Paper <i
+                                class="fas fa-external-link-alt"></i></a>
                     </article>
                 </div>
             </div>
         </section>
 
         <!-- FOOTER -->
-        <footer class="footer spatial-scene">
-            <div class="footer-container depth-fg">
+        <footer class="footer">
+            <div class="footer-container">
                 <div class="footer-section">
                     <h3>
-                        <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo" />
+                        <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo" width="32" height="32" />
                         ACM Student Chapter
                     </h3>
-                    <p style="color: var(--gold-primary); font-weight: 600">VIT Chennai</p>
-                    <p style="opacity: 0.75; margin-top: 0.5rem">
-                        Advancing Computing as a Science &amp; Profession.
+                    <p style="color: var(--gold-primary); font-weight: 600">VIT Chennai Campus</p>
+                    <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 0.5rem">
+                        Advancing Computing as a Science &amp; Profession. Awarded Best Technical Chapter AY 2025-26.
                     </p>
                 </div>
 
@@ -321,10 +403,10 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Chapter</a></li>
+                        <li><a href="events.html">Events &amp; Workshops</a></li>
+                        <li><a href="team.html">Leadership Team</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                         <li><a href="blogs-newsletters.html">Blogs &amp; Newsletters</a></li>
                         <li><a href="awards.html">Awards &amp; Recognition</a></li>
                     </ul>
@@ -333,26 +415,30 @@
                 <div class="footer-section">
                     <h3>Connect With Us</h3>
                     <p style="margin-bottom: 1rem">
-                        <span style="margin-right: 8px">📧</span>
-                        <a href="mailto:vitcc.acmsc@vit.ac.in">vitcc.acmsc@vit.ac.in</a>
+                        <a href="mailto:vitcc.acmsc@vit.ac.in" style="color: var(--text-muted)"><i
+                                class="fas fa-envelope" style="color: var(--gold-light); margin-right: 6px"></i>
+                            vitcc.acmsc@vit.ac.in</a>
                     </p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link" title="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link" title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link"
+                            title="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link"
+                            title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub"
+                            rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2026 ACM Student Chapter - VIT Chennai. All Rights Reserved.</p>
-                <p style="opacity: 0.5">Designed for ACM SC VIT Chennai</p>
+                <p>Designed for ACM SC VIT Chennai</p>
             </div>
         </footer>
 
     </div>
 
-    <!-- SCRIPTS -->
+    <!-- PERFORMANCE SCRIPTS -->
     <script src="assets/js/spatial-engine.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
