@@ -1824,38 +1824,89 @@ a:hover {
   margin: 1.5rem 0 2.5rem;
   scrollbar-width: thin;
   scrollbar-color: rgba(245, 158, 11, 0.4) transparent;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrolling-gallery-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrolling-gallery-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.scrolling-gallery-container::-webkit-scrollbar-thumb {
+  background: var(--gold-primary);
+  border-radius: 10px;
 }
 
 .scrolling-gallery-track {
   display: flex;
-  gap: 1.25rem;
+  justify-content: center;
+  gap: 1.5rem;
   width: max-content;
+  min-width: 100%;
+  padding: 0 0.5rem;
 }
 
 .scrolling-gallery-item {
-  flex: 0 0 320px;
+  position: relative;
+  flex: 0 0 340px;
+  height: 250px;
   border-radius: var(--card-radius);
   overflow: hidden;
   border: var(--glass-border);
   box-shadow: var(--glass-shadow);
   background: var(--midnight-navy);
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .scrolling-gallery-item:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   border-color: var(--gold-light);
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.2);
 }
 
 .scrolling-gallery-item img {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.4s var(--ease-spring);
+  display: block;
 }
 
 .scrolling-gallery-item:hover img {
-  transform: scale(1.04);
+  transform: scale(1.06);
+}
+
+.scrolling-gallery-item .gallery-event-overlay,
+.scrolling-gallery-item .gallery-carousel-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.5rem 1.25rem 1rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(3, 7, 18, 0.7) 35%, rgba(3, 7, 18, 0.95) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.scrolling-gallery-item .gallery-event-overlay h3,
+.scrolling-gallery-item .gallery-carousel-overlay h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.25rem;
+  color: var(--gold-primary);
+  font-weight: 700;
+}
+
+.scrolling-gallery-item .gallery-event-overlay p,
+.scrolling-gallery-item .gallery-carousel-overlay p {
+  font-size: 0.88rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.35;
 }
 
 .reviews-grid {
@@ -2160,18 +2211,24 @@ a:hover {
   width: 50%;
   padding: 1.2rem 2.5rem;
   box-sizing: border-box;
+  text-align: left;
 }
 
+/* Automatically alternate: Odd entries (1st, 3rd, 5th...) align to Left */
+.timeline-entry,
+.alternating-timeline .timeline-entry:nth-child(odd),
 .timeline-entry.left {
   left: 0;
+  padding-left: 0;
   padding-right: 3.5rem;
-  text-align: left;
 }
 
+/* Automatically alternate: Even entries (2nd, 4th, 6th...) align to Right */
+.alternating-timeline .timeline-entry:nth-child(even),
 .timeline-entry.right {
   left: 50%;
+  padding-right: 0;
   padding-left: 3.5rem;
-  text-align: left;
 }
 
 .timeline-card {
@@ -2251,7 +2308,9 @@ a:hover {
     transform: none;
   }
 
-  .timeline-entry {
+  .timeline-entry,
+  .alternating-timeline .timeline-entry:nth-child(odd),
+  .alternating-timeline .timeline-entry:nth-child(even) {
     width: 100%;
     left: 0 !important;
     padding: 1rem 0 1.5rem 3.2rem !important;
