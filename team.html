@@ -44,60 +44,14 @@
 
     <title>Our Team - ACM Student Chapter VIT Chennai</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css?v=20260822" />
-    <style>
-        .members-table-wrap {
-            background: var(--glass-bg);
-            border: var(--glass-border);
-            border-radius: var(--card-radius);
-            padding: 1.75rem 2rem;
-            box-shadow: var(--glass-shadow);
-            overflow-x: auto;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .members-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-        }
-
-        .members-table th {
-            font-family: var(--font-display);
-            color: var(--gold-light);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            padding: 0.85rem 1.25rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .members-table td {
-            padding: 1rem 1.25rem;
-            color: var(--text-primary);
-            font-size: 0.92rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .members-table tr:hover td {
-            background: rgba(255, 255, 255, 0.03);
-            color: #ffffff;
-        }
-
-        .members-table a {
-            color: var(--cyan-accent);
-            font-size: 0.88rem;
-            font-weight: 600;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css?v=20260906" />
 </head>
 
 <body>
-    <!-- NAVIGATION (Smart Floating Pill) -->
+    <!-- NAVIGATION -->
     <nav class="navbar" aria-label="Main Navigation">
         <a href="index.html" class="navbar-logo">
-            <img src="assets/logo.webp" alt="ACM Logo" width="34" height="34" />
+            <img src="assets/logo.webp" alt="ACM Logo" width="28" height="28" />
             ACM <span>VIT Chennai</span>
         </a>
         <ul class="navbar-menu">
@@ -105,62 +59,25 @@
             <li><a href="about.html">About</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="team.html" class="active">Team</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="awards.html">Awards</a></li>
             <li><a href="blogs-newsletters.html">Blogs</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <!-- MAIN STAGE -->
     <div class="spatial-stage">
 
-        <!-- HERO (100VH VIEWPORT WITH MARQUEE) -->
-        <header class="hero spatial-scene" id="hero">
-            <img src="images/about_premium.webp" alt="Our Team" class="hero-background" />
+        <!-- HERO -->
+        <header class="hero hero-compact spatial-scene" id="hero">
+            <img src="images/about_premium.webp" alt="ACM Leadership" class="hero-background" />
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <span class="hero-pretitle"><i class="fas fa-users"></i> CHAPTER GOVERNANCE // AY 2025–26</span>
-                <h1>Executive Board<br /><span>&amp; Technical Leads</span></h1>
-                <p>Student engineers, researchers, and organizers stewarding chapter initiatives, competitive events,
-                    and community development at VIT Chennai.</p>
-            </div>
-
-            <!-- TEAM ROLES MARQUEE RIBBON -->
-            <div class="tech-marquee-section" aria-label="Leadership Domains">
-                <div class="tech-marquee-track">
-                    <div class="tech-tag-pill"><span class="icon"><i class="fas fa-user-shield"></i></span> Chapter
-                        Executive Board</div>
-                    <div class="tech-tag-pill"><span class="icon"><i class="fas fa-code-branch"></i></span> Technical
-                        Core Leads</div>
-                    <div class="tech-tag-pill"><span class="icon"><i class="fas fa-laptop-code"></i></span> Full-Stack
-                        Webmasters</div>
-                    <div class="tech-tag-pill"><span class="icon"><i class="fas fa-award"></i></span> Awards &amp;
-                        Recognition Chair</div>
-                    <div class="tech-tag-pill"><span class="icon"><i class="fas fa-hands-helping"></i></span> Student
-                        Mentorship</div>
-                    <div class="tech-tag-pill"><span class="icon"><i class="fas fa-project-diagram"></i></span> Domain
-                        Project Leads</div>
-                    <div class="tech-tag-pill"><span class="icon"><i class="fab fa-github"></i></span> Open-Source
-                        Builders</div>
-                    <div class="tech-tag-pill"><span class="icon"><i class="fas fa-id-badge"></i></span> 18 Office
-                        Bearers</div>
-                    <!-- Duplicate for seamless looping -->
-                    <div class="tech-tag-pill"><span class="icon"><i class="fas fa-user-shield"></i></span> Chapter
-                        Executive Board</div>
-                    <div class="tech-tag-pill"><span class="icon"><i class="fas fa-code-branch"></i></span> Technical
-                        Core Leads</div>
-                    <div class="tech-tag-pill"><span class="icon"><i class="fas fa-laptop-code"></i></span> Full-Stack
-                        Webmasters</div>
-                    <div class="tech-tag-pill"><span class="icon"><i class="fas fa-award"></i></span> Awards &amp;
-                        Recognition Chair</div>
-                    <div class="tech-tag-pill"><span class="icon"><i class="fas fa-hands-helping"></i></span> Student
-                        Mentorship</div>
-                    <div class="tech-tag-pill"><span class="icon"><i class="fas fa-project-diagram"></i></span> Domain
-                        Project Leads</div>
-                    <div class="tech-tag-pill"><span class="icon"><i class="fab fa-github"></i></span> Open-Source
-                        Builders</div>
-                    <div class="tech-tag-pill"><span class="icon"><i class="fas fa-id-badge"></i></span> 18 Office
-                        Bearers</div>
-                </div>
+                <span class="hero-pretitle"><i class="fas fa-id-badge"></i> CHAPTER STEWARDS // AY 2025–26</span>
+                <h1>Our <span>Leadership</span></h1>
+                <p>
+                    The student leaders, researchers, and engineers steering ACM VIT Chennai toward technical excellence, community impact, and institutional prestige.
+                </p>
             </div>
         </header>
 
@@ -180,8 +97,7 @@
                         </div>
                         <h3>Subbulakshmi</h3>
                         <span class="team-role">Faculty Coordinator</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Providing faculty mentorship,
-                            institutional guidance, and strategic direction</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Providing faculty mentorship, institutional guidance, and strategic direction</p>
                     </div>
 
                     <!-- Chair -->
@@ -191,19 +107,17 @@
                         </div>
                         <h3>Ganeshvar K S</h3>
                         <span class="team-role">Chair</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Leading executive vision, strategic
-                            planning, and overall chapter growth</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Leading executive vision, strategic planning, and overall chapter growth</p>
                     </div>
 
                     <!-- Co-Chair -->
                     <div class="team-card">
                         <div class="team-avatar-wrap">
-                            <img src="images/office-br/man.webp" alt="Rahul R" loading="lazy" />
+                            <img src="images/office-br/rahulr.webp" alt="Rahul R" loading="lazy" />
                         </div>
                         <h3>Rahul R</h3>
                         <span class="team-role">Co-Chair</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Driving strategic initiatives and
-                            assisting leadership in chapter operations</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Driving strategic initiatives and assisting leadership in chapter operations</p>
                     </div>
 
                     <!-- Vice Chair -->
@@ -213,8 +127,7 @@
                         </div>
                         <h3>Adithiaya Mururgan K S</h3>
                         <span class="team-role">Vice Chair</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Overseeing chapter initiatives,
-                            cross-team coordination, and administration</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Overseeing chapter initiatives, cross-team coordination, and administration</p>
                     </div>
 
                     <!-- Secretary -->
@@ -224,8 +137,7 @@
                         </div>
                         <h3>Snigdha Neya Baskar</h3>
                         <span class="team-role">Secretary</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Managing chapter documentation,
-                            official correspondence, and operational records</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Managing chapter documentation, official correspondence, and operational records</p>
                     </div>
 
                     <!-- Treasurer -->
@@ -235,8 +147,7 @@
                         </div>
                         <h3>Dharshini Jayaraman</h3>
                         <span class="team-role">Treasurer</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Managing chapter finances, event
-                            budgeting, and fiscal planning</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Managing chapter finances, event budgeting, and fiscal planning</p>
                     </div>
 
                     <!-- Membership Chair -->
@@ -246,8 +157,7 @@
                         </div>
                         <h3>Muthu Venkatesh M</h3>
                         <span class="team-role">Membership Chair</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Engaging members, driving recruitment,
-                            and building the ACM community</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Engaging members, driving recruitment, and building the ACM community</p>
                     </div>
 
                     <!-- Research Lead -->
@@ -257,8 +167,7 @@
                         </div>
                         <h3>Akshith MK</h3>
                         <span class="team-role">Research Lead</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Fostering research culture, academic
-                            publications, and innovation projects</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Fostering research culture, academic publications, and innovation projects</p>
                     </div>
 
                     <!-- Technical Lead -->
@@ -268,19 +177,17 @@
                         </div>
                         <h3>Suyash Singh</h3>
                         <span class="team-role">Technical Lead</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Directing technical projects, hands-on
-                            workshops, and tech infrastructure</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Directing technical projects, hands-on workshops, and tech infrastructure</p>
                     </div>
 
                     <!-- Co-Technical Lead -->
                     <div class="team-card">
                         <div class="team-avatar-wrap">
-                            <img src="images/office-br/man.webp" alt="Atharva Bandekar" loading="lazy" />
+                            <img src="images/office-br/atharva.webp" alt="Atharva Bandekar" loading="lazy" />
                         </div>
                         <h3>Atharva Bandekar</h3>
                         <span class="team-role">Co-Technical Lead</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Co-leading technical development,
-                            hackathons, and skill-building sessions</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Co-leading technical development, hackathons, and skill-building sessions</p>
                     </div>
 
                     <!-- VTOP Representative & Editorial Head -->
@@ -290,8 +197,7 @@
                         </div>
                         <h3>Jaaiwanth K</h3>
                         <span class="team-role">VTOP Representative &amp; Editorial Head</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Overseeing university communications,
-                            newsletter curation, and editorial content</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Overseeing university communications, newsletter curation, and editorial content</p>
                     </div>
 
                     <!-- Webmaster -->
@@ -301,8 +207,7 @@
                         </div>
                         <h3>Hareekshith AS</h3>
                         <span class="team-role">Webmaster</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Architecting, developing, and
-                            maintaining web platforms and digital services</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Architecting, developing, and maintaining web platforms and digital services</p>
                     </div>
 
                     <!-- Event Management Lead -->
@@ -312,8 +217,7 @@
                         </div>
                         <h3>Ragul Sai</h3>
                         <span class="team-role">Event Management Lead</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Planning, coordinating, and executing
-                            flagship chapter events and logistics</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Planning, coordinating, and executing flagship chapter events and logistics</p>
                     </div>
 
                     <!-- Management & Digital Marketing Lead -->
@@ -323,8 +227,7 @@
                         </div>
                         <h3>Rahul S</h3>
                         <span class="team-role">Management &amp; Digital Marketing Lead</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Managing event logistics, digital
-                            outreach, and campaign strategy</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Managing event logistics, digital outreach, and campaign strategy</p>
                     </div>
 
                     <!-- Marketing Lead -->
@@ -334,8 +237,7 @@
                         </div>
                         <h3>Athul Raphi</h3>
                         <span class="team-role">Marketing Lead</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Leading promotional campaigns, chapter
-                            branding, and audience outreach</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Leading promotional campaigns, chapter branding, and audience outreach</p>
                     </div>
 
                     <!-- Marketing Co-Lead -->
@@ -345,8 +247,7 @@
                         </div>
                         <h3>Sanidhiyaa</h3>
                         <span class="team-role">Marketing Co-Lead</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Co-leading marketing initiatives,
-                            sponsor outreach, and publicity drives</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Co-leading marketing initiatives, sponsor outreach, and publicity drives</p>
                     </div>
 
                     <!-- Design Head -->
@@ -356,8 +257,7 @@
                         </div>
                         <h3>Keshav Giri</h3>
                         <span class="team-role">Design Head</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Directing visual identity, UI/UX
-                            design, and creative assets for the chapter</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Directing visual identity, UI/UX design, and creative assets for the chapter</p>
                     </div>
 
                     <!-- Awards & Achievements Chair -->
@@ -367,31 +267,14 @@
                         </div>
                         <h3>Nandhitha</h3>
                         <span class="team-role">Awards &amp; Achievements Chair</span>
-                        <p style="color: var(--text-muted); font-size: 0.88rem;">Curating nominations, tracking
-                            achievements, and highlighting chapter accolades</p>
+                        <p style="color: var(--text-muted); font-size: 0.88rem;">Curating nominations, tracking achievements, and highlighting chapter accolades</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- KINETIC PARALLAX DIVERGENCE -->
-        <section class="kinetic-text-section spatial-scene" aria-label="Team Philosophy">
-            <div class="kinetic-text-container">
-                <div class="kinetic-line diverge-up-far">initiative • execution</div>
-                <div class="kinetic-line diverge-up-near">student mentors • builders</div>
-                <div class="kinetic-line diverge-center">
-                    <span class="side-accent">Led By</span>
-                    <span class="outlined-word">Engineers</span>
-                    <span class="side-accent">For Engineers</span>
-                </div>
-                <div class="kinetic-line diverge-down-near">community • governance</div>
-                <div class="kinetic-line diverge-down-far">empowering • the next wave</div>
-            </div>
-        </section>
-
         <!-- WEBSITE CONTRIBUTORS -->
-        <section class="section-padding spatial-scene"
-            style="background: radial-gradient(circle at 50% 50%, rgba(19, 34, 71, 0.4) 0%, var(--void-black) 80%);">
+        <section class="section-padding bg-secondary spatial-scene">
             <div class="container">
                 <div class="section-header">
                     <h2>Website Maintainers &amp; Developers</h2>
@@ -468,11 +351,11 @@
             <div class="footer-container">
                 <div class="footer-section">
                     <h3>
-                        <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo" width="32" height="32" />
+                        <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo" width="28" height="28" />
                         ACM Student Chapter
                     </h3>
-                    <p style="color: var(--gold-primary); font-weight: 600">VIT Chennai Campus</p>
-                    <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 0.5rem">
+                    <p style="color: var(--accent-gold); font-weight: 600">VIT Chennai Campus</p>
+                    <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: 0.5rem">
                         Advancing Computing as a Science &amp; Profession. Awarded Best Technical Chapter AY 2025-26.
                     </p>
                 </div>
@@ -484,9 +367,9 @@
                         <li><a href="about.html">About Chapter</a></li>
                         <li><a href="events.html">Events &amp; Workshops</a></li>
                         <li><a href="team.html">Leadership Team</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="blogs-newsletters.html">Blogs &amp; Newsletters</a></li>
                         <li><a href="awards.html">Awards &amp; Recognition</a></li>
+                        <li><a href="blogs-newsletters.html">Blogs &amp; Newsletters</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -494,7 +377,7 @@
                     <h3>Connect With Us</h3>
                     <p style="margin-bottom: 1rem">
                         <a href="mailto:vitcc.acmsc@vit.ac.in" style="color: var(--text-muted)"><i
-                                class="fas fa-envelope" style="color: var(--gold-light); margin-right: 6px"></i>
+                                class="fas fa-envelope" style="color: var(--accent-gold); margin-right: 6px"></i>
                             vitcc.acmsc@vit.ac.in</a>
                     </p>
                     <div class="social-links">

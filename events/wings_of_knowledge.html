@@ -28,8 +28,8 @@
 </head>
 
 <body>
-    <!-- NAVIGATION (Floating Luxury Pill) -->
-    <nav class="navbar animate-fade-up">
+    <!-- NAVIGATION -->
+    <nav class="navbar" aria-label="Main Navigation">
         <a href="../index.html" class="navbar-logo">
             <img src="../assets/logo.webp" alt="ACM Logo">
             ACM <span>VIT Chennai</span>
@@ -57,7 +57,7 @@
             </div>
         </div>
         <div class="hero-split-image">
-            <img src="https://raw.githubusercontent.com/vitccacm/websitev2/refs/heads/main/events/event-img/wings_of_know/poster.jpeg"
+            <img src="event-img/wings_of_know/poster.jpeg"
                 alt="ACM Wings of Knowledge" onerror="this.onerror=null; this.src='../assets/logo.webp';">
         </div>
     </section>
@@ -131,34 +131,32 @@
     <!-- EVENT GALLERY (SCROLLING CAROUSEL) -->
     <section class="bg-light">
         <div class="section-container">
-            <div style="max-width: 100%; margin: 0 auto; overflow: hidden;">
+            <div style="max-width: 1200px; margin: 0 auto;">
                 <h2 class="section-title text-center">Event Gallery</h2>
 
-                <div class="scrolling-gallery-container">
-                    <div class="scrolling-gallery-track">
-                        <div class="scrolling-gallery-item">
-                            <img src="https://raw.githubusercontent.com/vitccacm/websitev2/refs/heads/main/events/event-img/wings_of_know/poster.jpeg"
-                                alt="Event Poster" onerror="this.onerror=null; this.src='../assets/logo.webp';">
-                            <div class="gallery-event-overlay">
-                                <h3 class="text-gold">Wings of Knowledge</h3>
-                                <p class="text-white">Read. Reflect. Recommend.</p>
-                            </div>
+                <div class="event-gallery-flex">
+                    <div class="gallery-event-card">
+                        <img src="event-img/wings_of_know/poster.jpeg"
+                            alt="Event Poster" class="gallery-event-image" onerror="this.onerror=null; this.src='../assets/logo.webp';">
+                        <div class="gallery-event-overlay">
+                            <h3 class="text-gold">Wings of Knowledge</h3>
+                            <p class="text-white">Read. Reflect. Recommend.</p>
                         </div>
-                        <div class="scrolling-gallery-item">
-                            <img src="https://raw.githubusercontent.com/vitccacm/websitev2/refs/heads/main/events/event-img/wings_of_know/img1.jpeg"
-                                alt="Reading and Reflection" onerror="this.onerror=null; this.src='../assets/logo.webp';">
-                            <div class="gallery-event-overlay">
-                                <h3 class="text-gold">Reading & Reflection</h3>
-                                <p class="text-white">Connecting lessons from books to life</p>
-                            </div>
+                    </div>
+                    <div class="gallery-event-card">
+                        <img src="event-img/wings_of_know/img1.jpeg"
+                            alt="Reading and Reflection" class="gallery-event-image" onerror="this.onerror=null; this.src='../assets/logo.webp';">
+                        <div class="gallery-event-overlay">
+                            <h3 class="text-gold">Reading & Reflection</h3>
+                            <p class="text-white">Connecting lessons from books to life</p>
                         </div>
-                        <div class="scrolling-gallery-item">
-                            <img src="https://raw.githubusercontent.com/vitccacm/websitev2/refs/heads/main/events/event-img/wings_of_know/img2.jpeg"
-                                alt="Insights and Recommendations" onerror="this.onerror=null; this.src='../assets/logo.webp';">
-                            <div class="gallery-event-overlay">
-                                <h3 class="text-gold">Sharing Insights</h3>
-                                <p class="text-white">Meaningful recommendations & discussion</p>
-                            </div>
+                    </div>
+                    <div class="gallery-event-card">
+                        <img src="event-img/wings_of_know/img2.jpeg"
+                            alt="Insights and Recommendations" class="gallery-event-image" onerror="this.onerror=null; this.src='../assets/logo.webp';">
+                        <div class="gallery-event-overlay">
+                            <h3 class="text-gold">Sharing Insights</h3>
+                            <p class="text-white">Meaningful recommendations & discussion</p>
                         </div>
                     </div>
                 </div>
@@ -210,8 +208,8 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
-                <h3><img src="../assets/logo.webp" alt="ACM Logo" class="footer-logo"> ACM Student Chapter</h3>
-                <p style="color: var(--gold-primary); font-weight: 600;">VIT Chennai</p>
+                <h3><img src="../assets/logo.webp" alt="ACM Logo" class="footer-logo" width="32" height="32"> ACM Student Chapter</h3>
+                <p style="color: var(--accent-gold); font-weight: 600;">VIT Chennai Campus</p>
                 <p style="opacity: 0.7; margin-top: 1rem;">Advancing Computing as a Science & Profession.</p>
             </div>
 

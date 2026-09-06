@@ -44,14 +44,14 @@
 
     <title>ACM Student Chapter VIT Chennai | Best Technical Chapter</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css?v=20260822" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20260906" />
 </head>
 
 <body class="home-page">
-    <!-- NAVIGATION (Smart Floating Pill) -->
+    <!-- NAVIGATION -->
     <nav class="navbar" aria-label="Main Navigation">
         <a href="index.html" class="navbar-logo">
-            <img src="assets/logo.webp" alt="ACM Logo" width="34" height="34" />
+            <img src="assets/logo.webp" alt="ACM Logo" width="28" height="28" />
             ACM <span>VIT Chennai</span>
         </a>
         <ul class="navbar-menu">
@@ -59,22 +59,24 @@
             <li><a href="about.html">About</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="team.html">Team</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="awards.html">Awards</a></li>
             <li><a href="blogs-newsletters.html">Blogs</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <!-- MAIN STAGE -->
     <div class="spatial-stage">
 
-        <!-- SCENE 1: HERO SECTION -->
+        <!-- ═══════════════════════════════════════════════════
+             SECTION 1: HERO
+             ═══════════════════════════════════════════════════ -->
         <header class="hero spatial-scene" id="hero">
             <img src="images/hero_luxury_dark.webp" alt="Abstract Spatial Tech Background" class="hero-background" />
             <div class="hero-overlay"></div>
 
             <div class="hero-content">
-                <img src="images/acmheader.png" alt="ACM Header" class="hero-header-img"
-                    style="display: block; margin: 0 auto 1.25rem auto; max-width: 440px; width: 100%; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.6));" />
+                <img src="images/acmheader.png" alt="ACM Header" class="hero-header-img" />
                 <span class="hero-pretitle"><i class="fas fa-award"></i> BEST TECHNICAL CHAPTER // AY 2025–26</span>
                 <h1>
                     Advancing Computing<br />
@@ -83,13 +85,13 @@
                 <p>
                     The official ACM Student Chapter at VIT Chennai. A community of student developers, researchers, and engineers building real-world systems, hosting national hackathons, and advancing open research.
                 </p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="#explore" class="btn-luxury">Explore Verticals <i class="fas fa-arrow-right"></i></a>
-                    <a href="#best-chapter" class="btn-outline-glass">Best Chapter Report <i class="fas fa-file-alt"></i></a>
+                <div class="hero-buttons">
+                    <a href="#explore" class="btn-primary">Explore Verticals <i class="fas fa-arrow-right"></i></a>
+                    <a href="#best-chapter" class="btn-secondary">Best Chapter Report <i class="fas fa-file-alt"></i></a>
                 </div>
             </div>
 
-            <!-- HERO MARQUEE RIBBON -->
+            <!-- HERO MARQUEE -->
             <div class="tech-marquee-section" aria-label="Chapter Accolades & Domains">
                 <div class="tech-marquee-track">
                     <div class="tech-tag-pill"><span class="icon"><i class="fas fa-trophy"></i></span> Best Technical Chapter 2025–26</div>
@@ -113,11 +115,13 @@
             </div>
         </header>
 
-        <!-- SCENE 2: BEST TECHNICAL CHAPTER AWARD SHOWCASE -->
+        <!-- ═══════════════════════════════════════════════════
+             SECTION 2: BEST TECHNICAL CHAPTER AWARD
+             ═══════════════════════════════════════════════════ -->
         <section class="section-padding best-chapter-section spatial-scene" id="best-chapter">
             <div class="container bc-container">
 
-                <!-- LEFT: Award info + Stats Matrix -->
+                <!-- LEFT: Award info + Stats -->
                 <div class="bc-left-col">
                     <div class="bc-title-row">
                         <div class="award-badge-wrap">
@@ -178,11 +182,11 @@
                     </div>
                 </div>
 
-                <!-- RIGHT: Certificate & Moment Gallery -->
+                <!-- RIGHT: Certificate & Gallery -->
                 <div class="bc-right-col">
                     <div class="bc-gallery-header">
                         <span class="hero-pretitle"
-                            style="font-size:0.75rem; margin-bottom:0.25rem; display:inline-block;">Award
+                            style="font-size:0.7rem; margin-bottom:0.25rem; display:inline-flex;">Award
                             Ceremony</span>
                         <h3 class="bc-gallery-title">The Moment of Excellence</h3>
                     </div>
@@ -211,25 +215,12 @@
             </div>
         </section>
 
-        <!-- KINETIC PARALLAX DIVERGENCE -->
-        <section class="kinetic-text-section spatial-scene" aria-label="Computing Statement">
-            <div class="kinetic-text-container">
-                <div class="kinetic-line diverge-up-far">computing • excellence</div>
-                <div class="kinetic-line diverge-up-near">computing • innovation</div>
-                <div class="kinetic-line diverge-center">
-                    <span class="side-accent">Because</span>
-                    <span class="outlined-word">Computing</span>
-                    <span class="side-accent">Matters</span>
-                </div>
-                <div class="kinetic-line diverge-down-near">community • research</div>
-                <div class="kinetic-line diverge-down-far">advancing • technology</div>
-            </div>
-        </section>
-
-        <!-- SCENE 3: PATRONS & INDUSTRY SPONSORS -->
+        <!-- ═══════════════════════════════════════════════════
+             SECTION 3: PATRONS & PARTNERS
+             ═══════════════════════════════════════════════════ -->
         <section class="section-padding partners-section spatial-scene" id="patrons">
             <div class="container text-center">
-                <div class="section-header">
+                <div class="section-header text-center">
                     <h2>Our Patrons &amp; Partners</h2>
                     <span class="subtitle">Empowering Our Technical Vision</span>
                 </div>
@@ -242,7 +233,9 @@
             </div>
         </section>
 
-        <!-- SCENE 4: RECRUITMENT & MEMBERSHIP -->
+        <!-- ═══════════════════════════════════════════════════
+             SECTION 4: MEMBERSHIP CTA
+             ═══════════════════════════════════════════════════ -->
         <section class="section-padding membership-banner spatial-scene" id="membership">
             <div class="container membership-banner-inner text-center">
                 <h2>Join Our Ranks!</h2>
@@ -272,14 +265,16 @@
                         </div>
                     </div>
                 </div>
-                <a href="http://vitchennai.acm.org/join/membership" class="btn-luxury" target="_blank"
+                <a href="http://vitchennai.acm.org/join/membership" class="btn-primary" target="_blank"
                     rel="noopener noreferrer">
                     Apply for Membership <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </section>
 
-        <!-- SCENE 5: CORE VERTICALS (BENTO GRID) -->
+        <!-- ═══════════════════════════════════════════════════
+             SECTION 5: CORE VERTICALS (BENTO GRID)
+             ═══════════════════════════════════════════════════ -->
         <section id="explore" class="section-padding spatial-scene">
             <div class="container">
                 <div class="section-header">
@@ -288,7 +283,6 @@
                 </div>
 
                 <div class="bento-grid">
-                    <!-- Large Feature Card -->
                     <div class="bento-card large">
                         <div class="card-icon"><i class="fas fa-microchip"></i></div>
                         <h3>Research &amp; Systems</h3>
@@ -297,7 +291,6 @@
                         </p>
                     </div>
 
-                    <!-- Tall Feature Card -->
                     <div class="bento-card tall">
                         <div class="card-icon"><i class="fas fa-terminal"></i></div>
                         <h3>Competitive Coding &amp; Hackathons</h3>
@@ -306,7 +299,6 @@
                         </p>
                     </div>
 
-                    <!-- Standard Cards -->
                     <div class="bento-card">
                         <div class="card-icon"><i class="fas fa-code"></i></div>
                         <h3>Engineering Workshops</h3>
@@ -322,7 +314,9 @@
             </div>
         </section>
 
-        <!-- SCENE 6: ABOUT PREVIEW (SPLIT SECTION) -->
+        <!-- ═══════════════════════════════════════════════════
+             SECTION 6: ABOUT PREVIEW (SPLIT SECTION)
+             ═══════════════════════════════════════════════════ -->
         <section class="split-section spatial-scene" id="who-we-are">
             <div class="split-image">
                 <img src="images/grp-img/personal-finance.webp" alt="ACM Community at VIT Chennai" loading="lazy" />
@@ -335,12 +329,14 @@
                     translates international technical standards into transformative experiences for undergraduate
                     engineers.
                 </p>
-                <a href="about.html" class="btn-luxury" style="display: inline-flex; margin-top: 1.25rem">Discover Our
+                <a href="about.html" class="btn-primary" style="display: inline-flex; margin-top: 1.25rem">Discover Our
                     Mission <i class="fas fa-arrow-right"></i></a>
             </div>
         </section>
 
-        <!-- SCENE 7: REPORTS & STATISTICS (DATA HUB) -->
+        <!-- ═══════════════════════════════════════════════════
+             SECTION 7: REPORTS & STATISTICS
+             ═══════════════════════════════════════════════════ -->
         <section class="section-padding impact-section spatial-scene" id="reports">
             <div class="container">
                 <div class="section-header">
@@ -497,8 +493,10 @@
             </div>
         </section>
 
-        <!-- SCENE 8: PROMINENT PARTNERS & SPEAKERS -->
-        <section class="section-padding partners-section spatial-scene" id="speakers">
+        <!-- ═══════════════════════════════════════════════════
+             SECTION 8: INDUSTRY SPEAKERS & MENTORS
+             ═══════════════════════════════════════════════════ -->
+        <section class="section-padding spatial-scene" id="speakers">
             <div class="container">
                 <div class="section-header">
                     <h2>Industry Speakers &amp; Mentors</h2>
@@ -546,7 +544,9 @@
             </div>
         </section>
 
-        <!-- SCENE 9: STUDENT TESTIMONIALS -->
+        <!-- ═══════════════════════════════════════════════════
+             SECTION 9: STUDENT TESTIMONIALS
+             ═══════════════════════════════════════════════════ -->
         <section class="section-padding testimonials-section spatial-scene" id="testimonials">
             <div class="container">
                 <div class="section-header">
@@ -615,8 +615,27 @@
             </div>
         </section>
 
-        <!-- SCENE 10: UPCOMING EVENTS RADAR -->
-        <section class="section-padding spatial-scene" id="upcoming-events" style="background: var(--void-black)">
+        <!-- ═══════════════════════════════════════════════════
+             SECTION 10: KINETIC TEXT
+             ═══════════════════════════════════════════════════ -->
+        <section class="kinetic-text-section spatial-scene" aria-label="Computing Statement">
+            <div class="kinetic-text-container">
+                <div class="kinetic-line diverge-up-far">computing • excellence</div>
+                <div class="kinetic-line diverge-up-near">computing • innovation</div>
+                <div class="kinetic-line diverge-center">
+                    <span class="side-accent">Because</span>
+                    <span class="outlined-word">Computing</span>
+                    <span class="side-accent">Matters</span>
+                </div>
+                <div class="kinetic-line diverge-down-near">community • research</div>
+                <div class="kinetic-line diverge-down-far">advancing • technology</div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════
+             SECTION 11: UPCOMING EVENTS
+             ═══════════════════════════════════════════════════ -->
+        <section class="section-padding spatial-scene" id="upcoming-events" style="background: var(--bg-secondary)">
             <div class="container">
                 <div class="section-header">
                     <h2>Events Radar</h2>
@@ -647,7 +666,7 @@
                 </div>
 
                 <div class="text-center" style="margin-top: 2.5rem;">
-                    <a href="events.html" class="btn-outline-glass">View All Events &amp; Archives <i
+                    <a href="events.html" class="btn-secondary">View All Events &amp; Archives <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -661,8 +680,8 @@
                         <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo" width="32" height="32" />
                         ACM Student Chapter
                     </h3>
-                    <p style="color: var(--gold-primary); font-weight: 600">VIT Chennai Campus</p>
-                    <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 0.5rem">
+                    <p style="color: var(--accent-gold); font-weight: 600">VIT Chennai Campus</p>
+                    <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: 0.5rem">
                         Advancing Computing as a Science &amp; Profession. Awarded Best Technical Chapter AY 2025-26.
                     </p>
                 </div>
@@ -684,7 +703,7 @@
                     <h3>Connect With Us</h3>
                     <p style="margin-bottom: 1rem">
                         <a href="mailto:vitcc.acmsc@vit.ac.in" style="color: var(--text-muted)"><i
-                                class="fas fa-envelope" style="color: var(--gold-light); margin-right: 6px"></i>
+                                class="fas fa-envelope" style="color: var(--accent-gold); margin-right: 6px"></i>
                             vitcc.acmsc@vit.ac.in</a>
                     </p>
                     <div class="social-links">
@@ -706,9 +725,10 @@
 
     </div>
 
-    <!-- PERFORMANCE-OPTIMIZED SCRIPTS -->
+    <!-- SCRIPTS -->
     <script src="assets/js/spatial-engine.js"></script>
     <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>

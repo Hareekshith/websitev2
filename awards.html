@@ -19,102 +19,38 @@
     <meta name="keywords"
         content="Best Chapter, VIT Chennai, ACM VITC, ACM Student Chapter, Technical Clubs, Awards, Excellence, VITC, ACM" />
     <meta name="author" content="ACM Student Chapter VIT Chennai" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vitchennai.acm.org/awards.html" />
+    <meta property="og:title" content="Awards &amp; Recognition - ACM Student Chapter VIT Chennai" />
+    <meta property="og:description"
+        content="Crowned the Best Technical Chapter at VIT Chennai. Explore our awards and defining milestones." />
+    <meta property="og:image" content="https://vitchennai.acm.org/events/event-img/best-chapter-campus/cert.webp" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://vitchennai.acm.org/awards.html" />
+    <meta property="twitter:title" content="Awards &amp; Recognition - ACM Student Chapter VIT Chennai" />
+    <meta property="twitter:description"
+        content="Crowned the Best Technical Chapter at VIT Chennai. Explore our awards and defining milestones." />
+    <meta property="twitter:image" content="https://vitchennai.acm.org/events/event-img/best-chapter-campus/cert.webp" />
 
     <!-- Favicon -->
     <link rel="icon" href="assets/favicon.ico" />
     <link rel="apple-touch-icon" href="assets/logo.webp" />
 
-    <title>Awards &amp; Achievements - ACM Student Chapter VIT Chennai</title>
+    <title>Awards &amp; Recognition - ACM Student Chapter VIT Chennai</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css?v=20260822" />
-    <style>
-        .journey-timeline {
-            max-width: 860px;
-            margin: 2.5rem auto 0;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            position: relative;
-        }
-        .journey-timeline::before {
-            content: '';
-            position: absolute;
-            left: 28px;
-            top: 15px;
-            bottom: 15px;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--gold-primary), var(--cyan-accent), transparent);
-            opacity: 0.35;
-        }
-        .journey-step {
-            display: flex;
-            gap: 1.75rem;
-            align-items: flex-start;
-            position: relative;
-        }
-        .journey-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: var(--midnight-navy);
-            border: 2px solid var(--gold-primary);
-            box-shadow: 0 0 16px rgba(245, 158, 11, 0.35);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            color: var(--gold-light);
-            flex-shrink: 0;
-            z-index: 2;
-        }
-        .journey-content {
-            background: var(--glass-bg);
-            padding: 1.75rem 2rem;
-            border-radius: var(--card-radius);
-            border: var(--glass-border);
-            box-shadow: var(--glass-shadow);
-            flex-grow: 1;
-            transition: transform var(--transition-fast), border-color var(--transition-fast);
-        }
-        .journey-content:hover {
-            transform: translateX(6px);
-            border-color: var(--gold-primary);
-        }
-        .journey-date {
-            color: var(--gold-light);
-            font-family: var(--font-display);
-            font-size: 0.82rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 0.3rem;
-        }
-        .journey-content h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-bright);
-        }
-        .journey-content p {
-            color: var(--text-muted);
-            line-height: 1.65;
-            margin: 0;
-            font-size: 0.95rem;
-        }
-        @media (max-width: 768px) {
-            .journey-timeline::before { left: 20px; }
-            .journey-icon { width: 42px; height: 42px; font-size: 1rem; }
-            .journey-step { gap: 1rem; }
-            .journey-content { padding: 1.25rem 1.5rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css?v=20260906" />
 </head>
 
 <body>
-    <!-- NAVIGATION (Smart Floating Pill) -->
+    <!-- NAVIGATION -->
     <nav class="navbar" aria-label="Main Navigation">
         <a href="index.html" class="navbar-logo">
-            <img src="assets/logo.webp" alt="ACM Logo" width="34" height="34" />
+            <img src="assets/logo.webp" alt="ACM Logo" width="28" height="28" />
             ACM <span>VIT Chennai</span>
         </a>
         <ul class="navbar-menu">
@@ -122,8 +58,9 @@
             <li><a href="about.html">About</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="team.html">Team</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="awards.html" class="active">Awards</a></li>
             <li><a href="blogs-newsletters.html">Blogs</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -131,7 +68,7 @@
     <div class="spatial-stage">
 
         <!-- HERO -->
-        <header class="hero spatial-scene" style="min-height: 65vh; padding-top: 8rem; padding-bottom: 3.5rem;">
+        <header class="hero hero-compact spatial-scene" id="hero">
             <img src="images/hero_luxury_dark.webp" alt="Awards Hero" class="hero-background" />
             <div class="hero-overlay"></div>
             <div class="hero-content">
@@ -143,7 +80,7 @@
             </div>
         </header>
 
-        <!-- BEST TECHNICAL CHAPTER AWARD SECTION -->
+        <!-- BEST TECHNICAL CHAPTER AWARD SHOWCASE -->
         <section class="section-padding best-chapter-section spatial-scene" id="best-chapter">
             <div class="container bc-container">
 
@@ -235,7 +172,7 @@
         </section>
 
         <!-- THE JOURNEY NARRATIVE SECTION -->
-        <section class="section-padding spatial-scene" style="background: radial-gradient(circle at 50% 50%, rgba(19, 34, 71, 0.45) 0%, var(--void-black) 80%);">
+        <section class="section-padding bg-secondary spatial-scene">
             <div class="container">
                 <div class="section-header text-center">
                     <h2>The Road to Excellence</h2>
@@ -310,15 +247,15 @@
         </section>
 
         <!-- FOOTER -->
-<footer class="footer">
+        <footer class="footer">
             <div class="footer-container">
                 <div class="footer-section">
                     <h3>
-                        <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo" width="32" height="32" />
+                        <img src="assets/logo.webp" alt="ACM Logo" class="footer-logo" width="28" height="28" />
                         ACM Student Chapter
                     </h3>
-                    <p style="color: var(--gold-primary); font-weight: 600">VIT Chennai Campus</p>
-                    <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 0.5rem">
+                    <p style="color: var(--accent-gold); font-weight: 600">VIT Chennai Campus</p>
+                    <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: 0.5rem">
                         Advancing Computing as a Science &amp; Profession. Awarded Best Technical Chapter AY 2025-26.
                     </p>
                 </div>
@@ -330,21 +267,26 @@
                         <li><a href="about.html">About Chapter</a></li>
                         <li><a href="events.html">Events &amp; Workshops</a></li>
                         <li><a href="team.html">Leadership Team</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="blogs-newsletters.html">Blogs &amp; Newsletters</a></li>
                         <li><a href="awards.html">Awards &amp; Recognition</a></li>
+                        <li><a href="blogs-newsletters.html">Blogs &amp; Newsletters</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
                     <h3>Connect With Us</h3>
                     <p style="margin-bottom: 1rem">
-                        <a href="mailto:vitcc.acmsc@vit.ac.in" style="color: var(--text-muted)"><i class="fas fa-envelope" style="color: var(--gold-light); margin-right: 6px"></i> vitcc.acmsc@vit.ac.in</a>
+                        <a href="mailto:vitcc.acmsc@vit.ac.in" style="color: var(--text-muted)"><i
+                                class="fas fa-envelope" style="color: var(--accent-gold); margin-right: 6px"></i>
+                            vitcc.acmsc@vit.ac.in</a>
                     </p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link" title="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link" title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/company/acm-vitc/" target="_blank" class="social-link"
+                            title="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/acm_vitcc/" target="_blank" class="social-link"
+                            title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/vitccacm" target="_blank" class="social-link" title="GitHub"
+                            rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
