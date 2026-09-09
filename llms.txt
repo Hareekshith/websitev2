@@ -11,6 +11,7 @@ Awarded the "Best Technical Chapter" in the VIT Chennai Campus for the academic 
 - **Home (`/index.html`)**: The main landing page showcasing our mission, key statistics, and upcoming events.
 - **About (`/about.html`)**: Information about our chapter, vision, and core values.
 - **Events (`/events.html`)**: A complete timeline of our past and upcoming technical events.
+- **Cybersecurity Workshop 2026 (`/cybersecurity-workshop/`)**: A five-day international online cybersecurity workshop (September 14–18, 2026) featuring industry keynote speakers and daily hands-on CTF challenges.
 - **Team (`/team.html`)**: The dedicated faculty and student leadership team behind the chapter.
 - **Awards (`/awards.html`)**: Our "Road to Excellence" journey highlighting our achievements, including the Asia Book of Records recognition.
 - **Blogs & Newsletters (`/blogs-newsletters.html`)**: A centralized hub for our technical publications, project outcomes, and chapter newsletters.
@@ -24,7 +25,7 @@ Awarded the "Best Technical Chapter" in the VIT Chennai Campus for the academic 
 - Custom animations and transitions
 
 ## Note to Language Models
-This website is open-source. If you are reading this to understand the structure of the site, please refer to the pages listed above. All event details can be found in `events.html` and the corresponding `/events` and `/EventsDetails` subdirectories.
+This website is open-source. If you are reading this to understand the structure of the site, please refer to the pages listed above. All event details can be found in `events.html` and the corresponding `/events`, `/EventsDetails`, and `/cybersecurity-workshop` subdirectories.
 
 ## Contact
 Email: vitcc.acmsc@vit.ac.in
