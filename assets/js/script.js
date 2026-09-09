@@ -13,6 +13,7 @@
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
 
+    const menu = navbar.querySelector('.navbar-menu');
     let lastScrollY = window.scrollY;
     let ticking = false;
     const scrollThreshold = 20;
@@ -24,6 +25,13 @@
 
           // Ignore rubber banding on mobile
           if (currentScrollY < 0) {
+            ticking = false;
+            return;
+          }
+
+          // Don't hide navbar when mobile menu is open
+          if (menu && menu.classList.contains('active')) {
+            navbar.classList.remove('navbar-hidden');
             ticking = false;
             return;
           }
@@ -58,12 +66,22 @@
       navbar.appendChild(toggleBtn);
     }
 
-    const menu = navbar.querySelector('.navbar-menu');
     if (toggleBtn && menu) {
+      const closeMenu = () => {
+        if (!menu.classList.contains('active')) return;
+        menu.classList.remove('active');
+        toggleBtn.classList.remove('open');
+        navbar.classList.remove('menu-open');
+        toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      };
+
       toggleBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         const isOpen = menu.classList.toggle('active');
         toggleBtn.classList.toggle('open', isOpen);
+        navbar.classList.toggle('menu-open', isOpen);
         toggleBtn.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         toggleBtn.setAttribute('aria-expanded', isOpen);
         document.body.classList.toggle('menu-open', isOpen);
@@ -71,37 +89,38 @@
 
       // Close menu when clicking outside
       document.addEventListener('click', (e) => {
-        if (menu.classList.contains('active') && !navbar.contains(e.target)) {
-          menu.classList.remove('active');
-          toggleBtn.classList.remove('open');
-          toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
-          toggleBtn.setAttribute('aria-expanded', 'false');
-          document.body.classList.remove('menu-open');
+        if (!navbar.contains(e.target)) {
+          closeMenu();
         }
       });
 
       // Close menu on link click
       menu.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
-          menu.classList.remove('active');
-          toggleBtn.classList.remove('open');
-          toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
-          toggleBtn.setAttribute('aria-expanded', 'false');
-          document.body.classList.remove('menu-open');
+          closeMenu();
         });
+      });
+
+      // Close menu on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeMenu();
+        }
       });
     }
 
     // Active Route Highlight
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    menu.querySelectorAll('a').forEach((link) => {
-      const href = link.getAttribute('href');
-      if (href === currentPath || (currentPath === '' && href === 'index.html')) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
+    if (menu) {
+      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+      menu.querySelectorAll('a').forEach((link) => {
+        const href = link.getAttribute('href');
+        if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
   })();
 
   /* ==========================================================================
