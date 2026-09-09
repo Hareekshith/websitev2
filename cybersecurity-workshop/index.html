@@ -1,0 +1,1671 @@
+<!doctype html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cybersecurity Workshop 2026 | ACM VIT Chennai</title>
+  <meta name="description"
+    content="A five-day international online cybersecurity workshop by ACM VIT Chennai. 14–18 September 2026, 6:30–8:30 PM IST. Industry speakers and daily CTF challenges." />
+  <link rel="icon" href="images/acm-logo.webp" />
+  <link rel="stylesheet" href="./assets/index-CUAu9GTP.css" />
+
+  <style>
+    /* =========================================================
+         ACCORDION & BUTTON RESETS
+         ========================================================= */
+    .day-trigger {
+      width: 100%;
+      background: transparent;
+      border: none;
+      text-align: left;
+      font: inherit;
+      color: inherit;
+    }
+
+    .day-trigger>svg {
+      transition: transform 0.25s ease, border-color 0.2s ease;
+    }
+
+    .day-trigger[aria-expanded="true"]>svg {
+      transform: rotate(180deg);
+      border-color: var(--gold);
+    }
+
+    /* =========================================================
+         MOBILE DRAWER / SHEET
+         ========================================================= */
+    .mobile-sheet-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 998;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .mobile-sheet-overlay.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .mobile-sheet {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999;
+      background: #081324;
+      border-left: 1px solid #1f2f45;
+      box-shadow: -8px 0 32px rgba(0, 0, 0, 0.6);
+      padding: 65px 28px 30px;
+      width: min(88vw, 370px) !important;
+      transform: translateX(100%);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-sheet.is-open {
+      transform: translateX(0);
+    }
+
+    .mobile-sheet-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: 1px solid #33435c;
+      color: #cbd5e1;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: color 0.18s, border-color 0.18s;
+    }
+
+    .mobile-sheet-close:hover {
+      color: #fff;
+      border-color: var(--gold);
+    }
+
+    /* =========================================================
+         ENHANCED SPEAKER CARDS (SCALED 270px PORTRAITS)
+         ========================================================= */
+    .speaker-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 24px !important;
+    }
+
+    .speaker-card {
+      position: relative !important;
+      background: linear-gradient(155deg, #0e1e35 0%, #071222 100%) !important;
+      border: 1px solid #1e334f !important;
+      border-radius: 12px !important;
+      padding: 20px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease !important;
+      box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .speaker-card:hover {
+      transform: translateY(-4px) !important;
+      border-color: #c5a059 !important;
+      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(197, 160, 89, 0.3) !important;
+    }
+
+    /* Resource persons with photos */
+    .speaker-card:not(.faculty-card) .speaker-top {
+      display: grid !important;
+      grid-template-columns: 1fr auto !important;
+      grid-template-areas:
+        "photo photo"
+        "org link" !important;
+      gap: 14px 10px !important;
+      align-items: center !important;
+      width: 100% !important;
+    }
+
+    .speaker-card:not(.faculty-card) .speaker-portrait {
+      grid-area: photo !important;
+      width: 100% !important;
+      height: 270px !important;
+      aspect-ratio: 1 / 1 !important;
+      object-fit: cover !important;
+      object-position: 50% 18% !important;
+      border-radius: 8px !important;
+      border: 1px solid rgba(212, 175, 55, 0.22) !important;
+      background: #091424 !important;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+      transition: transform 0.3s ease, border-color 0.3s ease !important;
+    }
+
+    .speaker-card:not(.faculty-card):hover .speaker-portrait {
+      border-color: rgba(212, 175, 55, 0.55) !important;
+    }
+
+    .speaker-card:not(.faculty-card) .speaker-organisation {
+      grid-area: org !important;
+      color: #d4c38c !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.5px !important;
+      text-transform: uppercase !important;
+      background: rgba(212, 175, 55, 0.08) !important;
+      border: 1px solid rgba(212, 175, 55, 0.22) !important;
+      padding: 5px 11px !important;
+      border-radius: 5px !important;
+      width: fit-content !important;
+    }
+
+    .speaker-card:not(.faculty-card) .speaker-link {
+      grid-area: link !important;
+      color: #8da2c0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 6px !important;
+      border-radius: 6px !important;
+      transition: color 0.18s, background 0.18s, transform 0.18s !important;
+    }
+
+    .speaker-card:not(.faculty-card) .speaker-link:hover {
+      color: #f5d77f !important;
+      background: rgba(212, 175, 55, 0.14) !important;
+      transform: scale(1.1) !important;
+    }
+
+    .speaker-bio {
+      flex: 1 !important;
+      margin-top: 14px !important;
+    }
+
+    .speaker-bio h3 {
+      font-family: var(--serif) !important;
+      font-size: 1.28rem !important;
+      font-weight: 600 !important;
+      color: #f1f5f9 !important;
+      line-height: 1.3 !important;
+    }
+
+    .speaker-bio>p {
+      color: #94a3b8 !important;
+      margin-top: 6px !important;
+      font-size: 13.5px !important;
+      line-height: 1.55 !important;
+    }
+
+    .speaker-location {
+      display: inline-block !important;
+      margin-left: 6px !important;
+      color: #cbd5e1 !important;
+    }
+
+    .speaker-location::before {
+      content: "• " !important;
+      color: #64748b !important;
+    }
+
+    .speaker-topic {
+      border-top: 1px solid #1a2b40 !important;
+      margin-top: 16px !important;
+      padding-top: 14px !important;
+    }
+
+    .speaker-topic>span {
+      display: inline-block !important;
+      letter-spacing: 1.2px !important;
+      color: #7287a3 !important;
+      font-size: 11px !important;
+      font-weight: 700 !important;
+    }
+
+    .speaker-topic p {
+      color: #e2e8f0 !important;
+      margin-top: 4px !important;
+      font-size: 14px !important;
+      font-weight: 500 !important;
+    }
+
+    /* Faculty Card (Dr. S. Brinda) */
+    .faculty-card {
+      grid-column: 1 / -1 !important;
+      grid-template-columns: 1fr 1fr 1fr !important;
+      align-items: center !important;
+      gap: 28px !important;
+      display: grid !important;
+      padding: 24px !important;
+    }
+
+    .faculty-card .speaker-top {
+      display: flex !important;
+      align-items: center !important;
+      gap: 14px !important;
+      width: auto !important;
+    }
+
+    .faculty-card .speaker-monogram {
+      color: #d9ba60 !important;
+      width: 58px !important;
+      height: 58px !important;
+      font-family: var(--serif) !important;
+      background: #d4af370a !important;
+      border: 1px solid #d4af3747 !important;
+      border-radius: 50% !important;
+      flex-shrink: 0 !important;
+      display: grid !important;
+      place-items: center !important;
+      font-size: 21px !important;
+      letter-spacing: normal !important;
+      box-shadow: none !important;
+      aspect-ratio: auto !important;
+    }
+
+    .faculty-card .speaker-organisation {
+      color: #d4c38c !important;
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      letter-spacing: normal !important;
+      text-transform: none !important;
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      width: auto !important;
+    }
+
+    .faculty-card .speaker-bio {
+      margin: 0 !important;
+    }
+
+    .faculty-card .speaker-topic {
+      border-top: 0 !important;
+      border-left: 1px solid #28374c !important;
+      margin: 0 !important;
+      padding: 0 0 0 28px !important;
+    }
+
+    @media (max-width: 960px) {
+      .speaker-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
+      .faculty-card {
+        grid-column: span 2 !important;
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+
+      .faculty-card .speaker-topic {
+        border-left: 0 !important;
+        border-top: 1px solid #1a2b40 !important;
+        padding: 14px 0 0 0 !important;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .speaker-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .faculty-card {
+        grid-column: span 1 !important;
+      }
+
+      .speaker-card:not(.faculty-card) .speaker-portrait {
+        height: 300px !important;
+      }
+    }
+
+    /* =========================================================
+       MODERN PRICING & REGISTRATION CARDS
+       ========================================================= */
+    .registration-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 24px !important;
+      margin-top: 40px !important;
+      align-items: stretch !important;
+    }
+
+    .registration-card {
+      position: relative !important;
+      overflow: hidden !important;
+      background: linear-gradient(160deg, #0e1e35 0%, #071222 100%) !important;
+      border: 1px solid #1e334f !important;
+      border-radius: 14px !important;
+      padding: 32px 28px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+      box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .registration-card:hover {
+      transform: translateY(-6px) !important;
+      border-color: #c5a059 !important;
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(197, 160, 89, 0.4) !important;
+    }
+
+    .registration-card.featured {
+      background: linear-gradient(160deg, #15253b 0%, #091629 100%) !important;
+      border-color: #c5a059 !important;
+      box-shadow: 0 14px 38px -8px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(197, 160, 89, 0.3) !important;
+    }
+
+    /* Popular / Featured Ribbon in top-right corner */
+    .pricing-ribbon {
+      position: absolute;
+      top: 20px;
+      right: -34px;
+      width: 130px;
+      transform: rotate(45deg);
+      background: linear-gradient(135deg, #d4af37, #a88a33);
+      color: #050d18;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 5px 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .registration-card-top {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      margin-bottom: 16px !important;
+    }
+
+    .registration-card-top svg {
+      color: var(--gold, #c5a059) !important;
+    }
+
+    .registration-card-top span {
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      letter-spacing: 1.4px !important;
+      text-transform: uppercase !important;
+      color: #c5a059 !important;
+      background: rgba(197, 160, 89, 0.1) !important;
+      border: 1px solid rgba(197, 160, 89, 0.25) !important;
+      padding: 4px 10px !important;
+      border-radius: 4px !important;
+    }
+
+    .registration-card h3 {
+      font-family: var(--serif, 'Playfair Display', serif) !important;
+      font-size: 1.45rem !important;
+      font-weight: 600 !important;
+      color: #f1f5f9 !important;
+      line-height: 1.3 !important;
+      margin: 0 !important;
+    }
+
+    .registration-card-desc {
+      color: #94a3b8 !important;
+      font-size: 13.5px !important;
+      line-height: 1.5 !important;
+      margin-top: 8px !important;
+      min-height: 40px !important;
+    }
+
+    /* Price Box */
+    .pricing-price-box {
+      margin: 20px 0 !important;
+      padding: 18px 0 !important;
+      border-top: 1px solid #1a2c44 !important;
+      border-bottom: 1px solid #1a2c44 !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .pricing-price-row {
+      display: flex !important;
+      align-items: baseline !important;
+      gap: 3px !important;
+    }
+
+    .pricing-currency {
+      font-size: 24px !important;
+      font-weight: 700 !important;
+      color: var(--gold, #c5a059) !important;
+      line-height: 1 !important;
+    }
+
+    .pricing-value {
+      font-size: 48px !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+      line-height: 1 !important;
+      font-family: var(--serif, 'Playfair Display', serif) !important;
+      letter-spacing: -0.5px !important;
+    }
+
+    .pricing-value.free {
+      color: #38ef7d !important;
+      font-size: 44px !important;
+    }
+
+    .pricing-frequency {
+      font-size: 13.5px !important;
+      font-weight: 500 !important;
+      color: #8da2c0 !important;
+      margin-left: 6px !important;
+    }
+
+    .pricing-note {
+      font-size: 12px !important;
+      color: #64748b !important;
+      margin-top: 6px !important;
+      display: block !important;
+    }
+
+    /* Feature List */
+    .pricing-features {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 0 28px 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+      flex: 1 !important;
+    }
+
+    .pricing-feature-item {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 10px !important;
+      font-size: 13.5px !important;
+      color: #cbd5e1 !important;
+      line-height: 1.45 !important;
+    }
+
+    .pricing-feature-icon {
+      color: var(--gold, #c5a059) !important;
+      flex-shrink: 0 !important;
+      margin-top: 2px !important;
+    }
+
+    .registration-card .registration-button {
+      width: 100% !important;
+      justify-content: center !important;
+      padding: 13px 20px !important;
+      font-size: 14.5px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.4px !important;
+      border-radius: 7px !important;
+      margin-top: auto !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      transition: all 0.22s ease !important;
+    }
+
+    @media (max-width: 960px) {
+      .registration-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .registration-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .registration-card-desc {
+        min-height: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- =========================================================
+         HEADER & NAVBAR
+         ========================================================= -->
+  <header class="nav-wrap">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="https://vitchennai.acm.org/" aria-label="ACM VIT Chennai home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="images/acm-logo.webp" alt="ACM Logo" width="640" height="360" />
+        </span>
+        <span class="brand-name">ACM <small>VIT CHENNAI</small></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">Overview</a>
+        <a href="#schedule">Programme</a>
+        <a href="#speakers">Speakers</a>
+      </div>
+
+      <a class="nav-cta" href="#register">
+        Registration
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-arrow-up-right">
+          <path d="M7 7h10v10" />
+          <path d="M7 17 17 7" />
+        </svg>
+      </a>
+
+      <button class="mobile-menu" aria-label="Open navigation" id="mobile-menu-btn" aria-expanded="false"
+        aria-controls="mobile-sheet">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-menu">
+          <path d="M4 5h16" />
+          <path d="M4 12h16" />
+          <path d="M4 19h16" />
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Sheet -->
+  <div class="mobile-sheet-overlay" id="mobile-sheet-overlay"></div>
+  <aside class="mobile-sheet" id="mobile-sheet" aria-label="Mobile navigation">
+    <button class="mobile-sheet-close" id="mobile-sheet-close" aria-label="Close navigation">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+        <path d="M18 6 6 18" />
+        <path d="m6 6 12 12" />
+      </svg>
+    </button>
+    <div style="font-family: var(--serif); font-size: 20px; font-weight: 600; color: #f1f5f9;">ACM VIT Chennai</div>
+    <div style="color: var(--muted-foreground); font-size: 13px; margin-top: 4px;">Cybersecurity Workshop · 14–18
+      September 2026</div>
+    <nav aria-label="Mobile navigation">
+      <a href="#about">
+        <span>Overview</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-arrow-up-right">
+          <path d="M7 7h10v10" />
+          <path d="M7 17 17 7" />
+        </svg>
+      </a>
+      <a href="#schedule">
+        <span>Programme</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-arrow-up-right">
+          <path d="M7 7h10v10" />
+          <path d="M7 17 17 7" />
+        </svg>
+      </a>
+      <a href="#speakers">
+        <span>Speakers</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-arrow-up-right">
+          <path d="M7 7h10v10" />
+          <path d="M7 17 17 7" />
+        </svg>
+      </a>
+      <a href="#register">
+        <span>Registration</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-arrow-up-right">
+          <path d="M7 7h10v10" />
+          <path d="M7 17 17 7" />
+        </svg>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- =========================================================
+         MAIN CONTENT
+         ========================================================= -->
+  <main id="main">
+    <!-- HERO SECTION -->
+    <section class="hero container" aria-labelledby="event-title">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="gold-line"></span> ACM VIT CHENNAI PRESENTS
+        </div>
+        <div class="event-label">
+          <span class="status-dot"></span> International online workshop
+        </div>
+        <h1 id="event-title">
+          Cybersecurity<br />
+          <em>Workshop.</em>
+        </h1>
+        <p class="hero-tagline">Explore. Learn. Defend.</p>
+        <p class="hero-description">
+          Five days of industry insights, hands-on learning, and daily Capture the Flag challenges. Build the skills to
+          make a safer digital tomorrow.
+        </p>
+        <div class="hero-facts">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-calendar-days">
+              <path d="M8 2v3" />
+              <path d="M16 2v3" />
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18" />
+              <path d="M8 13h.01" />
+              <path d="M12 13h.01" />
+              <path d="M16 13h.01" />
+              <path d="M8 17h.01" />
+              <path d="M12 17h.01" />
+              <path d="M16 17h.01" />
+            </svg>
+            <span>14–18 September <strong>2026</strong></span>
+          </div>
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-clock">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6h4" />
+            </svg>
+            <span>6:30–8:30 PM <strong>IST</strong></span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a href="#register" class="button button-gold">
+            Registration details
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-arrow-up-right">
+              <path d="M7 7h10v10" />
+              <path d="M7 17 17 7" />
+            </svg>
+          </a>
+          <a href="#schedule" class="text-link">
+            Explore the programme
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-arrow-down">
+              <path d="M12 5v14" />
+              <path d="m19 12-7 7-7-7" />
+            </svg>
+          </a>
+        </div>
+        <div class="hero-footnote">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-earth">
+            <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
+            <path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17" />
+            <path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05" />
+            <circle cx="12" cy="12" r="10" />
+          </svg>
+          Join online, from anywhere.
+        </div>
+      </div>
+
+      <figure class="poster-figure">
+        <div class="poster-overline">
+          <span>THE OFFICIAL POSTER</span>
+          <span>SEPTEMBER 2026</span>
+        </div>
+        <a href="images/workshop-poster.jpg" target="_blank" rel="noreferrer" class="poster-link"
+          aria-label="View the full event poster in a new tab">
+          <img class="poster" src="images/workshop-poster.jpg"
+            alt="International Online Cybersecurity Workshop poster, ACM VIT Chennai, 14–18 September 2026. Topics include Linux, Zero Trust, AI security, penetration testing, and vulnerability analysis."
+            width="1024" height="1536" />
+          <span class="poster-expand">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-arrow-up-right">
+              <path d="M7 7h10v10" />
+              <path d="M7 17 17 7" />
+            </svg>
+          </span>
+        </a>
+        <figcaption>
+          Real threats. Real skills.
+          <a href="images/workshop-poster.jpg" target="_blank" rel="noreferrer">
+            View full poster
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-arrow-up-right">
+              <path d="M7 7h10v10" />
+              <path d="M7 17 17 7" />
+            </svg>
+          </a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- EVENT STRIP -->
+    <div class="event-strip">
+      <div class="container">
+        <span><span class="strip-number">05</span> Days of discovery</span>
+        <i></i>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-earth">
+            <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
+            <path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17" />
+            <path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05" />
+            <circle cx="12" cy="12" r="10" />
+          </svg>
+          Fully online
+        </span>
+        <i></i>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-flag">
+            <path
+              d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528" />
+          </svg>
+          Daily CTF challenge
+        </span>
+        <i></i>
+        <span>
+          Open to learners worldwide
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-arrow-up-right">
+            <path d="M7 7h10v10" />
+            <path d="M7 17 17 7" />
+          </svg>
+        </span>
+      </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section container about-section" aria-labelledby="about-title">
+      <div>
+        <div class="eyebrow">01 / THE WORKSHOP</div>
+        <h2 id="about-title">
+          Same curiosity.<br />
+          <em>A safer tomorrow.</em>
+        </h2>
+      </div>
+      <div class="about-copy">
+        <p>
+          Step into the world of cybersecurity with ACM Student Chapter, VIT Chennai. This five-day online workshop
+          brings together industry professionals and academic expertise to explore how we protect systems, data, and
+          people.
+        </p>
+        <p>
+          From Linux and Zero Trust to AI security and penetration testing, get a glimpse of the challenges defenders
+          face—and put your learning into practice with a daily Capture the Flag (CTF) challenge.
+        </p>
+        <div class="about-note">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-flag">
+            <path
+              d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528" />
+          </svg>
+          <span>Learn in the sessions. Think like a defender in the CTF.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMME / SCHEDULE SECTION -->
+    <section id="schedule" class="programme-section section" aria-labelledby="programme-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">02 / THE PROGRAMME</div>
+            <h2 id="programme-title">
+              Five days.<br />
+              <em>A new perspective every day.</em>
+            </h2>
+          </div>
+          <div class="schedule-meta">
+            <span class="subtle-badge">Tentative programme</span>
+            <p>
+              14–18 September 2026<br />
+              6:30–8:30 PM IST (UTC+5:30)
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive 5-Day Schedule Accordion -->
+        <div class="programme-list">
+          <!-- Day 01 -->
+          <div class="day-item is-open" data-day="01">
+            <button class="day-trigger" type="button" aria-expanded="true" aria-controls="day-01-content">
+              <span class="day-number">01</span>
+              <span class="day-date">14 Sep <small>Monday</small></span>
+              <span class="day-heading">
+                <span>Linux for Security</span>
+                <small>Start with the systems at the heart of cybersecurity.</small>
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-down">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div class="day-content" id="day-01-content" style="display: block;">
+              <div class="session-list">
+                <div class="session">
+                  <span class="session-time">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-clock">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6h4" />
+                    </svg>
+                    6:30–8:30 PM IST
+                  </span>
+                  <div>
+                    <h3>Linux for Security</h3>
+                    <p>Beleswar Prasad Padhi · Texas Instruments</p>
+                  </div>
+                </div>
+                <p class="ctf-note">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-flag">
+                    <path
+                      d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528" />
+                  </svg>
+                  Daily CTF challenge · Challenge details to be announced.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 02 -->
+          <div class="day-item" data-day="02">
+            <button class="day-trigger" type="button" aria-expanded="false" aria-controls="day-02-content">
+              <span class="day-number">02</span>
+              <span class="day-date">15 Sep <small>Tuesday</small></span>
+              <span class="day-heading">
+                <span>Zero Trust &amp; AI Security</span>
+                <small>Explore trust, access, and security in an AI-driven world.</small>
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-down">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div class="day-content" id="day-02-content" style="display: none;">
+              <div class="session-list">
+                <div class="session">
+                  <span class="session-time">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-clock">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6h4" />
+                    </svg>
+                    6:30–7:25 PM IST
+                  </span>
+                  <div>
+                    <h3>Zero Trust for Security</h3>
+                    <p>Arun Santhosh R A · TCS</p>
+                  </div>
+                </div>
+                <div class="session">
+                  <span class="session-time">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-clock">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6h4" />
+                    </svg>
+                    7:35–8:30 PM IST
+                  </span>
+                  <div>
+                    <h3>AI Security</h3>
+                    <p>Ranjan Kathuria · Rubrik</p>
+                  </div>
+                </div>
+                <p class="ctf-note">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-flag">
+                    <path
+                      d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528" />
+                  </svg>
+                  Daily CTF challenge · Challenge details to be announced.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 03 -->
+          <div class="day-item" data-day="03">
+            <button class="day-trigger" type="button" aria-expanded="false" aria-controls="day-03-content">
+              <span class="day-number">03</span>
+              <span class="day-date">16 Sep <small>Wednesday</small></span>
+              <span class="day-heading">
+                <span>AI Tools &amp; Privacy Breaches</span>
+                <small>Take a closer look at AI tools and the privacy risks they introduce.</small>
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-down">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div class="day-content" id="day-03-content" style="display: none;">
+              <div class="session-list">
+                <div class="session">
+                  <span class="session-time">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-clock">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6h4" />
+                    </svg>
+                    6:30–8:30 PM IST
+                  </span>
+                  <div>
+                    <h3>AI Tools and Privacy Breaches</h3>
+                    <p>Sathish Eathuraj · Gain Credit</p>
+                  </div>
+                </div>
+                <p class="ctf-note">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-flag">
+                    <path
+                      d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528" />
+                  </svg>
+                  Daily CTF challenge · Challenge details to be announced.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 04 -->
+          <div class="day-item" data-day="04">
+            <button class="day-trigger" type="button" aria-expanded="false" aria-controls="day-04-content">
+              <span class="day-number">04</span>
+              <span class="day-date">17 Sep <small>Thursday</small></span>
+              <span class="day-heading">
+                <span>From Code to Compromise</span>
+                <small>Learn from real vulnerabilities and their impact on companies.</small>
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-down">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div class="day-content" id="day-04-content" style="display: none;">
+              <div class="session-list">
+                <div class="session">
+                  <span class="session-time">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-clock">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6h4" />
+                    </svg>
+                    6:30–7:25 PM IST
+                  </span>
+                  <div>
+                    <h3>From Code to Compromise: Real Vulnerabilities That Cost Companies Millions</h3>
+                    <p>Abhishek Kumar · cyvigilant</p>
+                  </div>
+                </div>
+                <p class="ctf-note">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-flag">
+                    <path
+                      d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528" />
+                  </svg>
+                  Daily CTF challenge · Challenge details to be announced.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 05 -->
+          <div class="day-item" data-day="05">
+            <button class="day-trigger" type="button" aria-expanded="false" aria-controls="day-05-content">
+              <span class="day-number">05</span>
+              <span class="day-date">18 Sep <small>Friday</small></span>
+              <span class="day-heading">
+                <span>Penetration Testing &amp; Threat Management</span>
+                <small>Connect vulnerability analysis with practical approaches to defence.</small>
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-down">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div class="day-content" id="day-05-content" style="display: none;">
+              <div class="session-list">
+                <div class="session">
+                  <span class="session-time">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-clock">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6h4" />
+                    </svg>
+                    6:30–7:25 PM IST
+                  </span>
+                  <div>
+                    <h3>Unified Threat Management Systems</h3>
+                    <p>Dr. S. Brinda · SCOPE, VIT</p>
+                  </div>
+                </div>
+                <div class="session">
+                  <span class="session-time">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-clock">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6h4" />
+                    </svg>
+                    7:35–8:30 PM IST
+                  </span>
+                  <div>
+                    <h3>Penetration Testing and Vulnerabilities</h3>
+                    <p>Giri Veeraraghavan Veda · DefSecone</p>
+                  </div>
+                </div>
+                <p class="ctf-note">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-flag">
+                    <path
+                      d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528" />
+                  </svg>
+                  Daily CTF challenge · Challenge details to be announced.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="programme-note">
+          Session topics and timings are subject to confirmation. The final agenda will be updated here.
+        </p>
+      </div>
+    </section>
+
+    <!-- RESOURCE PERSONS / SPEAKERS SECTION -->
+    <section id="speakers" class="section container" aria-labelledby="speakers-title">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">03 / THE RESOURCE PERSONS</div>
+          <h2 id="speakers-title">
+            Learn from the people<br />
+            <em>working in the field.</em>
+          </h2>
+        </div>
+        <p class="section-aside">
+          Perspectives from security, cloud,<br />
+          systems, and academia.
+        </p>
+      </div>
+
+      <div class="speaker-grid">
+        <!-- 1. Beleswar Prasad Padhi -->
+        <article class="speaker-card">
+          <div class="speaker-top">
+            <img class="speaker-portrait" src="images/speakers/beleswar-prasad-padhi.webp" alt="Beleswar Prasad Padhi"
+              width="640" height="640" loading="lazy" />
+            <span class="speaker-organisation">Texas Instruments</span>
+            <a class="speaker-link" href="https://www.linkedin.com/in/3v3ryone/" target="_blank" rel="noreferrer"
+              aria-label="View Beleswar Prasad Padhi on LinkedIn (opens in a new tab)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-up-right">
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
+            </a>
+          </div>
+          <div class="speaker-bio">
+            <h3>Beleswar Prasad Padhi</h3>
+            <p>Linux Kernel Team <span class="speaker-location">Bangalore</span></p>
+          </div>
+          <div class="speaker-topic">
+            <span>IN CONVERSATION</span>
+            <p>Linux for Security</p>
+          </div>
+        </article>
+
+        <!-- 2. Arun Santhosh R A -->
+        <article class="speaker-card">
+          <div class="speaker-top">
+            <img class="speaker-portrait" src="images/speakers/arun-santhosh.webp" alt="Arun Santhosh R A" width="640"
+              height="640" loading="lazy" />
+            <span class="speaker-organisation">TCS</span>
+            <a class="speaker-link" href="https://www.linkedin.com/in/arun-santhosh-r-a-/" target="_blank"
+              rel="noreferrer" aria-label="View Arun Santhosh R A on LinkedIn (opens in a new tab)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-up-right">
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
+            </a>
+          </div>
+          <div class="speaker-bio">
+            <h3>Arun Santhosh R A</h3>
+            <p>Cyber Security Professional <span class="speaker-location">Chennai</span></p>
+          </div>
+          <div class="speaker-topic">
+            <span>IN CONVERSATION</span>
+            <p>Zero Trust for Security</p>
+          </div>
+        </article>
+
+        <!-- 3. Ranjan Kathuria -->
+        <article class="speaker-card">
+          <div class="speaker-top">
+            <img class="speaker-portrait" src="images/speakers/ranjan-kathuria.webp" alt="Ranjan Kathuria" width="640"
+              height="640" loading="lazy" />
+            <span class="speaker-organisation">Rubrik</span>
+            <a class="speaker-link" href="https://www.linkedin.com/in/kathuriaranjan/" target="_blank" rel="noreferrer"
+              aria-label="View Ranjan Kathuria on LinkedIn (opens in a new tab)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-up-right">
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
+            </a>
+          </div>
+          <div class="speaker-bio">
+            <h3>Ranjan Kathuria</h3>
+            <p>Cyber Security &amp; Cloud Security Professional · AI-driven security solutions <span
+                class="speaker-location">USA</span></p>
+          </div>
+          <div class="speaker-topic">
+            <span>IN CONVERSATION</span>
+            <p>AI Security</p>
+          </div>
+        </article>
+
+        <!-- 4. Sathish Eathuraj -->
+        <article class="speaker-card">
+          <div class="speaker-top">
+            <img class="speaker-portrait" src="images/speakers/sathish-eathuraj.webp" alt="Sathish Eathuraj" width="640"
+              height="640" loading="lazy" />
+            <span class="speaker-organisation">Gain Credit</span>
+            <a class="speaker-link" href="https://www.linkedin.com/in/satzzz/" target="_blank" rel="noreferrer"
+              aria-label="View Sathish Eathuraj on LinkedIn (opens in a new tab)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-up-right">
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
+            </a>
+          </div>
+          <div class="speaker-bio">
+            <h3>Sathish Eathuraj</h3>
+            <p>Head of InfoSec and EUC · Cybersecurity content creator and YouTuber</p>
+          </div>
+          <div class="speaker-topic">
+            <span>IN CONVERSATION</span>
+            <p>AI Tools and Privacy Breaches</p>
+          </div>
+        </article>
+
+        <!-- 5. Abhishek Kumar -->
+        <article class="speaker-card">
+          <div class="speaker-top">
+            <img class="speaker-portrait" src="images/speakers/abhishek-kumar.webp" alt="Abhishek Kumar" width="640"
+              height="640" loading="lazy" />
+            <span class="speaker-organisation">cyvigilant</span>
+            <a class="speaker-link" href="https://www.linkedin.com/in/abhishek-kumar-284849215/" target="_blank"
+              rel="noreferrer" aria-label="View Abhishek Kumar on LinkedIn (opens in a new tab)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-up-right">
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
+            </a>
+          </div>
+          <div class="speaker-bio">
+            <h3>Abhishek Kumar</h3>
+            <p>Founder · CTF mentor</p>
+          </div>
+          <div class="speaker-topic">
+            <span>IN CONVERSATION</span>
+            <p>From Code to Compromise</p>
+          </div>
+        </article>
+
+        <!-- 6. Giri Veeraraghavan Veda -->
+        <article class="speaker-card">
+          <div class="speaker-top">
+            <img class="speaker-portrait" src="images/speakers/giri-veeraraghavan.webp" alt="Giri Veeraraghavan Veda"
+              width="640" height="640" loading="lazy" />
+            <span class="speaker-organisation">DefSecone</span>
+            <a class="speaker-link" href="https://www.linkedin.com/in/girivv/" target="_blank" rel="noreferrer"
+              aria-label="View Giri Veeraraghavan Veda on LinkedIn (opens in a new tab)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-up-right">
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
+            </a>
+          </div>
+          <div class="speaker-bio">
+            <h3>Giri Veeraraghavan Veda</h3>
+            <p>Founder &amp; CEO · Penetration testing expert <span class="speaker-location">Chennai</span></p>
+          </div>
+          <div class="speaker-topic">
+            <span>IN CONVERSATION</span>
+            <p>Penetration Testing and Vulnerabilities</p>
+          </div>
+        </article>
+
+        <!-- 7. Dr. S. Brinda (Faculty Coordinator & Speaker) -->
+        <article class="speaker-card faculty-card">
+          <div class="speaker-top">
+            <div class="speaker-monogram" aria-hidden="true">SB</div>
+            <span class="speaker-organisation">SCOPE, VIT</span>
+          </div>
+          <div class="speaker-bio">
+            <h3>Dr. S. Brinda</h3>
+            <p>Assistant Professor</p>
+          </div>
+          <div class="speaker-topic">
+            <span>IN CONVERSATION</span>
+            <p>Unified Threat Management Systems</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- REGISTRATION SECTION -->
+    <section id="register" class="section registration-section" aria-labelledby="registration-title">
+      <div class="container">
+        <div class="registration-heading">
+          <div class="eyebrow">04 / JOIN THE WORKSHOP</div>
+          <h2 id="registration-title">
+            Your next step<br />
+            <em>into cybersecurity.</em>
+          </h2>
+          <p>
+            Five days of learning. One global community.<br />
+            Choose your participant category below.
+          </p>
+        </div>
+
+        <div class="registration-grid">
+          <!-- 1. VIT Community -->
+          <article class="registration-card featured">
+            <div class="registration-card-top">
+              <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-graduation-cap">
+                <path
+                  d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                <path d="M22 10v6" />
+                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+              </svg>
+              <span>VIT COMMUNITY</span>
+            </div>
+            <h3>VIT participants</h3>
+            <p class="registration-card-desc">Exclusive access for students and research scholars of VIT.</p>
+
+            <div class="pricing-price-box">
+              <div class="pricing-price-row">
+                <span class="pricing-value free">Free</span>
+                <span class="pricing-frequency">/ 5-day pass</span>
+              </div>
+              <span class="pricing-note">Complimentary with VITC EventHub registration</span>
+            </div>
+
+            <ul class="pricing-features">
+              <li class="pricing-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="pricing-feature-icon lucide lucide-check">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>All five workshop days (6:30–8:30 PM IST)</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="pricing-feature-icon lucide lucide-check">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>Daily Capture the Flag (CTF) challenges</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="pricing-feature-icon lucide lucide-check">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>Official Certificate of Participation</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="pricing-feature-icon lucide lucide-check">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>Interactive live Q&amp;A with industry experts</span>
+              </li>
+            </ul>
+
+            <a href="https://eventhubcc.vit.ac.in/EventHub/#:~:text=International%20Cyber%20Security%20workshop"
+              target="_blank" rel="noreferrer" class="button button-gold registration-button">
+              Register now
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-up-right">
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
+            </a>
+          </article>
+
+          <!-- 2. Non-VIT Across India (Featured with POPULAR Ribbon) -->
+          <article class="registration-card">
+            <div class="registration-card-top">
+              <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-graduation-cap">
+                <path
+                  d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                <path d="M22 10v6" />
+                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+              </svg>
+              <span>ACROSS INDIA</span>
+            </div>
+            <h3>Non-VIT participants</h3>
+            <p class="registration-card-desc">For university students &amp; professionals from outside VIT in India.</p>
+
+            <div class="pricing-price-box">
+              <div class="pricing-price-row">
+                <span class="pricing-currency">₹</span>
+                <span class="pricing-value">200</span>
+                <span class="pricing-frequency">/ participant</span>
+              </div>
+              <span class="pricing-note">Full 5-day event access &amp; national CTF</span>
+            </div>
+
+            <ul class="pricing-features">
+              <li class="pricing-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="pricing-feature-icon lucide lucide-check">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>Full access to all 5 workshop sessions</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="pricing-feature-icon lucide lucide-check">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>Daily Capture the Flag (CTF) challenges</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="pricing-feature-icon lucide lucide-check">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>Official Certificate of Participation</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="pricing-feature-icon lucide lucide-check">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>National CTF rank recognition &amp; Q&amp;A</span>
+              </li>
+            </ul>
+
+            <a href="https://eventhubcc.vit.ac.in/EventHub/#:~:text=International%20Cyber%20Security%20workshop"
+              target="_blank" rel="noreferrer" class="button button-gold registration-button">
+              Register now
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-up-right">
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
+            </a>
+          </article>
+
+          <!-- 3. International -->
+          <article class="registration-card">
+            <div class="registration-card-top">
+              <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-earth">
+                <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
+                <path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17" />
+                <path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05" />
+                <circle cx="12" cy="12" r="10" />
+              </svg>
+              <span>AROUND THE WORLD</span>
+            </div>
+            <h3>International participants</h3>
+            <p class="registration-card-desc">For international students &amp; professionals joining from outside India.
+            </p>
+
+            <div class="pricing-price-box">
+              <div class="pricing-price-row">
+                <span class="pricing-currency">$</span>
+                <span class="pricing-value">15</span>
+                <span class="pricing-frequency">/ participant</span>
+              </div>
+              <span class="pricing-note">USD via global Google Form registration</span>
+            </div>
+
+            <ul class="pricing-features">
+              <li class="pricing-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="pricing-feature-icon lucide lucide-check">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>Full online access from anywhere globally</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="pricing-feature-icon lucide lucide-check">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>Daily Capture the Flag (CTF) challenges</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="pricing-feature-icon lucide lucide-check">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>International Certificate of Participation</span>
+              </li>
+              <li class="pricing-feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="pricing-feature-icon lucide lucide-check">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>Global CTF leaderboard &amp; community</span>
+              </li>
+            </ul>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfN8755ADzcqv5Q9g_KzAChJqnT4mM28CUGQ47uvHP7UQpHhw/viewform?pli=1"
+              target="_blank" rel="noreferrer" class="button button-gold registration-button">
+              Register now
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-up-right">
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COORDINATORS SECTION -->
+    <section class="section container coordinators" aria-labelledby="contact-title">
+      <div>
+        <div class="eyebrow">GET IN TOUCH</div>
+        <h2 id="contact-title">
+          Meet the<br />
+          <em>organising team.</em>
+        </h2>
+        <a class="contact-email" href="mailto:vitcc.acmsc@vit.ac.in">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-mail">
+            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+          </svg>
+          vitcc.acmsc@vit.ac.in
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-arrow-up-right">
+            <path d="M7 7h10v10" />
+            <path d="M7 17 17 7" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="coordinator-group">
+        <h3>Faculty coordinators</h3>
+        <p>Dr. Subbulakshmi T</p>
+        <p>Dr. Lekshmi K</p>
+      </div>
+
+      <div class="coordinator-group">
+        <h3>Student coordinators</h3>
+        <a href="tel:+919342666141">
+          <span>Rahul R</span>
+          <span>+91 93426 66141</span>
+        </a>
+        <a href="tel:+917418017766">
+          <span>Rahul S</span>
+          <span>+91 74180 17766</span>
+        </a>
+        <a href="tel:+919566242656">
+          <span>Muthu Venkatesh M</span>
+          <span>+91 95662 42656</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <a class="brand" href="https://vitchennai.acm.org/">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="images/acm-logo.webp" alt="ACM Logo" width="640" height="360" />
+        </span>
+        <span class="brand-name">ACM <small>VIT CHENNAI</small></span>
+      </a>
+      <p>
+        © 2026 ACM Student Chapter, VIT Chennai.<br />
+        <span>Office of Students’ Welfare · VIT Chennai</span>
+      </p>
+      <a class="text-link" href="https://vitchennai.acm.org/">
+        Visit the chapter website
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-arrow-up-right">
+          <path d="M7 7h10v10" />
+          <path d="M7 17 17 7" />
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+         LIGHTWEIGHT VANILLA JAVASCRIPT
+         ========================================================= -->
+  <script>
+    // 1. Accordion Schedule Toggle
+    document.querySelectorAll('.day-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+        const nextState = !isExpanded;
+        trigger.setAttribute('aria-expanded', String(nextState));
+
+        const dayItem = trigger.closest('.day-item');
+        if (dayItem) {
+          dayItem.classList.toggle('is-open', nextState);
+        }
+
+        const content = trigger.nextElementSibling;
+        if (content) {
+          content.style.display = nextState ? 'block' : 'none';
+        }
+      });
+    });
+
+    // 2. Mobile Navigation Drawer Toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileSheet = document.getElementById('mobile-sheet');
+    const mobileOverlay = document.getElementById('mobile-sheet-overlay');
+    const mobileClose = document.getElementById('mobile-sheet-close');
+
+    function openMobileMenu() {
+      if (mobileSheet) mobileSheet.classList.add('is-open');
+      if (mobileOverlay) mobileOverlay.classList.add('is-open');
+      if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      if (mobileSheet) mobileSheet.classList.remove('is-open');
+      if (mobileOverlay) mobileOverlay.classList.remove('is-open');
+      if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', openMobileMenu);
+    if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
+
+    document.querySelectorAll('.mobile-sheet nav a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // 3. Smooth scrolling for internal anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#' || targetId === '#main') return;
+        const targetElem = document.querySelector(targetId);
+        if (targetElem) {
+          e.preventDefault();
+          targetElem.scrollIntoView({ behavior: 'smooth' });
+          if (history.pushState) {
+            history.pushState(null, '', targetId);
+          }
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
