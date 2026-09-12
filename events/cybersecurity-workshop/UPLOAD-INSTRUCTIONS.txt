@@ -1,0 +1,32 @@
+ACM VIT Chennai - Cybersecurity Workshop 2026 event page
+========================================================
+
+WHAT THIS IS
+A self-contained static page (plain HTML/CSS/JS). No PHP, no database,
+no build step, no server configuration needed.
+
+HOW TO PUBLISH
+1. Upload this entire "cybersecurity-workshop" folder into the website's
+   web root - the same folder that already contains events.html, about.html,
+   contact.html (on cPanel this is usually public_html).
+
+2. The page is then live at:
+      https://vitchennai.acm.org/cybersecurity-workshop/
+
+3. Add a link to it from the events listing page (events.html), e.g. in the
+   same style as the other event cards:
+
+      <a href="/cybersecurity-workshop/">Cybersecurity Workshop 2026</a>
+
+That is all. Nothing already on the site is modified or overwritten -
+this folder only adds new files.
+
+NOTES
+- Keep the folder contents together. index.html, assets/ and images/ must
+  stay in the same folder; the page uses relative paths.
+- Link to it WITH the trailing slash ("/cybersecurity-workshop/").
+- The page currently carries <meta name="robots" content="noindex, nofollow">
+  so search engines will skip it. Remove that line from index.html when the
+  event should appear in Google results.
+- Folder can be renamed (e.g. to "events/cybersecurity-workshop"); just keep
+  the files inside it together and update the link accordingly.

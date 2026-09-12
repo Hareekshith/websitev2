@@ -1,0 +1,83 @@
+# ==============================================================================
+# ACM Student Chapter - VIT Chennai (.htaccess Security Hardening)
+# ==============================================================================
+
+# 1. DISABLE DIRECTORY BROWSING / INDEXING
+# Prevents Apache from generating "Index of /" file listings site-wide
+Options -Indexes
+Options +FollowSymLinks
+
+# 2. HIDE SERVER BANNER & VERSION DETAILS
+ServerSignature Off
+
+# 3. ENFORCE UTF-8 ENCODING
+AddDefaultCharset UTF-8
+
+# 4. ENFORCE HTTPS (when mod_rewrite is available)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 5. BLOCK ACCESS TO HIDDEN FILES & DIRECTORIES (.git, .env, .DS_Store, etc.)
+<FilesMatch "^\.">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 6. BLOCK ACCESS TO SENSITIVE EXTENSIONS, LOGS, SCRIPTS, AND DUMPS
+<FilesMatch "(?i)\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist|code-search|env)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 7. BLOCK ACCESS TO INTERNAL DEPLOYMENT DOCUMENTATION
+<FilesMatch "(?i)^upload-instructions\.txt$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 8. COMPREHENSIVE SECURITY HEADERS (when mod_headers is available)
+<IfModule mod_headers.c>
+    # Prevent MIME-type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Anti-clickjacking protection
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Control Referrer Information
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Disable unnecessary / sensitive browser APIs
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), vr=()"
+
+    # HTTP Strict Transport Security (HSTS) - 1 year with subdomains and preload
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # Content Security Policy (CSP) tailored to chapter resources
+    Header always set Content-Security-Policy "default-src 'self' https://vitchennai.acm.org; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://code.jquery.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:; img-src 'self' https: data:; frame-src 'self' https://docs.google.com https://www.linkedin.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; frame-ancestors 'self'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests;"
+
+    # Remove X-Powered-By if set by backend/modules
+    Header unset X-Powered-By
+    Header always unset X-Powered-By
+</IfModule>
+
+# 9. HARDENED CUSTOM ERROR DOCUMENTS
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html

@@ -1,0 +1,44 @@
+# ==============================================================================
+# ACM Student Chapter - VIT Chennai (Nginx Hardening Configuration Snippet)
+# Include this within your server { ... } block when deploying on Nginx.
+# ==============================================================================
+
+# 1. DISABLE DIRECTORY INDEXING SITE-WIDE
+autoindex off;
+
+# 2. HIDE NGINX VERSION BANNER
+server_tokens off;
+
+# 3. BLOCK ACCESS TO HIDDEN FILES & DIRECTORIES (.git, .env, .DS_Store, etc.)
+location ~ /\.(?!well-known) {
+    deny all;
+    access_log off;
+    log_not_found off;
+    return 404;
+}
+
+# 4. BLOCK ACCESS TO SENSITIVE EXTENSIONS, LOGS, SCRIPTS, AND SEARCH CACHES
+location ~* \.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist|code-search|env)$ {
+    deny all;
+    access_log off;
+    log_not_found off;
+    return 404;
+}
+
+# 5. BLOCK INTERNAL DEPLOYMENT INSTRUCTIONS
+location = /cybersecurity-workshop/UPLOAD-INSTRUCTIONS.txt {
+    deny all;
+    return 404;
+}
+
+# 6. SECURITY HEADERS
+add_header X-Content-Type-Options "nosniff" always;
+add_header X-Frame-Options "SAMEORIGIN" always;
+add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), vr=()" always;
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+add_header Content-Security-Policy "default-src 'self' https://vitchennai.acm.org; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://code.jquery.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:; img-src 'self' https: data:; frame-src 'self' https://docs.google.com https://www.linkedin.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; frame-ancestors 'self'; form-action 'self'; base-uri 'self'; upgrade-insecure-requests;" always;
+
+# 7. CUSTOM ERROR PAGES
+error_page 403 /403.html;
+error_page 404 /404.html;
