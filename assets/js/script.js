@@ -7,6 +7,165 @@
   'use strict';
 
   /* ==========================================================================
+     0. THEME PALETTE MANAGER & FLOATING SWITCHER
+     ========================================================================== */
+  const THEMES = [
+    {
+      id: 'midnight-gold',
+      name: 'Midnight Gold',
+      desc: 'Obsidian Noir & Amber Gold (Signature)',
+      primary: '#f59e0b',
+      bg: '#09090b',
+      card: '#16161a'
+    },
+    {
+      id: 'cyber-sapphire',
+      name: 'Cyber Sapphire',
+      desc: 'Electric Cyan & Deep Tech Blue',
+      primary: '#00d4ff',
+      bg: '#060913',
+      card: '#111a30'
+    },
+    {
+      id: 'emerald-matrix',
+      name: 'Emerald Matrix',
+      desc: 'Hacker Mint & Forest Obsidian',
+      primary: '#10b981',
+      bg: '#050d09',
+      card: '#102419'
+    },
+    {
+      id: 'royal-amethyst',
+      name: 'Royal Amethyst',
+      desc: 'Cosmic Violet & Luxury Purple',
+      primary: '#c084fc',
+      bg: '#0a0614',
+      card: '#1c1333'
+    }
+  ];
+
+  function getActiveTheme() {
+    try {
+      return localStorage.getItem('acm_theme') || 'midnight-gold';
+    } catch (e) {
+      return 'midnight-gold';
+    }
+  }
+
+  function setTheme(themeId) {
+    document.documentElement.setAttribute('data-theme', themeId);
+    try {
+      localStorage.setItem('acm_theme', themeId);
+    } catch (e) {}
+
+    const label = document.querySelector('.theme-switcher-current-name');
+    const dot = document.querySelector('.theme-indicator-dot');
+    const matched = THEMES.find((t) => t.id === themeId);
+    if (label && matched) label.textContent = matched.name;
+    if (dot && matched) {
+      dot.style.background = matched.primary;
+      dot.style.boxShadow = `0 0 8px ${matched.primary}`;
+    }
+
+    document.querySelectorAll('.theme-option-btn').forEach((btn) => {
+      btn.classList.toggle('active', btn.getAttribute('data-theme-id') === themeId);
+    });
+  }
+
+  // Set theme immediately
+  setTheme(getActiveTheme());
+
+  (function initThemeSwitcher() {
+    function setupWidget() {
+      if (document.querySelector('.theme-switcher-wrapper')) return;
+
+      const activeThemeId = getActiveTheme();
+      const current = THEMES.find((t) => t.id === activeThemeId) || THEMES[0];
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'theme-switcher-wrapper';
+      wrapper.innerHTML = `
+        <button class="theme-switcher-trigger" type="button" aria-label="Toggle Color Palette Menu" aria-expanded="false">
+          <span class="theme-indicator-dot" style="background:${current.primary}; box-shadow:0 0 8px ${current.primary}"></span>
+          <span>Palette:</span>
+          <span class="theme-switcher-current-name">${current.name}</span>
+          <i class="fas fa-palette" style="font-size:0.75rem; opacity:0.8; margin-left:2px;"></i>
+        </button>
+        <div class="theme-switcher-modal" role="dialog" aria-label="Theme Selection Menu">
+          <div class="theme-switcher-header">
+            <span class="theme-switcher-title"><i class="fas fa-palette"></i> Color Palettes</span>
+            <button class="theme-switcher-close" type="button" aria-label="Close Palette Menu">&times;</button>
+          </div>
+          <div class="theme-options-grid">
+            ${THEMES.map((t) => `
+              <button class="theme-option-btn ${t.id === activeThemeId ? 'active' : ''}" type="button" data-theme-id="${t.id}">
+                <div class="theme-option-meta">
+                  <span class="theme-option-name">${t.name}</span>
+                  <span class="theme-option-desc">${t.desc}</span>
+                </div>
+                <div class="theme-option-preview">
+                  <span class="theme-preview-dot" style="background:${t.bg}" title="Background"></span>
+                  <span class="theme-preview-dot" style="background:${t.card}" title="Surface"></span>
+                  <span class="theme-preview-dot" style="background:${t.primary}; box-shadow:0 0 6px ${t.primary}" title="Accent"></span>
+                </div>
+              </button>
+            `).join('')}
+          </div>
+        </div>
+      `;
+
+      document.body.appendChild(wrapper);
+
+      const trigger = wrapper.querySelector('.theme-switcher-trigger');
+      const modal = wrapper.querySelector('.theme-switcher-modal');
+      const closeBtn = wrapper.querySelector('.theme-switcher-close');
+
+      const toggleModal = (show) => {
+        const isActive = typeof show === 'boolean' ? show : !modal.classList.contains('active');
+        modal.classList.toggle('active', isActive);
+        trigger.setAttribute('aria-expanded', String(isActive));
+      };
+
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleModal();
+      });
+
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleModal(false);
+      });
+
+      wrapper.querySelectorAll('.theme-option-btn').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const targetId = btn.getAttribute('data-theme-id');
+          setTheme(targetId);
+          setTimeout(() => toggleModal(false), 180);
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!wrapper.contains(e.target)) {
+          toggleModal(false);
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          toggleModal(false);
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupWidget);
+    } else {
+      setupWidget();
+    }
+  })();
+
+  /* ==========================================================================
      1. SMART FLOATING NAVBAR LOGIC
      ========================================================================== */
   (function initNavbar() {
