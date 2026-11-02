@@ -1,344 +1,271 @@
-// Smart Navbar Logic
+/**
+ * ACM STUDENT CHAPTER - VIT CHENNAI
+ * Core Interactive Scripts: Smart Navbar, Mobile Navigation, Lightbox, Modals, Category Filters
+ */
+
 (function () {
-  let lastScrollY = window.scrollY;
-  const navbar = document.querySelector(".navbar");
-  const scrollThreshold = 15;
+  'use strict';
 
-  if (!navbar) {
-    console.error("Navbar element not found!");
-    return;
-  }
+  /* ==========================================================================
+     1. SMART FLOATING NAVBAR LOGIC
+     ========================================================================== */
+  (function initNavbar() {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
 
-  console.log("Navbar Smart Scroll Initialized");
+    const menu = navbar.querySelector('.navbar-menu');
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    const scrollThreshold = 20;
 
-  window.addEventListener("scroll", () => {
-    const currentScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
 
-    // Mobile bounce protection
-    if (currentScrollY < 0) return;
+          // Ignore rubber banding on mobile
+          if (currentScrollY < 0) {
+            ticking = false;
+            return;
+          }
 
-    // Always show if at very top
-    if (currentScrollY < 10) {
-      navbar.classList.remove("navbar-hidden");
-      lastScrollY = currentScrollY;
-      return;
+          // Don't hide navbar when mobile menu is open
+          if (menu && menu.classList.contains('active')) {
+            navbar.classList.remove('navbar-hidden');
+            ticking = false;
+            return;
+          }
+
+          if (currentScrollY <= scrollThreshold) {
+            navbar.classList.remove('navbar-hidden', 'navbar-scrolled');
+          } else {
+            navbar.classList.add('navbar-scrolled');
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+              // Scrolling down
+              navbar.classList.add('navbar-hidden');
+            } else if (currentScrollY < lastScrollY) {
+              // Scrolling up
+              navbar.classList.remove('navbar-hidden');
+            }
+          }
+
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Mobile Hamburger Toggle
+    let toggleBtn = navbar.querySelector('.navbar-toggle');
+    if (!toggleBtn) {
+      toggleBtn = document.createElement('button');
+      toggleBtn.className = 'navbar-toggle';
+      toggleBtn.setAttribute('aria-label', 'Toggle Navigation Menu');
+      toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      navbar.appendChild(toggleBtn);
     }
 
-    // Determine Direction
-    if (currentScrollY > lastScrollY && currentScrollY > scrollThreshold) {
-      // SCROLLING DOWN -> HIDE
-      if (!navbar.classList.contains("navbar-hidden")) {
-        navbar.classList.add("navbar-hidden");
-      }
-    } else if (currentScrollY < lastScrollY) {
-      // SCROLLING UP -> SHOW
-      if (navbar.classList.contains("navbar-hidden")) {
-        navbar.classList.remove("navbar-hidden");
-      }
-    }
-
-    lastScrollY = currentScrollY;
-  });
-
-  // Mobile Hamburger Injection
-  const toggleBtn = document.createElement("div");
-  toggleBtn.className = "navbar-toggle";
-  toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
-  // Insert after logo, before menu (technically standard flex order handles this if justify-between)
-  // Actually append to navbar.
-  navbar.appendChild(toggleBtn);
-
-  const menu = navbar.querySelector(".navbar-menu");
-  if (toggleBtn && menu) {
-    toggleBtn.addEventListener("click", () => {
-      menu.classList.toggle("active");
-      toggleBtn.innerHTML = menu.classList.contains("active")
-        ? '<i class="fas fa-times"></i>'
-        : '<i class="fas fa-bars"></i>';
-    });
-
-    // Close menu when clicking a link
-    menu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        menu.classList.remove("active");
+    if (toggleBtn && menu) {
+      const closeMenu = () => {
+        if (!menu.classList.contains('active')) return;
+        menu.classList.remove('active');
+        toggleBtn.classList.remove('open');
+        navbar.classList.remove('menu-open');
         toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      };
+
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = menu.classList.toggle('active');
+        toggleBtn.classList.toggle('open', isOpen);
+        navbar.classList.toggle('menu-open', isOpen);
+        toggleBtn.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        toggleBtn.setAttribute('aria-expanded', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
       });
-    });
-  }
-})();
 
-// Lightbox Logic
-(function () {
-  // Create Lightbox DOM
-  const lightbox = document.createElement("div");
-  lightbox.className = "lightbox-modal";
-  lightbox.innerHTML = `
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" src="" alt="Enlarged Image">
-    `;
-  document.body.appendChild(lightbox);
-
-  const lightboxImg = lightbox.querySelector(".lightbox-content");
-  const closeBtn = lightbox.querySelector(".lightbox-close");
-
-  // Function to open lightbox
-  const openLightbox = (src) => {
-    lightboxImg.src = src;
-    lightbox.classList.add("active");
-    document.body.style.overflow = "hidden"; // Disable scroll
-  };
-
-  // Function to close lightbox
-  const closeLightbox = () => {
-    lightbox.classList.remove("active");
-    document.body.style.overflow = ""; // Enable scroll
-  };
-
-  // Event Delegation for Gallery Images
-  document.addEventListener("click", (e) => {
-    if (
-      e.target.tagName === "IMG" &&
-      (e.target.closest(".scrolling-gallery-item") ||
-        e.target.closest(".gallery-event-card"))
-    ) {
-      openLightbox(e.target.src);
-    }
-  });
-
-  // Close events
-  closeBtn.addEventListener("click", closeLightbox);
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  // Escape key to close
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lightbox.classList.contains("active")) {
-      closeLightbox();
-    }
-  });
-})();
-
-// Scroll Reveal & Parallax
-(function () {
-  const revealEls = document.querySelectorAll(
-    ".reveal, .animate-fade, .animate-scale, .animate-blur",
-  );
-  const hero = document.querySelector(".hero");
-  const bg = document.querySelector(".hero.hero-parallax .hero-background");
-  const overlay = document.querySelector(".hero.hero-parallax .hero-overlay");
-
-  // Reveal on scroll
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!navbar.contains(e.target)) {
+          closeMenu();
         }
       });
-    },
-    { threshold: 0.15 },
-  );
 
-  revealEls.forEach((el) => observer.observe(el));
+      // Close menu on link click
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          closeMenu();
+        });
+      });
 
-  // Parallax for hero
-  let lastY = window.scrollY;
-  window.addEventListener("scroll", () => {
-    const y = window.scrollY;
-    // subtle parallax only when hero exists
-    if (hero && bg) {
-      const offset = Math.min(60, y * 0.2);
-      bg.style.transform = `translateY(${offset}px) scale(1.02)`;
-    }
-    if (hero && overlay) {
-      const fade = Math.max(0.4, 0.9 - y * 0.001);
-      overlay.style.opacity = String(fade);
-    }
-    lastY = y;
-  });
-})();
-
-// Modal Logic for Registration
-(function () {
-  const openModalBtn = document.getElementById("openRegistrationModal");
-  const modal = document.getElementById("registrationModal");
-
-  if (!openModalBtn || !modal) {
-    console.warn("Modal elements not found. Skipping modal functionality.");
-    return;
-  }
-
-  const closeButton = modal.querySelector(".close-button");
-  if (!closeButton) {
-    console.warn("Modal close button not found. Skipping modal functionality.");
-    return;
-  }
-
-  // Function to open the modal
-  const openModal = () => {
-    modal.style.display = "block";
-    document.body.style.overflow = "hidden"; // Disable body scroll
-  };
-
-  // Function to close the modal
-  const closeModal = () => {
-    modal.style.display = "none";
-    document.body.style.overflow = ""; // Re-enable body scroll
-  };
-
-  // Event listeners
-  openModalBtn.addEventListener("click", openModal);
-  closeButton.addEventListener("click", closeModal);
-
-  // Close when clicking outside the modal content
-  window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      closeModal();
-    }
-  });
-
-  // Close when pressing the Escape key
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && modal.style.display === "block") {
-      closeModal();
-    }
-  });
-})();
-
-// LinkedIn Embed Fallback Handler
-(function () {
-  const embedFrames = document.querySelectorAll(".linkedin-embed-frame");
-  if (!embedFrames.length) return;
-
-  const isWebProtocol =
-    window.location.protocol === "http:" ||
-    window.location.protocol === "https:";
-
-  const showFallback = (frame) => {
-    const fallback = frame.querySelector(".linkedin-embed-fallback");
-    if (!fallback) return;
-    fallback.hidden = false;
-    frame.classList.add("embed-fallback-visible");
-  };
-
-  embedFrames.forEach((frame) => {
-    const iframe = frame.querySelector("iframe");
-    if (!iframe) return;
-
-    if (!isWebProtocol) {
-      iframe.removeAttribute("src");
-      showFallback(frame);
-      return;
-    }
-
-    let resolved = false;
-
-    iframe.addEventListener("load", () => {
-      if (resolved) return;
-
-      try {
-        const href = iframe.contentWindow?.location?.href || "";
-        if (href.startsWith("chrome-error://")) {
-          iframe.removeAttribute("src");
-          showFallback(frame);
-          resolved = true;
-          return;
+      // Close menu on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeMenu();
         }
+      });
+    }
 
-        // If href is readable and not a LinkedIn page, treat as a failed embed.
-        if (href && !href.includes("linkedin.com")) {
-          iframe.removeAttribute("src");
-          showFallback(frame);
-          resolved = true;
-          return;
+    // Active Route Highlight
+    if (menu) {
+      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+      menu.querySelectorAll('a').forEach((link) => {
+        const href = link.getAttribute('href');
+        if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
         }
+      });
+    }
+  })();
 
-        // If readable and still LinkedIn, keep frame as-is.
-        resolved = true;
-      } catch (error) {
-        // Cross-origin access throws on successful external embeds.
-        resolved = true;
+  /* ==========================================================================
+     2. LIGHTBOX PREVIEW MODAL
+     ========================================================================== */
+  (function initLightbox() {
+    let lightbox = document.querySelector('.lightbox-modal');
+    if (!lightbox) {
+      lightbox = document.createElement('div');
+      lightbox.className = 'lightbox-modal';
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightbox.innerHTML = `
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-dialog">
+          <button class="lightbox-close" aria-label="Close Preview">&times;</button>
+          <img class="lightbox-content" src="" alt="Enlarged Visual Preview">
+          <div class="lightbox-caption"></div>
+        </div>
+      `;
+      document.body.appendChild(lightbox);
+    }
+
+    const lightboxImg = lightbox.querySelector('.lightbox-content');
+    const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    const backdrop = lightbox.querySelector('.lightbox-backdrop');
+
+    const openLightbox = (src, alt) => {
+      if (!src) return;
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || 'Preview';
+      if (lightboxCaption) {
+        lightboxCaption.textContent = alt || '';
+        lightboxCaption.style.display = alt ? 'block' : 'none';
       }
-    });
-
-    iframe.addEventListener("error", () => {
-      if (resolved) return;
-      iframe.removeAttribute("src");
-      showFallback(frame);
-      resolved = true;
-    });
-
-    window.setTimeout(() => {
-      if (resolved) return;
-      iframe.removeAttribute("src");
-      showFallback(frame);
-      resolved = true;
-    }, 7000);
-  });
-})();
-
-// (Duplicate modal block removed — handled above)
-
-// Best Chapter Stats Counter Animation
-(function () {
-  const statNums = document.querySelectorAll(".bc-stat-num[data-target], .bc-chip-num[data-target]");
-  if (!statNums.length) return;
-
-  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
-
-  const animateCount = (el, target, suffix) => {
-    const duration = 1800;
-    const start = performance.now();
-
-    const update = (now) => {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = easeOut(progress);
-      const current = Math.round(eased * target);
-      el.textContent = current.toLocaleString() + (progress >= 1 && suffix ? suffix : "");
-      if (progress < 1) requestAnimationFrame(update);
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
     };
 
-    requestAnimationFrame(update);
-  };
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.dataset.target, 10);
-          const suffix = el.dataset.suffix || "";
-          animateCount(el, target, suffix);
-          observer.unobserve(el);
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        if (!lightbox.classList.contains('active')) {
+          lightboxImg.src = '';
         }
+      }, 300);
+    };
+
+    document.addEventListener('click', (e) => {
+      const target = e.target.closest(
+        '.bc-gallery-item img, .gallery-image-wrapper img, .event-row-img, .lightbox-trigger, .bc-gallery-cert img'
+      );
+      if (target) {
+        e.preventDefault();
+        openLightbox(target.src, target.alt || target.getAttribute('data-caption'));
+      }
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    if (backdrop) backdrop.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  })();
+
+  /* ==========================================================================
+     3. EVENT CATEGORY FILTERING (FOR EVENTS PAGE)
+     ========================================================================== */
+  (function initEventFilters() {
+    const filterContainer = document.querySelector('.event-filter-tabs');
+    if (!filterContainer) return;
+
+    const filterBtns = filterContainer.querySelectorAll('.filter-tab-btn');
+    const eventCards = document.querySelectorAll('.gallery-event-card, .event-card-item');
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.getAttribute('data-category');
+
+        eventCards.forEach((card) => {
+          const cardCat = card.getAttribute('data-category') || 'all';
+          if (category === 'all' || cardCat.includes(category)) {
+            card.style.display = '';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 20);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(15px)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 250);
+          }
+        });
       });
-    },
-    { threshold: 0.3 }
-  );
+    });
+  })();
 
-  statNums.forEach((el) => observer.observe(el));
-})();
+  /* ==========================================================================
+     4. LINKEDIN EMBED FALLBACK HANDLER
+     ========================================================================== */
+  (function initLinkedInEmbeds() {
+    const embedFrames = document.querySelectorAll('.linkedin-embed-frame');
+    if (!embedFrames.length) return;
 
-// Best Chapter Gallery Lightbox
-(function () {
-  // Reuse existing lightbox if available
-  const lightbox = document.querySelector(".lightbox-modal");
-  if (!lightbox) return;
+    embedFrames.forEach((frame) => {
+      const iframe = frame.querySelector('iframe');
+      const fallback = frame.querySelector('.linkedin-embed-fallback');
+      if (!iframe || !fallback) return;
 
-  const lightboxImg = lightbox.querySelector(".lightbox-content");
-  if (!lightboxImg) return;
+      iframe.addEventListener('error', () => {
+        iframe.style.display = 'none';
+        fallback.hidden = false;
+      });
+    });
+  })();
 
-  const openLightbox = (src) => {
-    lightboxImg.src = src;
-    lightbox.classList.add("active");
-    document.body.style.overflow = "hidden";
-  };
+  /* ==========================================================================
+     5. SMOOTH ANCHOR SCROLL
+     ========================================================================== */
+  document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        const headerOffset = 90;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
-  document.querySelectorAll(".bc-gallery-item img").forEach((img) => {
-    img.style.cursor = "zoom-in";
-    img.addEventListener("click", () => openLightbox(img.src));
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
   });
 })();
-
