@@ -1,0 +1,41 @@
+# Operating System Artifacts
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor & IDE Directories & Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-search
+*.swp
+*.swo
+*~
+
+# Environment & Secret Files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+
+# Logs & Databases
+*.log
+*.sql
+*.sqlite
+
+# Temporary & Build Dumps
+*.bak
+*.tmp
+*.temp
+node_modules/
+dist/
+.cache/
