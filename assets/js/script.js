@@ -41,6 +41,30 @@
       primary: '#c084fc',
       bg: '#0a0614',
       card: '#1c1333'
+    },
+    {
+      id: 'crimson-forge',
+      name: 'Crimson Forge',
+      desc: 'Electric Rose & Volcanic Slate',
+      primary: '#f43f5e',
+      bg: '#0e0709',
+      card: '#221318'
+    },
+    {
+      id: 'nordic-frost',
+      name: 'Nordic Frost',
+      desc: 'Polar Ice & Frosted Titanium',
+      primary: '#38bdf8',
+      bg: '#070b10',
+      card: '#131d2a'
+    },
+    {
+      id: 'solar-flare',
+      name: 'Solar Flare',
+      desc: 'Sunset Orange & Warm Espresso',
+      primary: '#fb923c',
+      bg: '#0c0806',
+      card: '#211610'
     }
   ];
 
