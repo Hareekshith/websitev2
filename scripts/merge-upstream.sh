@@ -34,9 +34,8 @@ if ! git remote get-url upstream >/dev/null 2>&1; then
     git remote add upstream https://github.com/vitccacm/websitev2.git
 fi
 
-echo "🔄 Fetching latest upstream/main..."
-# Try ssh first, fallback to https if needed
-git fetch upstream main || git fetch https://github.com/vitccacm/websitev2.git main
+echo "🔄 Fetching latest upstream/main via HTTPS..."
+git fetch https://github.com/vitccacm/websitev2.git main:refs/remotes/upstream/main
 
 # 3. Start merge
 echo "🔀 Initiating merge with upstream/main..."
